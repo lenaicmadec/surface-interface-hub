@@ -1,0 +1,73 @@
+<!doctype html><html lang="en" data-theme="ocean" data-theme-mode="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Search by Core Level — Surface &amp; Interface Hub</title><script src="../../assets/xps-theme.js"></script><link rel="stylesheet" href="../../assets/xps-themes.css"><link rel="stylesheet" href="../../assets/xps-base.css"><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../database.css"><link rel="stylesheet" href="./core-level.css"></head><body><header class="hubTopbar"><a class="hubBrand" href="../../"><img class="hubMarkImg" src="../../assets/images/hub-logo.png" alt=""><span class="hubBrandText">Surface &amp; Interface Hub</span></a><nav class="hubTopNav" aria-label="Primary navigation"></nav><div class="hubActions"><button class="hubShare" type="button" data-share-page>Share</button><div class="hubTheme"><span class="hubThemeLabel">Theme</span><div data-theme-picker></div></div></div></header><div class="hubLayout"><aside class="hubSidebar" aria-label="Hub navigation"></aside><main class="hubMain"><div class="hubShell databaseToolShell"><div class="databaseToolHero"><div><div class="pageEyebrow">Interactive XPS Database</div><h1>Search by Core Level</h1></div><div class="databaseToolVersion">XPS Database · v0.4</div></div><div class="databaseToolBody"><div id="xps-core-levels-static" class="xps-core-levels">
+
+  <div class="xps-core-intro">
+    Select a core level to display the reference binding energies.<br>
+    Then refine the results by chemical class, if needed.<br>
+    Then click a compound name or bar to display its details, and click the peak assignment to copy the reference data.
+  </div>
+
+  <!-- ========================================================= -->
+  <!-- ELEMENT AND CORE LEVEL SELECTORS                           -->
+  <!-- ========================================================= -->
+
+  <div class="xps-core-controls">
+
+    <div class="xps-core-control">
+      <button id="xps-core-levels-static-core-toggle" class="xps-core-toggle" type="button" aria-expanded="false">
+        Select a core level
+      </button>
+      <div class="xps-core-menu" hidden>
+        <input class="xps-core-search" type="search" placeholder="Search core levels">
+        <div class="xps-core-options"></div>
+      </div>
+      <select id="xps-core-levels-static-core-choice" hidden>
+        <option value="">Select a core level</option>
+      </select>
+    </div>
+
+    <div class="xps-core-control xps-class-filter" hidden>
+      <button id="xps-core-levels-static-class-toggle" class="xps-class-toggle" type="button" aria-expanded="false">
+        All chemical classes
+      </button>
+      <div class="xps-class-menu" hidden>
+        <input class="xps-class-search" type="search" placeholder="Search chemical classes">
+        <div class="xps-class-options"></div>
+        <button class="xps-class-clear" type="button">Clear selection</button>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- ========================================================= -->
+  <!-- PLACEHOLDER                                               -->
+  <!-- ========================================================= -->
+
+  <div class="xps-chart-placeholder" hidden>
+  </div>
+
+
+  <!-- ========================================================= -->
+  <!-- CHART                                                     -->
+  <!-- ========================================================= -->
+
+  <div class="xps-chart-container" hidden>
+
+    <div class="xps-chart-title"></div>
+
+    <div class="xps-spin-orbit-info" hidden></div>
+
+    <div class="xps-chart-wrapper">
+      <svg class="xps-chart"></svg>
+    </div>
+
+  </div>
+
+
+  <!-- ========================================================= -->
+  <!-- RAW CSV DATA                                              -->
+  <!-- ========================================================= -->
+
+  
+
+</div></div><footer class="hubFooter"><span>Surface &amp; Interface Hub</span><span>·</span><span>© 2026 Lénaïc Madec</span><span>·</span><a href="../../about/">Contact</a><span>·</span><a href="../../about/">About</a></footer></div></main></div><script src="../../assets/xps-nav.js"></script><script src="../../assets/site.js"></script><script src="../../assets/xps-data.js"></script><script src="./core-level.js"></script></body></html>

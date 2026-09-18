@@ -1,0 +1,4739 @@
+
+.visuallyHidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.toolHead{display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:20px;align-items:start;margin-bottom:12px}
+.headCopy{min-width:0}.toolHead h1{margin:0 0 3px}.toolHead .sub{max-width:none;white-space:nowrap;font-size:.77rem;line-height:1.35;overflow:hidden;text-overflow:ellipsis}
+.headUtility{align-self:start;padding:1px 0 0 16px;border-left:1px solid var(--border-soft);min-width:0}
+.headTheme{display:grid;grid-template-columns:auto minmax(125px,1fr);gap:9px;align-items:center;font-size:.69rem;color:var(--muted)}
+.headInfo{display:flex;align-items:center;justify-content:flex-end;gap:6px;margin-top:6px;font-size:.61rem;color:var(--muted);white-space:nowrap}
+#spectrum-analysis{margin:0;font-size:.82rem;line-height:1.25}
+#spectrum-analysis .xv-upload-card{background:var(--surface);border-color:var(--border);border-radius:11px;padding:8px 10px;min-height:46px}
+#spectrum-analysis .xv-chart-card{background:var(--plot-bg)}
+#spectrum-analysis .xv-chart-head{background:var(--plot-bg);color:var(--text)}
+#spectrum-analysis .xv-chart{color:var(--text)}
+#spectrum-analysis .xv-mode-button.is-active,#spectrum-analysis .xv-line-filter button.is-active{background:var(--accent-strong);color:var(--accent-text)}
+#spectrum-analysis .xv-counts-toggle.is-active{background:var(--accent-strong);color:var(--accent-text)}
+#spectrum-analysis .xv-element-candidate:not(.xv-element-selected){border-color:var(--warn)!important;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--warn) 52%,transparent)}
+#spectrum-analysis .xv-file-button span,#spectrum-analysis .xv-sample-select,#spectrum-analysis .xv-source-readout{border-color:var(--border);background:var(--field-bg);color:var(--text)}
+#spectrum-analysis .xv-periodic-table button,#spectrum-analysis .xv-series-row button{border-color:var(--border)}
+@media(max-width:930px){.toolHead{grid-template-columns:1fr}.headUtility{border-left:0;padding-left:0;max-width:260px}.headInfo{justify-content:flex-start}.toolHead .sub{white-space:normal}}
+#spectrum-analysis {
+  --xv-border: var(--border);
+  --xv-muted: var(--muted);
+  --xv-soft: var(--surface);
+  --xv-accent: var(--accent);
+  width: 100%;
+  margin: 0.4rem 0 1.2rem 0;
+  font-size: 0.82rem;
+  line-height: 1.25;
+}
+#spectrum-analysis * { box-sizing: border-box; }
+#spectrum-analysis button, #spectrum-analysis select, #spectrum-analysis input { font: inherit; }
+
+#spectrum-analysis .xv-upload-card {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 46px;
+  padding: 0.38rem 0.55rem;
+  border: 1px solid var(--xv-border);
+  border-radius: 0.5rem;
+  background: var(--xv-soft);
+}
+#spectrum-analysis .xv-subtitle {
+  min-width: 0;
+  color: var(--xv-muted);
+  font-size: 0.68rem;
+  line-height: 1.15;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#spectrum-analysis .xv-file-meta {
+  flex: 0 0 auto;
+  color: var(--text);
+  font-size: 0.67rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+#spectrum-analysis .xv-file-button { flex: 0 0 auto; cursor: pointer; }
+#spectrum-analysis .xv-file-button {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 104px; padding: 0.31rem 0.58rem;
+  border: 1px solid var(--plot-axis); border-radius: 0.36rem;
+  background: var(--surface-raised); color: var(--text); font-size: 0.72rem; font-weight: 650;
+}
+#spectrum-analysis .xv-file-button:hover { border-color: var(--xv-accent); }
+#spectrum-analysis .xv-status {
+  margin-top: 0.4rem; padding: 0.42rem 0.58rem;
+  border: 1px solid var(--xv-border); border-radius: 0.4rem;
+}
+#spectrum-analysis .xv-status.is-error { border-color: var(--bad); color: var(--bad); }
+
+#spectrum-analysis .xv-workspace { display: block; margin-top: 0.42rem; }
+#spectrum-analysis .xv-main { min-width: 0; }
+
+/* VAMAS sample + block navigation: one compact horizontal band. */
+#spectrum-analysis .xv-navigation {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  width: 100%;
+  margin-bottom: 0.34rem;
+  padding: 0.28rem 0.36rem;
+  border: 1px solid var(--xv-border);
+  border-radius: 0.48rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+#spectrum-analysis .xv-nav-sample {
+  flex: 0 0 126px;
+  min-width: 126px;
+  padding: 0.02rem 0.48rem 0.02rem 0;
+}
+#spectrum-analysis .xv-side-label,
+#spectrum-analysis .xv-block-heading {
+  display: block;
+  margin: 0 0 0.14rem;
+  color: var(--xv-muted);
+  font-size: 0.52rem;
+  font-weight: 750;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+#spectrum-analysis .xv-side-label { color: var(--text); text-transform: none; font-size: 0.58rem; letter-spacing: 0; }
+#spectrum-analysis .xv-sample-select {
+  width: 100%;
+  padding: 0.18rem 0.28rem;
+  border: 1px solid var(--xv-border);
+  border-radius: 0.28rem;
+  background: var(--field-bg);
+  color: var(--text);
+  font-size: 0.64rem;
+  line-height: 1;
+}
+#spectrum-analysis .xv-block-list {
+  flex: 1 0 auto;
+  min-width: max-content;
+  display: flex;
+  align-items: stretch;
+}
+#spectrum-analysis .xv-block-group {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0.02rem 0.46rem;
+  border-left: 1px solid color-mix(in srgb, var(--xv-border) 75%, transparent);
+}
+#spectrum-analysis .xv-block-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.18rem;
+  flex-wrap: nowrap;
+}
+#spectrum-analysis .xv-block-button {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: auto; margin: 0; padding: 0.16rem 0.28rem;
+  border: 1px solid var(--xv-border); border-radius: 0.26rem;
+  background: transparent; color: inherit; text-align: center; cursor: pointer;
+  font-size: 0.58rem; line-height: 1; white-space: nowrap;
+}
+#spectrum-analysis .xv-block-button:hover { border-color: var(--xv-accent); }
+#spectrum-analysis .xv-block-button.is-active { border-color: var(--xv-accent); background: color-mix(in srgb, var(--xv-accent) 9%, transparent); }
+#spectrum-analysis .xv-block-name { font-weight: 650; }
+#spectrum-analysis .xv-block-id { display: none; }
+
+/* Block header. */
+#spectrum-analysis .xv-spectrum-header {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-height: 30px;
+  margin-bottom: 0.22rem;
+}
+#spectrum-analysis .xv-spectrum-heading { display: flex; align-items: baseline; gap: 0.45rem; min-width: 0; }
+#spectrum-analysis .xv-block-title { flex: 0 0 auto; font-size: 0.98rem; font-weight: 750; }
+#spectrum-analysis .xv-block-meta { color: var(--xv-muted); font-size: 0.6rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+#spectrum-analysis .xv-mode-controls, #spectrum-analysis .xv-line-filter {
+  display: inline-flex;
+  border: 1px solid var(--xv-border);
+  border-radius: 0.34rem;
+  overflow: hidden;
+}
+#spectrum-analysis .xv-auto-panel {
+  margin-left: auto;
+  flex: 0 1 460px;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.12rem;
+}
+#spectrum-analysis .xv-auto-summary {
+  width: 100%;
+  color: var(--xv-muted);
+  font-size: 0.6rem;
+  line-height: 1.2;
+  white-space: normal;
+  overflow: visible;
+  text-align: right;
+}
+#spectrum-analysis .xv-mode-controls { margin-left: 0; flex: 0 0 auto; }
+#spectrum-analysis .xv-mode-button, #spectrum-analysis .xv-line-filter button {
+  border: 0;
+  border-right: 1px solid var(--xv-border);
+  padding: 0.26rem 0.45rem;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font-size: 0.65rem;
+  line-height: 1.1;
+}
+#spectrum-analysis .xv-mode-button:last-child, #spectrum-analysis .xv-line-filter button:last-child { border-right: 0; }
+#spectrum-analysis .xv-mode-button.is-active, #spectrum-analysis .xv-line-filter button.is-active { background: var(--accent-strong); color: var(--accent-text); }
+#spectrum-analysis .xv-mode-button:disabled { opacity: 0.42; cursor: default; }
+
+/* Periodic table: compact, with the Element-page controls in the central void. */
+#spectrum-analysis .xv-survey-tools {
+  margin-bottom: 0.28rem;
+  padding: 0.24rem 0.34rem 0.3rem;
+  border: 1px solid var(--xv-border);
+  border-radius: 0.45rem;
+}
+#spectrum-analysis .xv-periodic-shell {
+  position: relative;
+  max-width: 770px;
+  margin: 0 auto;
+  overflow-x: auto;
+}
+#spectrum-analysis .xv-periodic-table {
+  display: grid;
+  grid-template-columns: repeat(18, minmax(23px, 1fr));
+  gap: 2px;
+  min-width: 650px;
+}
+#spectrum-analysis .xv-periodic-table button, #spectrum-analysis .xv-series-row button {
+  position: relative;
+  height: 27px;
+  min-width: 0;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 0.17rem;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  overflow: hidden;
+}
+#spectrum-analysis .xv-periodic-table button:hover:not(:disabled), #spectrum-analysis .xv-series-row button:hover:not(:disabled) { border-color: var(--xv-accent); }
+#spectrum-analysis .xv-periodic-table button:disabled, #spectrum-analysis .xv-series-row button:disabled { opacity: 0.24; cursor: default; }
+#spectrum-analysis .xv-element-selected { background: var(--xv-element-color) !important; border-color: var(--xv-element-color) !important; color: white !important; }
+#spectrum-analysis .xv-element-candidate:not(.xv-element-selected) {
+  border-color: var(--warn) !important;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--warn) 52%, transparent);
+}
+#spectrum-analysis .xv-z { position: absolute; left: 3px; top: 2px; font-size: 6px; opacity: 0.66; line-height: 1; }
+#spectrum-analysis .xv-symbol { position: absolute; left: 50%; top: 60%; transform: translate(-50%, -50%); font-size: 10.5px; font-weight: 750; line-height: 1; }
+#spectrum-analysis .xv-periodic-gap { height: 27px; visibility: hidden; }
+#spectrum-analysis .xv-series-marker { display: flex; align-items: center; justify-content: center; height: 27px; border: 1px dashed var(--plot-axis); border-radius: 0.17rem; opacity: 0.55; font-size: 0.66rem; font-weight: 700; }
+#spectrum-analysis .xv-series-row {
+  display: grid;
+  grid-template-columns: 27px repeat(15, minmax(23px, 1fr));
+  gap: 2px;
+  min-width: 570px;
+  width: calc(100% - 78px);
+  margin-left: 78px;
+  margin-top: 2px;
+}
+#spectrum-analysis .xv-series-label { display:flex; align-items:center; justify-content:center; height:27px; border:1px solid var(--plot-axis); border-radius:0.17rem; opacity:0.6; font-weight:700; }
+#spectrum-analysis .xv-periodic-central {
+  position: absolute;
+  top: 0;
+  left: calc((100% / 18) * 2 + 4px);
+  width: calc((100% / 18) * 10 - 8px);
+  height: 85px;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.28rem;
+  pointer-events: none;
+}
+#spectrum-analysis .xv-periodic-note {
+  text-align: center;
+  color: var(--xv-muted);
+  font-size: 0.59rem;
+  line-height: 1.18;
+}
+#spectrum-analysis .xv-central-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  pointer-events: auto;
+}
+#spectrum-analysis .xv-source-readout {
+  min-width: 145px;
+  padding: 0.25rem 0.42rem;
+  border: 1px solid var(--xv-border);
+  border-radius: 0.34rem;
+  color: var(--text);
+  font-size: 0.63rem;
+  text-align: center;
+  white-space: nowrap;
+}
+#spectrum-analysis .xv-clear-elements {
+  padding: 0.25rem 0.4rem;
+  border: 1px solid var(--xv-border);
+  border-radius: 0.34rem;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font-size: 0.63rem;
+  line-height: 1.1;
+}
+#spectrum-analysis .xv-clear-elements:disabled { opacity: 0.4; cursor: default; }
+
+#spectrum-analysis .xv-core-placeholder {
+  margin-bottom: 0.35rem; padding: 0.5rem 0.65rem;
+  border: 1px dashed var(--xv-border); border-radius: 0.44rem;
+}
+#spectrum-analysis .xv-placeholder-title { font-weight: 700; }
+#spectrum-analysis .xv-placeholder-text { margin-top: 0.12rem; color: var(--xv-muted); font-size: 0.66rem; }
+
+/* Spectrum: maximize actual plotting area. */
+#spectrum-analysis .xv-chart-card {
+  position: relative;
+  width: 100%;
+  border: 1px solid var(--xv-border);
+  border-radius: 0.48rem;
+  padding: 0;
+  overflow: hidden;
+}
+#spectrum-analysis .xv-chart-head {
+  position: relative;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: minmax(150px, 1fr) minmax(220px, 1.7fr) auto;
+  align-items: start;
+  gap: 0.4rem;
+  min-height: 30px;
+  padding: 0.28rem 0.45rem 0.12rem 0.45rem;
+  pointer-events: auto;
+}
+#spectrum-analysis .xv-chart {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+}
+#spectrum-analysis .xv-chart.is-dragging { cursor: grabbing; }
+#spectrum-analysis .xv-chart text { fill: currentColor; }
+#spectrum-analysis .xv-axis { stroke: var(--plot-axis); stroke-width: 1.25; }
+#spectrum-analysis .xv-grid { stroke: var(--plot-grid); stroke-width: 0.65; opacity: 0.72; }
+#spectrum-analysis .xv-spectrum-path { fill: none; stroke: var(--plot-sum); stroke-width: 1.35; vector-effect: non-scaling-stroke; }
+#spectrum-analysis .xv-tick { font-size: 13px; opacity: 0.92; }
+#spectrum-analysis .xv-axis-label { font-size: 15px; font-weight: 700; }
+#spectrum-analysis .xv-reference-line { stroke-width: 3.4; opacity: 0.9; cursor: pointer; vector-effect: non-scaling-stroke; }
+#spectrum-analysis .xv-reference-hit { stroke: transparent; stroke-width: 15; cursor: pointer; vector-effect: non-scaling-stroke; pointer-events: stroke; }
+#spectrum-analysis .xv-reference-line:hover { stroke-width: 5; opacity: 1; }
+#spectrum-analysis .xv-reference-label { font-size: 16px; font-weight: 750; cursor: pointer; }
+#spectrum-analysis .xv-detected-peak {
+  fill: color-mix(in srgb, var(--text) 72%, transparent);
+  stroke: var(--plot-bg);
+  stroke-width: 1.4;
+  cursor: pointer;
+}
+#spectrum-analysis .xv-detected-peak:hover {
+  fill: var(--warn);
+  r: 5.2px;
+}
+#spectrum-analysis .xv-detected-hit { fill: transparent; cursor: pointer; }
+#spectrum-analysis .xv-legend {
+  position: static;
+  display: flex;
+  align-items: center;
+  gap: 0.48rem;
+  flex-wrap: wrap;
+  min-height: 24px;
+  padding: 0.1rem 0.22rem;
+  background: color-mix(in srgb, var(--plot-bg) 88%, transparent);
+  border-radius: 0.24rem;
+  font-size: 0.62rem;
+  line-height: 1;
+}
+#spectrum-analysis .xv-legend span { display: inline-flex; align-items: center; gap: 0.2rem; }
+#spectrum-analysis .xv-legend i { display: inline-block; width: 13px; height: 3px; border-radius: 999px; }
+#spectrum-analysis .xv-line-info {
+  position: static;
+  justify-self: center;
+  width: fit-content;
+  max-width: 100%;
+  padding: 0.13rem 0.4rem;
+  border: 1px solid var(--xv-info-color, var(--xv-accent));
+  border-radius: 0.3rem;
+  background: color-mix(in srgb, var(--plot-bg) 92%, transparent);
+  color: var(--xv-info-color, var(--xv-accent));
+  font-size: 0.65rem;
+  font-weight: 650;
+  line-height: 1.18;
+  text-align: center;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+}
+#spectrum-analysis .xv-chart-actions {
+  position: static;
+  justify-self: end;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.16rem;
+  pointer-events: auto;
+}
+#spectrum-analysis .xv-counts-toggle, #spectrum-analysis .xv-reset-view {
+  min-width: 62px;
+  padding: 0.16rem 0.3rem;
+  border: 1px solid var(--xv-border);
+  border-radius: 0.28rem;
+  background: color-mix(in srgb, var(--plot-bg) 92%, transparent);
+  color: inherit;
+  cursor: pointer;
+  font-size: 0.57rem;
+  line-height: 1.05;
+}
+#spectrum-analysis .xv-reset-view:disabled { opacity: 0.38; cursor: default; }
+#spectrum-analysis .xv-counts-toggle.is-active { background: var(--accent-strong); color: var(--accent-text); }
+
+@media (max-width: 900px) {
+  #spectrum-analysis .xv-navigation { overflow-x: auto; }
+  #spectrum-analysis .xv-subtitle { white-space: normal; }
+}
+@media (max-width: 700px) {
+  #spectrum-analysis .xv-chart-head { grid-template-columns: 1fr auto; }
+  #spectrum-analysis .xv-line-info { grid-column: 1 / -1; grid-row: 2; }
+  #spectrum-analysis .xv-chart-actions { grid-column: 2; grid-row: 1; }
+  #spectrum-analysis .xv-upload-card { flex-wrap: wrap; }
+  #spectrum-analysis .xv-spectrum-header { align-items: flex-start; flex-wrap: wrap; }
+  #spectrum-analysis .xv-mode-controls { margin-left: 0; }
+  #spectrum-analysis .xv-auto-panel { margin-left: 0; flex: 1 1 100%; align-items: flex-start; }
+  #spectrum-analysis .xv-auto-summary { text-align: left; }
+  #spectrum-analysis .xv-periodic-central { display: none; }
+  #spectrum-analysis .xv-chart { min-height: 0; }
+}
+
+/* Design pass 1: keep the analysis workspace close to the compact Hugo version. */
+.toolHead,
+#spectrum-analysis {
+  max-width: 940px;
+}
+
+#spectrum-analysis {
+  --xv-frame-border: color-mix(in srgb, var(--text) 55%, var(--border));
+  --xv-control-border: color-mix(in srgb, var(--text) 38%, var(--border));
+}
+
+/* Main frames: a little more contrast than the shared shell default. */
+#spectrum-analysis .xv-upload-card,
+#spectrum-analysis .xv-navigation,
+#spectrum-analysis .xv-survey-tools,
+#spectrum-analysis .xv-chart-card {
+  border-color: var(--xv-frame-border);
+}
+
+/* Make navigation groups and core-level buttons easier to read. */
+#spectrum-analysis .xv-block-group {
+  border-left-color: var(--xv-control-border);
+}
+#spectrum-analysis .xv-block-heading {
+  color: var(--text-soft);
+  font-size: 0.57rem;
+  opacity: 1;
+}
+#spectrum-analysis .xv-block-button {
+  border-color: var(--xv-control-border);
+  color: var(--text-soft);
+  font-size: 0.61rem;
+}
+#spectrum-analysis .xv-block-button.is-active {
+  border-color: var(--good);
+  background: color-mix(in srgb, var(--good) 16%, var(--surface));
+  color: var(--good-text);
+}
+#spectrum-analysis .xv-block-button.is-active .xv-block-name {
+  color: var(--good-text);
+  font-weight: 800;
+}
+
+/* Stronger outlines inside the periodic-table panel, like the previous tool. */
+#spectrum-analysis .xv-periodic-table button,
+#spectrum-analysis .xv-series-row button,
+#spectrum-analysis .xv-series-label,
+#spectrum-analysis .xv-series-marker,
+#spectrum-analysis .xv-source-readout,
+#spectrum-analysis .xv-sample-select,
+#spectrum-analysis .xv-mode-controls,
+#spectrum-analysis .xv-line-filter,
+#spectrum-analysis .xv-clear-elements,
+#spectrum-analysis .xv-counts-toggle,
+#spectrum-analysis .xv-reset-view {
+  border-color: var(--xv-control-border);
+}
+
+@media(max-width:1100px){
+  .toolHead,
+  #spectrum-analysis { max-width: 100%; }
+}
+
+/* ----- Design pass 2: centered workspace + survey/core two-column layout ----- */
+.appMain > .toolHead,
+.appMain > #spectrum-analysis {
+  width: min(100%, 1080px);
+  margin-left: auto;
+  margin-right: auto;
+}
+.toolHead,
+#spectrum-analysis {
+  max-width: none;
+}
+
+#spectrum-analysis {
+  --xv-neutral-active-bg: color-mix(in srgb, var(--text) 13%, var(--surface));
+  --xv-neutral-active-border: color-mix(in srgb, var(--text) 44%, var(--border));
+  --xv-panel-bg: color-mix(in srgb, var(--plot-bg) 62%, var(--surface));
+  --xv-upload-bg: color-mix(in srgb, var(--surface) 68%, var(--plot-bg));
+}
+
+/* Upload card: strong white frame, softer inner background. */
+#spectrum-analysis .xv-upload-card {
+  background: var(--xv-upload-bg);
+  border-color: color-mix(in srgb, var(--text) 68%, var(--border));
+  border-radius: 0.58rem;
+}
+#spectrum-analysis .xv-file-button {
+  min-width: 110px;
+  background: color-mix(in srgb, var(--surface-raised) 75%, var(--plot-bg));
+  border-color: color-mix(in srgb, var(--text) 72%, var(--border));
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--text) 10%, transparent);
+}
+#spectrum-analysis .xv-file-button:hover {
+  border-color: color-mix(in srgb, var(--text) 82%, var(--border));
+}
+#spectrum-analysis .xv-file-meta { font-size: 0.7rem; }
+
+/* Neutral action buttons: keep colors for actual selected elements and green nav only. */
+#spectrum-analysis .xv-mode-button.is-active,
+#spectrum-analysis .xv-line-filter button.is-active,
+#spectrum-analysis .xv-counts-toggle.is-active {
+  background: var(--xv-neutral-active-bg);
+  border-color: var(--xv-neutral-active-border);
+  color: var(--text);
+}
+#spectrum-analysis .xv-mode-button,
+#spectrum-analysis .xv-line-filter button,
+#spectrum-analysis .xv-counts-toggle,
+#spectrum-analysis .xv-reset-view,
+#spectrum-analysis .xv-clear-elements {
+  color: var(--text-soft);
+}
+
+/* Keep survey/core-level selection in green, a bit stronger. */
+#spectrum-analysis .xv-block-button.is-active {
+  border-color: var(--good);
+  background: color-mix(in srgb, var(--good) 20%, var(--surface));
+}
+
+/* Survey/Core workspace */
+#spectrum-analysis .xv-analysis-grid {
+  display: grid;
+  grid-template-columns: 395px minmax(0, 1fr);
+  gap: 0.72rem;
+  align-items: start;
+}
+#spectrum-analysis .xv-left-panel,
+#spectrum-analysis .xv-right-panel {
+  min-width: 0;
+}
+#spectrum-analysis .xv-survey-tools,
+#spectrum-analysis .xv-core-placeholder,
+#spectrum-analysis .xv-chart-card {
+  margin-bottom: 0;
+}
+#spectrum-analysis .xv-survey-tools,
+#spectrum-analysis .xv-core-placeholder {
+  height: fit-content;
+}
+#spectrum-analysis .xv-chart-card {
+  min-height: 620px;
+}
+
+/* More compact periodic table for left column. */
+#spectrum-analysis .xv-survey-tools { padding: 0.28rem 0.32rem 0.34rem; }
+#spectrum-analysis .xv-periodic-shell {
+  max-width: none;
+  overflow: hidden;
+}
+#spectrum-analysis .xv-periodic-table {
+  grid-template-columns: repeat(18, minmax(18px, 1fr));
+  min-width: 0;
+  gap: 2px;
+}
+#spectrum-analysis .xv-periodic-table button,
+#spectrum-analysis .xv-series-row button,
+#spectrum-analysis .xv-periodic-gap,
+#spectrum-analysis .xv-series-marker,
+#spectrum-analysis .xv-series-label {
+  height: 22px;
+}
+#spectrum-analysis .xv-symbol { font-size: 8.9px; top: 61%; }
+#spectrum-analysis .xv-z { font-size: 5px; left: 2px; top: 2px; }
+#spectrum-analysis .xv-series-row {
+  grid-template-columns: 22px repeat(15, minmax(18px, 1fr));
+  min-width: 0;
+  width: calc(100% - 60px);
+  margin-left: 60px;
+}
+#spectrum-analysis .xv-periodic-central {
+  left: calc((100% / 18) * 2 + 4px);
+  width: calc((100% / 18) * 10 - 10px);
+  height: 74px;
+  gap: 0.22rem;
+}
+#spectrum-analysis .xv-periodic-note {
+  font-size: 0.52rem;
+  line-height: 1.14;
+}
+#spectrum-analysis .xv-central-controls,
+#spectrum-analysis .xv-central-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.28rem;
+  pointer-events: auto;
+  flex-wrap: wrap;
+}
+#spectrum-analysis .xv-central-actions .xv-mode-controls {
+  margin-left: 0;
+}
+#spectrum-analysis .xv-source-readout {
+  min-width: 132px;
+  font-size: 0.58rem;
+  padding: 0.2rem 0.32rem;
+}
+#spectrum-analysis .xv-line-filter,
+#spectrum-analysis .xv-mode-controls {
+  transform: scale(0.95);
+  transform-origin: center;
+}
+#spectrum-analysis .xv-clear-elements {
+  padding: 0.18rem 0.34rem;
+  font-size: 0.58rem;
+}
+
+/* Hide the outer mode buttons when in the side-by-side survey view; we keep the inline ones in the table void. */
+#spectrum-analysis .xv-spectrum-header .xv-mode-controls {
+  display: none;
+}
+#spectrum-analysis .xv-spectrum-header {
+  align-items: flex-end;
+}
+#spectrum-analysis .xv-auto-panel {
+  align-items: flex-end;
+}
+
+/* Core-level mockup panel */
+#spectrum-analysis .xv-core-placeholder {
+  padding: 0.62rem 0.7rem;
+  border-style: solid;
+  border-color: var(--xv-frame-border);
+  background: var(--xv-panel-bg);
+}
+#spectrum-analysis .xv-placeholder-title {
+  font-size: 0.9rem;
+  font-weight: 800;
+  margin-bottom: 0.4rem;
+}
+#spectrum-analysis .xv-core-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.28rem;
+  margin-bottom: 0.42rem;
+}
+#spectrum-analysis .xv-core-pill {
+  padding: 0.22rem 0.42rem;
+  border: 1px solid var(--xv-control-border);
+  border-radius: 999px;
+  font-size: 0.6rem;
+  color: var(--text-soft);
+  background: color-mix(in srgb, var(--surface) 72%, transparent);
+}
+#spectrum-analysis .xv-core-pill.is-active {
+  border-color: var(--good);
+  background: color-mix(in srgb, var(--good) 15%, var(--surface));
+  color: var(--good-text);
+}
+#spectrum-analysis .xv-core-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.45rem;
+  margin-top: 0.48rem;
+}
+#spectrum-analysis .xv-core-column {
+  padding: 0.46rem 0.5rem;
+  border: 1px solid var(--xv-control-border);
+  border-radius: 0.45rem;
+  background: color-mix(in srgb, var(--surface) 65%, transparent);
+}
+#spectrum-analysis .xv-core-column-title {
+  font-size: 0.67rem;
+  font-weight: 760;
+  margin-bottom: 0.18rem;
+}
+#spectrum-analysis .xv-core-column-text,
+#spectrum-analysis .xv-placeholder-text {
+  font-size: 0.63rem;
+  line-height: 1.25;
+  color: var(--muted);
+}
+
+/* Right spectrum panel */
+#spectrum-analysis .xv-chart-head {
+  padding: 0.3rem 0.35rem 0.08rem;
+}
+#spectrum-analysis .xv-chart-card {
+  border-color: var(--xv-frame-border);
+}
+#spectrum-analysis .xv-legend {
+  min-height: 20px;
+}
+
+/* Small-screen fallback: stack left panel above chart. */
+@media (max-width: 1120px) {
+  #spectrum-analysis .xv-analysis-grid {
+    grid-template-columns: 1fr;
+  }
+  #spectrum-analysis .xv-chart-card { min-height: 560px; }
+  #spectrum-analysis .xv-periodic-table {
+    grid-template-columns: repeat(18, minmax(23px, 1fr));
+  }
+  #spectrum-analysis .xv-periodic-table button,
+  #spectrum-analysis .xv-series-row button,
+  #spectrum-analysis .xv-periodic-gap,
+  #spectrum-analysis .xv-series-marker,
+  #spectrum-analysis .xv-series-label { height: 27px; }
+  #spectrum-analysis .xv-symbol { font-size: 10.5px; }
+  #spectrum-analysis .xv-z { font-size: 6px; }
+  #spectrum-analysis .xv-series-row {
+    grid-template-columns: 27px repeat(15, minmax(23px, 1fr));
+    width: calc(100% - 78px);
+    margin-left: 78px;
+  }
+  #spectrum-analysis .xv-periodic-central {
+    height: 85px;
+  }
+}
+
+/* ----- Design pass 3: larger block nav, graph context, separate command/database cards ----- */
+.appMain > .toolHead,
+.appMain > #spectrum-analysis {
+  width: min(100%, 1120px);
+}
+
+/* Slightly larger sample / Survey / Core levels / Other controls. */
+#spectrum-analysis .xv-navigation {
+  padding: 0.36rem 0.46rem;
+}
+#spectrum-analysis .xv-nav-sample {
+  flex-basis: 142px;
+  min-width: 142px;
+}
+#spectrum-analysis .xv-side-label,
+#spectrum-analysis .xv-block-heading {
+  font-size: 0.59rem;
+  margin-bottom: 0.18rem;
+}
+#spectrum-analysis .xv-sample-select {
+  padding: 0.24rem 0.34rem;
+  font-size: 0.69rem;
+  min-height: 28px;
+}
+#spectrum-analysis .xv-block-group {
+  padding-left: 0.58rem;
+  padding-right: 0.58rem;
+}
+#spectrum-analysis .xv-block-buttons { gap: 0.24rem; }
+#spectrum-analysis .xv-block-button {
+  padding: 0.24rem 0.42rem;
+  min-height: 28px;
+  font-size: 0.66rem;
+  border-radius: 0.32rem;
+}
+
+/* A little more width for the periodic table, less for the graph. */
+#spectrum-analysis .xv-analysis-grid {
+  grid-template-columns: 445px minmax(0, 1fr);
+  gap: 0.65rem;
+}
+
+/* Survey command card above the table. */
+#spectrum-analysis .xv-survey-command-card,
+#spectrum-analysis .xv-core-command-card,
+#spectrum-analysis .xv-core-database-card {
+  border: 1px solid var(--xv-frame-border);
+  border-radius: 0.48rem;
+  background: var(--xv-panel-bg);
+}
+#spectrum-analysis .xv-survey-command-card {
+  display: grid;
+  grid-template-columns: auto auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.38rem 0.46rem;
+  margin-bottom: 0.36rem;
+}
+#spectrum-analysis .xv-command-title {
+  font-size: 0.68rem;
+  font-weight: 780;
+  color: var(--text-soft);
+  white-space: nowrap;
+}
+#spectrum-analysis .xv-survey-command-card .xv-auto-summary {
+  text-align: right;
+  font-size: 0.58rem;
+}
+
+/* Give the periodic-table frame a touch more breathing room vertically. */
+#spectrum-analysis .xv-survey-tools {
+  padding: 0.36rem 0.38rem 0.42rem;
+}
+#spectrum-analysis .xv-periodic-table {
+  grid-template-columns: repeat(18, minmax(20px, 1fr));
+}
+#spectrum-analysis .xv-periodic-table button,
+#spectrum-analysis .xv-series-row button,
+#spectrum-analysis .xv-periodic-gap,
+#spectrum-analysis .xv-series-marker,
+#spectrum-analysis .xv-series-label {
+  height: 24px;
+}
+#spectrum-analysis .xv-symbol { font-size: 9.6px; }
+#spectrum-analysis .xv-z { font-size: 5.4px; }
+#spectrum-analysis .xv-series-row {
+  grid-template-columns: 24px repeat(15, minmax(20px, 1fr));
+  width: calc(100% - 66px);
+  margin-left: 66px;
+}
+#spectrum-analysis .xv-periodic-central {
+  height: 82px;
+}
+#spectrum-analysis .xv-periodic-note {
+  font-size: 0.55rem;
+  line-height: 1.16;
+}
+#spectrum-analysis .xv-central-controls {
+  gap: 0.3rem;
+  flex-wrap: nowrap;
+}
+#spectrum-analysis .xv-source-readout {
+  min-width: 136px;
+}
+
+/* Current graph/block reminder above the plotted spectrum. */
+#spectrum-analysis .xv-graph-context {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 31px;
+  margin-bottom: 0.28rem;
+}
+#spectrum-analysis .xv-graph-block-title {
+  display: inline-flex;
+  align-items: center;
+  min-height: 25px;
+  padding: 0.24rem 0.48rem;
+  border: 1px solid var(--good);
+  border-radius: 0.36rem;
+  background: color-mix(in srgb, var(--good) 20%, var(--surface));
+  color: var(--good-text);
+  font-size: 0.7rem;
+  font-weight: 820;
+  white-space: nowrap;
+}
+#spectrum-analysis .xv-graph-block-meta {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--muted);
+  font-size: 0.61rem;
+}
+
+/* Core-level: commands in one frame, database in a second frame below. */
+#spectrum-analysis .xv-core-placeholder {
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+#spectrum-analysis .xv-core-command-card,
+#spectrum-analysis .xv-core-database-card {
+  padding: 0.58rem 0.62rem;
+}
+#spectrum-analysis .xv-core-command-card {
+  margin-bottom: 0.42rem;
+}
+#spectrum-analysis .xv-core-toolbar {
+  margin: 0.42rem 0 0.42rem;
+}
+#spectrum-analysis .xv-core-action {
+  padding: 0.28rem 0.48rem;
+  border: 1px solid var(--xv-control-border);
+  border-radius: 0.35rem;
+  background: var(--xv-neutral-active-bg);
+  color: var(--text-soft);
+  font-size: 0.63rem;
+  font-weight: 690;
+}
+#spectrum-analysis .xv-core-action:hover {
+  border-color: color-mix(in srgb, var(--text) 60%, var(--border));
+}
+#spectrum-analysis .xv-core-columns {
+  grid-template-columns: 1fr;
+  margin-top: 0.42rem;
+}
+
+/* Let the actual SVG determine the chart card height: no empty lower frame. */
+#spectrum-analysis .xv-chart-card {
+  min-height: 0;
+}
+#spectrum-analysis .xv-chart {
+  margin-bottom: 0;
+}
+
+@media (max-width: 1180px) {
+  #spectrum-analysis .xv-analysis-grid { grid-template-columns: 420px minmax(0,1fr); }
+}
+@media (max-width: 1040px) {
+  #spectrum-analysis .xv-analysis-grid { grid-template-columns: 1fr; }
+  #spectrum-analysis .xv-survey-command-card { grid-template-columns: auto auto minmax(0,1fr); }
+}
+
+/* ----- Design pass 4: fixed Survey/Core-level architecture ----- */
+#spectrum-analysis .xv-command-title,
+#spectrum-analysis .xv-panel-title {
+  color: var(--text);
+  font-weight: 820;
+  letter-spacing: 0;
+}
+#spectrum-analysis .xv-command-title { font-size: 0.76rem; }
+#spectrum-analysis .xv-panel-title {
+  font-size: 0.72rem;
+  margin: 0 0 0.32rem 0.05rem;
+}
+
+/* Manual / Identify peaks: intentionally visible but neutral. */
+#spectrum-analysis .xv-survey-command-card {
+  grid-template-columns: auto auto minmax(0,1fr);
+  padding: 0.48rem 0.55rem;
+  min-height: 48px;
+}
+#spectrum-analysis .xv-survey-command-card .xv-mode-controls {
+  transform: none;
+}
+#spectrum-analysis .xv-survey-command-card .xv-mode-button {
+  min-height: 30px;
+  padding: 0.32rem 0.62rem;
+  font-size: 0.69rem;
+  font-weight: 760;
+  color: var(--text);
+  background: transparent;
+  border-color: var(--xv-control-border);
+}
+#spectrum-analysis .xv-survey-command-card .xv-mode-button.is-active {
+  background: var(--xv-neutral-active-bg);
+  color: var(--text);
+}
+#spectrum-analysis .xv-survey-command-card .xv-auto-summary {
+  color: var(--text-soft);
+  font-size: 0.62rem;
+}
+
+/* Periodic-table centre: source stays here; graph-line modes moved to plot header. */
+#spectrum-analysis .xv-periodic-central {
+  justify-content: flex-start;
+  padding-top: 0.18rem;
+  height: 84px;
+  gap: 0.34rem;
+}
+#spectrum-analysis .xv-periodic-note {
+  color: var(--text-soft);
+  font-size: 0.56rem;
+  line-height: 1.18;
+}
+#spectrum-analysis .xv-central-controls {
+  margin-top: 0.05rem;
+}
+#spectrum-analysis .xv-source-readout {
+  min-width: 150px;
+  color: var(--text);
+}
+
+/* Plot controls: displayed reference type on the left, graph actions on the right. */
+#spectrum-analysis .xv-chart-head {
+  grid-template-columns: minmax(0,1.25fr) minmax(140px,.9fr) auto;
+  align-items: start;
+  gap: 0.45rem;
+  padding: 0.34rem 0.42rem 0.08rem;
+}
+#spectrum-analysis .xv-chart-left-tools {
+  min-width: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.48rem;
+  flex-wrap: wrap;
+}
+#spectrum-analysis .xv-graph-line-filter {
+  transform: none;
+  flex: 0 0 auto;
+}
+#spectrum-analysis .xv-graph-line-filter button {
+  min-height: 27px;
+  padding: 0.27rem 0.48rem;
+  color: var(--text);
+  font-size: 0.63rem;
+  font-weight: 720;
+}
+#spectrum-analysis .xv-graph-line-filter[hidden] { display:none!important; }
+#spectrum-analysis .xv-chart-actions {
+  flex-direction: row;
+  gap: 0.28rem;
+}
+#spectrum-analysis .xv-counts-toggle,
+#spectrum-analysis .xv-reset-view {
+  min-width: 70px;
+  min-height: 27px;
+  padding: 0.24rem 0.42rem;
+  color: var(--text);
+  font-size: 0.61rem;
+}
+
+/* Core-level Explorer */
+#spectrum-analysis .xv-core-command-card,
+#spectrum-analysis .xv-core-database-card {
+  background: var(--xv-panel-bg);
+}
+#spectrum-analysis .xv-core-section {
+  margin-top: 0.52rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid color-mix(in srgb,var(--text) 16%,var(--border));
+}
+#spectrum-analysis .xv-core-section:first-of-type { margin-top: 0.42rem; }
+#spectrum-analysis .xv-core-section-head {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:.5rem;
+  margin-bottom:.38rem;
+  color:var(--text);
+  font-size:.65rem;
+  font-weight:760;
+}
+#spectrum-analysis .xv-calibration-status {
+  color: var(--muted);
+  font-size: .61rem;
+  font-weight: 700;
+}
+#spectrum-analysis .xv-calibration-status.is-set { color: var(--good-text); }
+#spectrum-analysis .xv-calibration-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:.36rem;
+}
+#spectrum-analysis .xv-calibration-grid label,
+#spectrum-analysis .xv-core-field {
+  display:grid;
+  gap:.18rem;
+  color:var(--muted);
+  font-size:.58rem;
+}
+#spectrum-analysis .xv-calibration-grid label:last-child { grid-column:1/-1; }
+#spectrum-analysis .xv-calibration-grid input,
+#spectrum-analysis .xv-calibration-grid select,
+#spectrum-analysis .xv-core-field input,
+#spectrum-analysis .xv-core-field select {
+  width:100%;
+  min-height:30px;
+  padding:.28rem .38rem;
+  border:1px solid var(--xv-control-border);
+  border-radius:.34rem;
+  background:var(--field-bg);
+  color:var(--text);
+  outline:none;
+  font-size:.64rem;
+}
+#spectrum-analysis .xv-calibration-grid input:focus,
+#spectrum-analysis .xv-calibration-grid select:focus,
+#spectrum-analysis .xv-core-field input:focus,
+#spectrum-analysis .xv-core-field select:focus {
+  border-color:color-mix(in srgb,var(--text) 62%,var(--border));
+}
+#spectrum-analysis .xv-calibration-actions,
+#spectrum-analysis .xv-core-mode {
+  display:flex;
+  gap:.3rem;
+  margin-top:.36rem;
+}
+#spectrum-analysis .xv-core-action {
+  cursor:pointer;
+  background:transparent;
+  color:var(--text);
+  border-color:var(--xv-control-border);
+}
+#spectrum-analysis .xv-core-action.is-active {
+  background:var(--xv-neutral-active-bg);
+  border-color:var(--xv-neutral-active-border);
+  color:var(--text);
+}
+#spectrum-analysis .xv-core-field { margin-top:.42rem; }
+#spectrum-analysis .xv-core-pinned {
+  margin-top:.45rem;
+  padding:.4rem .46rem;
+  border:1px solid color-mix(in srgb,var(--good) 55%,var(--border));
+  border-radius:.38rem;
+  background:color-mix(in srgb,var(--good) 10%,var(--surface));
+  color:var(--good-text);
+  font-size:.6rem;
+  line-height:1.24;
+}
+
+/* Reference Database */
+#spectrum-analysis .xv-core-database-card { margin-top:.42rem; }
+#spectrum-analysis .xv-database-summary {
+  margin:.2rem 0 .42rem;
+  color:var(--muted);
+  font-size:.59rem;
+}
+#spectrum-analysis .xv-database-list {
+  max-height: 520px;
+  overflow:auto;
+  padding-right:.12rem;
+}
+#spectrum-analysis .xv-database-empty {
+  padding:1rem .45rem;
+  color:var(--muted);
+  text-align:center;
+  font-size:.63rem;
+}
+#spectrum-analysis .xv-db-section-label {
+  margin:.45rem 0 .22rem;
+  color:var(--text-soft);
+  font-size:.57rem;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.045em;
+}
+#spectrum-analysis .xv-db-row {
+  width:100%;
+  display:grid;
+  grid-template-columns:minmax(80px,.8fr) minmax(0,1.7fr);
+  align-items:center;
+  gap:.38rem;
+  margin:0 0 .22rem;
+  padding:.38rem .42rem;
+  border:1px solid var(--xv-control-border);
+  border-radius:.36rem;
+  background:color-mix(in srgb,var(--surface) 72%,transparent);
+  color:var(--text);
+  text-align:left;
+  cursor:pointer;
+}
+#spectrum-analysis .xv-db-row:hover { border-color:color-mix(in srgb,var(--text) 56%,var(--border)); }
+#spectrum-analysis .xv-db-row.is-selected {
+  border-color:var(--good);
+  background:color-mix(in srgb,var(--good) 12%,var(--surface));
+}
+#spectrum-analysis .xv-db-primary {
+  min-width:0;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  font-size:.65rem;
+  font-weight:800;
+}
+#spectrum-analysis .xv-db-secondary {
+  min-width:0;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  color:var(--muted);
+  font-size:.57rem;
+}
+#spectrum-analysis .xv-linked-compounds {
+  margin:-.08rem 0 .34rem .5rem;
+  padding-left:.38rem;
+  border-left:2px solid color-mix(in srgb,var(--good) 48%,var(--border));
+}
+#spectrum-analysis .xv-db-row.is-compact { padding:.3rem .38rem; }
+#spectrum-analysis .xv-compound-details {
+  margin-top:.55rem;
+  padding-top:.52rem;
+  border-top:1px solid color-mix(in srgb,var(--text) 18%,var(--border));
+}
+#spectrum-analysis .xv-compound-detail-head {
+  display:flex;
+  flex-direction:column;
+  gap:.08rem;
+  margin-bottom:.42rem;
+  color:var(--text);
+  font-size:.66rem;
+}
+#spectrum-analysis .xv-compound-detail-head span { color:var(--muted);font-size:.58rem; }
+#spectrum-analysis .xv-reported-title {
+  margin-bottom:.24rem;
+  color:var(--text-soft);
+  font-size:.58rem;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+}
+#spectrum-analysis .xv-reported-row {
+  width:100%;
+  display:grid;
+  grid-template-columns:58px minmax(0,1fr) auto;
+  gap:.34rem;
+  align-items:center;
+  padding:.34rem .36rem;
+  border:0;
+  border-bottom:1px solid color-mix(in srgb,var(--text) 10%,var(--border));
+  background:transparent;
+  color:var(--text);
+  text-align:left;
+  font-size:.58rem;
+}
+#spectrum-analysis .xv-reported-row:not(:disabled) { cursor:pointer; }
+#spectrum-analysis .xv-reported-row:not(:disabled):hover { background:color-mix(in srgb,var(--text) 5%,transparent); }
+#spectrum-analysis .xv-reported-row:disabled { opacity:.55; }
+#spectrum-analysis .xv-reported-core { font-weight:800; }
+#spectrum-analysis .xv-reported-values { color:var(--muted); }
+#spectrum-analysis .xv-reported-open { color:var(--good-text);font-weight:800;white-space:nowrap; }
+
+/* Core-level database markers. */
+#spectrum-analysis .xv-db-reference-band {
+  fill: color-mix(in srgb,var(--good) 9%,transparent);
+  pointer-events:none;
+}
+#spectrum-analysis .xv-db-reference-line {
+  stroke:var(--good);
+  stroke-width:2;
+  stroke-dasharray:5 4;
+  opacity:.88;
+  vector-effect:non-scaling-stroke;
+  pointer-events:none;
+}
+#spectrum-analysis .xv-db-reference-label {
+  fill:var(--good-text);
+  font-size:13px;
+  font-weight:780;
+  pointer-events:none;
+}
+
+@media(max-width:1040px){
+  #spectrum-analysis .xv-database-list{max-height:360px}
+}
+
+/* ----- Design pass 5: survey header clarity + compact core-level explorer ----- */
+#spectrum-analysis [hidden] { display: none !important; }
+
+/* Give the command/database column a little more room without stretching the page. */
+#spectrum-analysis .xv-analysis-grid {
+  grid-template-columns: 470px minmax(0, 1fr);
+}
+
+/* Survey Identification: modes on first line, candidates deliberately below. */
+#spectrum-analysis .xv-survey-command-card {
+  grid-template-columns: auto auto;
+  align-items: center;
+  justify-content: start;
+  row-gap: .26rem;
+}
+#spectrum-analysis .xv-survey-command-card .xv-auto-summary {
+  grid-column: 1 / -1;
+  width: 100%;
+  text-align: right;
+  color: var(--text);
+  font-size: .62rem;
+  line-height: 1.2;
+}
+
+/* Periodic-table note stays clear of the source controls. */
+#spectrum-analysis .xv-periodic-central {
+  padding-top: .05rem;
+  height: 86px;
+}
+#spectrum-analysis .xv-periodic-note {
+  margin-top: 0;
+  line-height: 1.12;
+}
+
+/* Plot header: filter / selected-line information / graph actions, then legend. */
+#spectrum-analysis .xv-chart-head {
+  display: grid;
+  grid-template-columns: auto minmax(160px, 1fr) auto;
+  grid-template-rows: auto auto;
+  gap: .28rem .5rem;
+  align-items: start;
+  padding: .34rem .42rem .12rem;
+}
+#spectrum-analysis .xv-graph-line-filter {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: start;
+}
+#spectrum-analysis .xv-line-info {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: center;
+  align-self: start;
+  max-width: 100%;
+  text-align: center;
+}
+#spectrum-analysis .xv-chart-actions {
+  grid-column: 3;
+  grid-row: 1;
+  justify-self: end;
+}
+#spectrum-analysis .xv-legend {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  justify-self: start;
+  width: 100%;
+  min-height: 18px;
+  padding: .06rem .2rem .1rem;
+}
+#spectrum-analysis .xv-legend:empty { display:none; }
+
+/* Calibration indicator next to the active graph context. */
+#spectrum-analysis .xv-graph-calibration {
+  margin-left: .2rem;
+  min-height: 25px;
+  padding: .22rem .48rem;
+  border: 1px solid var(--xv-control-border);
+  border-radius: .36rem;
+  background: transparent;
+  color: var(--text-soft);
+  font-size: .61rem;
+  font-weight: 760;
+  cursor: pointer;
+}
+#spectrum-analysis .xv-graph-calibration.is-set {
+  border-color: var(--good);
+  background: color-mix(in srgb, var(--good) 14%, var(--surface));
+  color: var(--good-text);
+}
+#spectrum-analysis .xv-graph-calibration.is-picking {
+  border-color: color-mix(in srgb, var(--text) 62%, var(--border));
+  background: var(--xv-neutral-active-bg);
+  color: var(--text);
+}
+#spectrum-analysis .xv-graph-calibration:disabled {
+  cursor: default;
+  opacity: .95;
+}
+#spectrum-analysis .xv-chart.is-calibrating { cursor: crosshair; }
+
+/* Calibration is a separate compact card, not part of the explorer/database. */
+#spectrum-analysis .xv-calibration-card,
+#spectrum-analysis .xv-core-command-card,
+#spectrum-analysis .xv-core-database-card {
+  border: 1px solid var(--xv-frame-border);
+  border-radius: .48rem;
+  background: var(--xv-panel-bg);
+  padding: .54rem .6rem;
+}
+#spectrum-analysis .xv-calibration-card,
+#spectrum-analysis .xv-core-command-card { margin-bottom: .4rem; }
+#spectrum-analysis .xv-calibration-head {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:.5rem;
+  margin-bottom:.35rem;
+}
+#spectrum-analysis .xv-calibration-status {
+  color: var(--muted);
+  font-size:.61rem;
+  font-weight:760;
+  white-space:nowrap;
+}
+#spectrum-analysis .xv-calibration-status.is-set { color: var(--good-text); }
+#spectrum-analysis .xv-calibration-row {
+  display:grid;
+  grid-template-columns:auto minmax(64px,.82fr) minmax(64px,.82fr) minmax(114px,1.18fr) auto auto;
+  gap:.26rem;
+  align-items:end;
+}
+#spectrum-analysis .xv-cal-field {
+  display:grid;
+  gap:.13rem;
+  min-width:0;
+  color:var(--muted);
+  font-size:.52rem;
+  line-height:1;
+}
+#spectrum-analysis .xv-cal-field input,
+#spectrum-analysis .xv-cal-field select {
+  width:100%;
+  min-width:0;
+  height:29px;
+  padding:.22rem .3rem;
+  border:1px solid var(--xv-control-border);
+  border-radius:.32rem;
+  background:var(--field-bg);
+  color:var(--text);
+  font-size:.61rem;
+}
+#spectrum-analysis .xv-calibration-row .xv-core-action {
+  min-height:29px;
+  padding:.23rem .39rem;
+  white-space:nowrap;
+}
+#spectrum-analysis .xv-cal-pick.is-active {
+  background:var(--xv-neutral-active-bg);
+  border-color:var(--xv-neutral-active-border);
+  color:var(--text);
+}
+#spectrum-analysis .xv-calibration-hint {
+  margin-top:.3rem;
+  color:var(--muted);
+  font-size:.53rem;
+  line-height:1.2;
+}
+
+/* Core-level search controls stay on one level. */
+#spectrum-analysis .xv-core-search-row {
+  display:grid;
+  grid-template-columns:minmax(185px,1.35fr) minmax(128px,.95fr) minmax(115px,1fr);
+  gap:.32rem;
+  align-items:end;
+  margin-top:.42rem;
+}
+#spectrum-analysis .xv-core-mode-wrap {
+  min-width:0;
+  display:flex;
+  align-items:center;
+  gap:.3rem;
+}
+#spectrum-analysis .xv-inline-label {
+  flex:0 0 auto;
+  color:var(--text);
+  font-size:.57rem;
+  font-weight:760;
+  white-space:nowrap;
+}
+#spectrum-analysis .xv-core-mode {
+  display:flex;
+  min-width:0;
+  gap:0;
+  margin:0;
+  border:1px solid var(--xv-control-border);
+  border-radius:.34rem;
+  overflow:hidden;
+}
+#spectrum-analysis .xv-core-mode .xv-core-action {
+  min-height:29px;
+  padding:.23rem .34rem;
+  border:0;
+  border-right:1px solid var(--xv-control-border);
+  border-radius:0;
+  background:transparent;
+  font-size:.56rem;
+  white-space:nowrap;
+}
+#spectrum-analysis .xv-core-mode .xv-core-action:last-child { border-right:0; }
+#spectrum-analysis .xv-core-mode .xv-core-action.is-active { background:var(--xv-neutral-active-bg); }
+#spectrum-analysis .xv-core-search {
+  width:100%;
+  min-width:0;
+  height:29px;
+  padding:.22rem .36rem;
+  border:1px solid var(--xv-control-border);
+  border-radius:.34rem;
+  background:var(--field-bg);
+  color:var(--text);
+  font-size:.59rem;
+}
+
+/* Searchable multi-select copied from the existing Core Level interaction. */
+#spectrum-analysis .xv-core-class-filter { position:relative; min-width:0; }
+#spectrum-analysis .xv-core-class-toggle,
+#spectrum-analysis .xv-core-class-clear {
+  width:100%;
+  min-height:29px;
+  padding:.22rem .36rem;
+  border:1px solid var(--xv-control-border);
+  border-radius:.34rem;
+  background:transparent;
+  color:var(--text);
+  font:inherit;
+  font-size:.57rem;
+  text-align:left;
+  cursor:pointer;
+}
+#spectrum-analysis .xv-core-class-toggle::after { content:"⌄"; float:right; }
+#spectrum-analysis .xv-core-class-menu {
+  position:absolute;
+  z-index:30;
+  top:calc(100% + .28rem);
+  right:0;
+  width:min(320px,80vw);
+  padding:.5rem;
+  border:1px solid var(--xv-control-border);
+  border-radius:.42rem;
+  background:var(--surface-raised);
+  box-shadow:0 10px 26px rgba(0,0,0,.28);
+}
+#spectrum-analysis .xv-core-class-search {
+  width:100%;
+  min-height:30px;
+  margin-bottom:.4rem;
+  padding:.24rem .36rem;
+  border:1px solid var(--xv-control-border);
+  border-radius:.34rem;
+  background:var(--field-bg);
+  color:var(--text);
+  font-size:.61rem;
+}
+#spectrum-analysis .xv-core-class-options {
+  max-height:220px;
+  overflow-y:auto;
+}
+#spectrum-analysis .xv-core-class-option {
+  display:flex;
+  align-items:center;
+  gap:.42rem;
+  padding:.18rem .04rem;
+  color:var(--text);
+  font-size:.61rem;
+  cursor:pointer;
+}
+#spectrum-analysis .xv-core-class-clear {
+  margin-top:.45rem;
+  text-align:center;
+}
+
+/* Reference database: compact, scrollable three-column internal table. */
+#spectrum-analysis .xv-database-list {
+  max-height:410px;
+  overflow:auto;
+  padding-right:.1rem;
+}
+#spectrum-analysis .xv-db-header,
+#spectrum-analysis .xv-db-row {
+  display:grid;
+  grid-template-columns:minmax(82px,.85fr) minmax(0,1.55fr) minmax(84px,.9fr);
+  gap:.42rem;
+  align-items:center;
+}
+#spectrum-analysis .xv-db-header {
+  padding:.12rem .4rem .22rem;
+  color:var(--muted);
+  font-size:.5rem;
+  font-weight:760;
+  text-transform:uppercase;
+  letter-spacing:.035em;
+}
+#spectrum-analysis .xv-db-header span:last-child { text-align:right; }
+#spectrum-analysis .xv-db-row {
+  margin:0 0 .18rem;
+  padding:.34rem .4rem;
+  text-align:left;
+}
+#spectrum-analysis .xv-db-primary,
+#spectrum-analysis .xv-db-name,
+#spectrum-analysis .xv-db-energy {
+  min-width:0;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+#spectrum-analysis .xv-db-primary {
+  white-space:nowrap;
+  color:var(--text);
+  font-size:.62rem;
+  font-weight:800;
+}
+#spectrum-analysis .xv-db-name {
+  white-space:nowrap;
+  color:var(--text-soft);
+  font-size:.56rem;
+}
+#spectrum-analysis .xv-db-energy {
+  color:var(--text);
+  font-size:.57rem;
+  text-align:right;
+  white-space:normal;
+  line-height:1.2;
+}
+#spectrum-analysis .xv-linked-compounds {
+  margin:-.02rem 0 .34rem .42rem;
+  padding:.28rem 0 .04rem .36rem;
+}
+#spectrum-analysis .xv-database-summary {
+  margin:.18rem 0 .36rem;
+}
+
+@media(max-width:1180px){
+  #spectrum-analysis .xv-analysis-grid{grid-template-columns:440px minmax(0,1fr)}
+  #spectrum-analysis .xv-calibration-row{grid-template-columns:auto 1fr 1fr}
+  #spectrum-analysis .xv-cal-scope-field{grid-column:1 / 3}
+  #spectrum-analysis .xv-core-search-row{grid-template-columns:1fr 1fr}
+  #spectrum-analysis .xv-core-search{grid-column:1 / -1}
+}
+@media(max-width:1040px){
+  #spectrum-analysis .xv-analysis-grid{grid-template-columns:1fr}
+}
+
+/* ----- v0.1g: compact calibration, assignment-first explorer, multi-pin ----- */
+
+/* Survey command: title + two main actions + Clear, summary on its own line. */
+#spectrum-analysis .xv-survey-command-card{
+  display:grid;
+  grid-template-columns:auto auto 1fr;
+  align-items:center;
+  column-gap:.5rem;
+  row-gap:.3rem;
+  padding:.48rem .62rem;
+  border-width:1.5px;
+}
+#spectrum-analysis .xv-survey-command-card .xv-command-title{
+  font-size:.84rem;
+  font-weight:800;
+  color:var(--text);
+  white-space:nowrap;
+}
+#spectrum-analysis .xv-survey-command-card .xv-mode-controls{
+  margin:0;
+}
+#spectrum-analysis .xv-survey-command-card .xv-mode-button,
+#spectrum-analysis .xv-survey-command-card .xv-clear-elements{
+  min-height:34px;
+  padding:.38rem .72rem;
+  font-size:.71rem;
+  font-weight:750;
+  color:var(--text);
+}
+#spectrum-analysis .xv-survey-command-card .xv-clear-elements{
+  justify-self:end;
+  min-width:68px;
+  background:var(--xv-neutral-active-bg);
+}
+#spectrum-analysis .xv-survey-command-card .xv-auto-summary{
+  grid-column:1 / -1;
+  justify-self:start;
+  width:100%;
+  padding-top:.03rem;
+  text-align:left;
+  white-space:normal;
+  color:var(--text-soft);
+  font-size:.64rem;
+}
+
+/* Periodic table: keep only source in the middle and center it clearly. */
+#spectrum-analysis .xv-periodic-central{
+  justify-content:flex-start;
+  padding-top:.24rem;
+}
+#spectrum-analysis .xv-periodic-note{
+  margin-top:0;
+  line-height:1.08;
+}
+#spectrum-analysis .xv-central-controls{
+  width:100%;
+  justify-content:center;
+}
+#spectrum-analysis .xv-source-readout{
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* Graph context: selected region at left, calibration control centered. */
+#spectrum-analysis .xv-graph-context{
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:center;
+  min-height:39px;
+  gap:.5rem;
+}
+#spectrum-analysis .xv-graph-block-title{
+  grid-column:1;
+  justify-self:start;
+}
+#spectrum-analysis .xv-graph-calibration{
+  grid-column:2;
+  justify-self:center;
+  min-width:132px;
+  padding:.32rem .65rem;
+  border:1px solid var(--xv-control-border);
+  border-radius:.4rem;
+  background:var(--xv-neutral-active-bg);
+  color:var(--text);
+  font-size:.64rem;
+  font-weight:750;
+  cursor:pointer;
+}
+#spectrum-analysis .xv-graph-calibration.is-set{
+  border-color:var(--good);
+  background:color-mix(in srgb,var(--good) 14%,var(--surface));
+  color:var(--good-text);
+}
+#spectrum-analysis .xv-graph-calibration.is-open{
+  box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--text) 12%,transparent);
+}
+#spectrum-analysis .xv-graph-calibration.is-picking{
+  border-color:var(--warn);
+}
+
+/* Calibration lives with the graph and stays one compact line. */
+#spectrum-analysis .xv-calibration-strip{
+  display:grid;
+  grid-template-columns:auto minmax(92px,.85fr) minmax(92px,.85fr) minmax(145px,1.2fr) auto auto minmax(110px,.9fr);
+  align-items:center;
+  gap:.34rem;
+  margin-bottom:.34rem;
+  padding:.42rem .48rem;
+  border:1px solid var(--xv-frame-border);
+  border-radius:.5rem;
+  background:color-mix(in srgb,var(--surface) 72%,var(--plot-bg));
+}
+#spectrum-analysis .xv-calibration-strip[hidden]{display:none!important}
+#spectrum-analysis .xv-calibration-strip input,
+#spectrum-analysis .xv-calibration-strip select,
+#spectrum-analysis .xv-calibration-strip button{
+  min-height:32px;
+  width:100%;
+  border:1px solid var(--xv-control-border);
+  border-radius:.35rem;
+  background:var(--field-bg);
+  color:var(--text);
+  padding:.3rem .45rem;
+  font-size:.62rem;
+}
+#spectrum-analysis .xv-calibration-strip .xv-cal-pick,
+#spectrum-analysis .xv-calibration-strip .xv-set-calibration{
+  width:auto;
+  white-space:nowrap;
+  font-weight:750;
+}
+#spectrum-analysis .xv-calibration-strip .xv-cal-pick.is-active{
+  border-color:var(--warn);
+  color:var(--warn);
+}
+#spectrum-analysis .xv-calibration-strip .xv-calibration-status{
+  min-width:90px;
+  text-align:center;
+  color:var(--muted);
+  font-size:.63rem;
+  font-weight:800;
+  white-space:nowrap;
+}
+#spectrum-analysis .xv-calibration-strip .xv-calibration-status.is-set{
+  color:var(--good-text);
+}
+
+/* Core explorer gets the same visual weight as Survey Identification. */
+#spectrum-analysis .xv-core-command-card{
+  border-width:1.5px;
+  padding:.5rem .62rem;
+}
+#spectrum-analysis .xv-core-command-card > .xv-command-title,
+#spectrum-analysis .xv-core-database-card > .xv-command-title,
+#spectrum-analysis .xv-pinned-card > .xv-command-title{
+  color:var(--text);
+  font-size:.84rem;
+  font-weight:800;
+}
+#spectrum-analysis .xv-core-search-row{
+  grid-template-columns:minmax(155px,.8fr) minmax(175px,.9fr) minmax(210px,1.25fr);
+  align-items:end;
+  gap:.4rem;
+}
+#spectrum-analysis .xv-core-mode-wrap{
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr);
+  align-items:center;
+  gap:.35rem;
+}
+#spectrum-analysis .xv-core-mode-label{
+  min-height:32px;
+  display:flex;
+  align-items:center;
+  padding:.3rem .5rem;
+  border:1px solid var(--xv-control-border);
+  border-radius:.35rem;
+  background:var(--xv-neutral-active-bg);
+  color:var(--text);
+  font-size:.63rem;
+  font-weight:750;
+  white-space:nowrap;
+}
+#spectrum-analysis .xv-inline-label{
+  color:var(--text-soft);
+  font-size:.61rem;
+  white-space:nowrap;
+}
+#spectrum-analysis .xv-core-search,
+#spectrum-analysis .xv-core-class-toggle{
+  min-height:32px;
+}
+
+/* Reference list: assignment-first, vertically constrained. */
+#spectrum-analysis .xv-core-database-card{
+  margin-top:0rem;
+}
+#spectrum-analysis .xv-database-list{
+  max-height:390px;
+  overflow-y:auto;
+  overflow-x:hidden;
+  scrollbar-gutter:stable;
+}
+#spectrum-analysis .xv-db-header,
+#spectrum-analysis .xv-db-row{
+  grid-template-columns:minmax(95px,.8fr) minmax(145px,1.35fr) minmax(110px,.8fr);
+  column-gap:.55rem;
+}
+#spectrum-analysis .xv-db-energy{
+  text-align:right;
+  padding-right:.15rem;
+}
+#spectrum-analysis .xv-compound-row.is-pinned{
+  border-color:color-mix(in srgb,var(--good) 72%,var(--border));
+  background:color-mix(in srgb,var(--good) 10%,transparent);
+}
+
+/* Dedicated pinned-compound card. */
+#spectrum-analysis .xv-pinned-card{
+  margin-top:.42rem;
+  padding:.52rem .62rem;
+  border:1px solid var(--xv-frame-border);
+  border-radius:.5rem;
+  background:var(--xv-panel-bg);
+}
+#spectrum-analysis .xv-pinned-list{
+  display:grid;
+  gap:.26rem;
+  margin-top:.38rem;
+}
+#spectrum-analysis .xv-pinned-empty{
+  color:var(--muted);
+  font-size:.63rem;
+  padding:.28rem 0;
+}
+#spectrum-analysis .xv-pinned-row{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  align-items:center;
+  gap:.4rem;
+  padding:.34rem .42rem;
+  border:1px solid var(--xv-control-border);
+  border-radius:.38rem;
+  background:color-mix(in srgb,var(--good) 7%,var(--surface));
+}
+#spectrum-analysis .xv-pinned-copy{
+  min-width:0;
+  display:grid;
+  grid-template-columns:minmax(72px,.55fr) minmax(0,1.45fr);
+  gap:.45rem;
+  align-items:center;
+  font-size:.63rem;
+}
+#spectrum-analysis .xv-pinned-copy b{
+  color:var(--good-text);
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+#spectrum-analysis .xv-pinned-copy span{
+  color:var(--text-soft);
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+#spectrum-analysis .xv-unpin{
+  width:26px;
+  height:26px;
+  border:1px solid var(--xv-control-border);
+  border-radius:.32rem;
+  background:transparent;
+  color:var(--text-soft);
+  cursor:pointer;
+  font-size:.8rem;
+}
+#spectrum-analysis .xv-pinned-note{
+  margin-top:.38rem;
+  padding-top:.35rem;
+  border-top:1px solid var(--border-soft);
+  color:var(--muted);
+  font-size:.59rem;
+  line-height:1.25;
+}
+
+@media(max-width:1300px){
+  #spectrum-analysis .xv-calibration-strip{
+    grid-template-columns:auto 1fr 1fr minmax(140px,1fr) auto auto;
+  }
+  #spectrum-analysis .xv-calibration-strip .xv-reset-calibration{
+    grid-column:1 / -1;
+    width:min(220px,100%);
+    justify-self:end;
+  }
+}
+@media(max-width:1120px){
+  #spectrum-analysis .xv-calibration-strip{
+    grid-template-columns:1fr 1fr;
+  }
+  #spectrum-analysis .xv-calibration-strip > *{grid-column:auto!important;width:100%!important}
+  #spectrum-analysis .xv-core-search-row{grid-template-columns:1fr}
+}
+
+/* ----- v0.1g: compact calibration, assignment-first explorer, multi-pin ----- */
+
+#spectrum-analysis .xv-survey-command-card{
+  display:grid;
+  grid-template-columns:auto auto 1fr;
+  align-items:center;
+  column-gap:.5rem;
+  row-gap:.3rem;
+  padding:.48rem .62rem;
+  border-width:1.5px;
+}
+#spectrum-analysis .xv-survey-command-card .xv-command-title{
+  font-size:.84rem;
+  font-weight:800;
+  color:var(--text);
+  white-space:nowrap;
+}
+#spectrum-analysis .xv-survey-command-card .xv-mode-controls{margin:0}
+#spectrum-analysis .xv-survey-command-card .xv-mode-button,
+#spectrum-analysis .xv-survey-command-card .xv-clear-elements{
+  min-height:34px;
+  padding:.38rem .72rem;
+  font-size:.71rem;
+  font-weight:750;
+  color:var(--text);
+}
+#spectrum-analysis .xv-survey-command-card .xv-clear-elements{
+  justify-self:end;
+  min-width:68px;
+  background:var(--xv-neutral-active-bg);
+}
+#spectrum-analysis .xv-survey-command-card .xv-auto-summary{
+  grid-column:1 / -1;
+  justify-self:start;
+  width:100%;
+  padding-top:.03rem;
+  text-align:left;
+  white-space:normal;
+  color:var(--text-soft);
+  font-size:.64rem;
+}
+
+#spectrum-analysis .xv-periodic-central{
+  justify-content:flex-start;
+  padding-top:.24rem;
+}
+#spectrum-analysis .xv-periodic-note{
+  margin-top:0;
+  line-height:1.08;
+}
+#spectrum-analysis .xv-central-controls{
+  width:100%;
+  justify-content:center;
+}
+#spectrum-analysis .xv-source-readout{
+  margin-left:auto;
+  margin-right:auto;
+}
+
+#spectrum-analysis .xv-graph-context{
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:center;
+  min-height:39px;
+  gap:.5rem;
+}
+#spectrum-analysis .xv-graph-block-title{
+  grid-column:1;
+  justify-self:start;
+}
+#spectrum-analysis .xv-graph-calibration{
+  grid-column:2;
+  justify-self:center;
+  min-width:132px;
+  padding:.32rem .65rem;
+  border:1px solid var(--xv-control-border);
+  border-radius:.4rem;
+  background:var(--xv-neutral-active-bg);
+  color:var(--text);
+  font-size:.64rem;
+  font-weight:750;
+  cursor:pointer;
+}
+#spectrum-analysis .xv-graph-calibration.is-set{
+  border-color:var(--good);
+  background:color-mix(in srgb,var(--good) 14%,var(--surface));
+  color:var(--good-text);
+}
+#spectrum-analysis .xv-graph-calibration.is-open{
+  box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--text) 12%,transparent);
+}
+#spectrum-analysis .xv-graph-calibration.is-picking{border-color:var(--warn)}
+
+#spectrum-analysis .xv-calibration-strip{
+  display:grid;
+  grid-template-columns:auto minmax(92px,.85fr) minmax(92px,.85fr) minmax(145px,1.2fr) auto auto minmax(110px,.9fr);
+  align-items:center;
+  gap:.34rem;
+  margin-bottom:.34rem;
+  padding:.42rem .48rem;
+  border:1px solid var(--xv-frame-border);
+  border-radius:.5rem;
+  background:color-mix(in srgb,var(--surface) 72%,var(--plot-bg));
+}
+#spectrum-analysis .xv-calibration-strip[hidden]{display:none!important}
+#spectrum-analysis .xv-calibration-strip input,
+#spectrum-analysis .xv-calibration-strip select,
+#spectrum-analysis .xv-calibration-strip button{
+  min-height:32px;
+  width:100%;
+  border:1px solid var(--xv-control-border);
+  border-radius:.35rem;
+  background:var(--field-bg);
+  color:var(--text);
+  padding:.3rem .45rem;
+  font-size:.62rem;
+}
+#spectrum-analysis .xv-calibration-strip .xv-cal-pick,
+#spectrum-analysis .xv-calibration-strip .xv-set-calibration{
+  width:auto;
+  white-space:nowrap;
+  font-weight:750;
+}
+#spectrum-analysis .xv-calibration-strip .xv-cal-pick.is-active{
+  border-color:var(--warn);
+  color:var(--warn);
+}
+#spectrum-analysis .xv-calibration-strip .xv-calibration-status{
+  min-width:90px;
+  text-align:center;
+  color:var(--muted);
+  font-size:.63rem;
+  font-weight:800;
+  white-space:nowrap;
+}
+#spectrum-analysis .xv-calibration-strip .xv-calibration-status.is-set{color:var(--good-text)}
+
+#spectrum-analysis .xv-core-command-card{
+  border-width:1.5px;
+  padding:.5rem .62rem;
+}
+#spectrum-analysis .xv-core-command-card > .xv-command-title,
+#spectrum-analysis .xv-core-database-card > .xv-command-title,
+#spectrum-analysis .xv-pinned-card > .xv-command-title{
+  color:var(--text);
+  font-size:.84rem;
+  font-weight:800;
+}
+#spectrum-analysis .xv-core-search-row{
+  grid-template-columns:minmax(155px,.8fr) minmax(175px,.9fr) minmax(210px,1.25fr);
+  align-items:end;
+  gap:.4rem;
+}
+#spectrum-analysis .xv-core-mode-wrap{
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr);
+  align-items:center;
+  gap:.35rem;
+}
+#spectrum-analysis .xv-core-mode-label{
+  min-height:32px;
+  display:flex;
+  align-items:center;
+  padding:.3rem .5rem;
+  border:1px solid var(--xv-control-border);
+  border-radius:.35rem;
+  background:var(--xv-neutral-active-bg);
+  color:var(--text);
+  font-size:.63rem;
+  font-weight:750;
+  white-space:nowrap;
+}
+#spectrum-analysis .xv-inline-label{
+  color:var(--text-soft);
+  font-size:.61rem;
+  white-space:nowrap;
+}
+#spectrum-analysis .xv-core-search,
+#spectrum-analysis .xv-core-class-toggle{min-height:32px}
+
+#spectrum-analysis .xv-core-database-card{margin-top:0rem}
+#spectrum-analysis .xv-database-list{
+  max-height:390px;
+  overflow-y:auto;
+  overflow-x:hidden;
+  scrollbar-gutter:stable;
+}
+#spectrum-analysis .xv-db-header,
+#spectrum-analysis .xv-db-row{
+  grid-template-columns:minmax(95px,.8fr) minmax(145px,1.35fr) minmax(110px,.8fr);
+  column-gap:.55rem;
+}
+#spectrum-analysis .xv-db-energy{
+  text-align:right;
+  padding-right:.15rem;
+}
+#spectrum-analysis .xv-compound-row.is-pinned{
+  border-color:color-mix(in srgb,var(--good) 72%,var(--border));
+  background:color-mix(in srgb,var(--good) 10%,transparent);
+}
+
+#spectrum-analysis .xv-pinned-card{
+  margin-top:.42rem;
+  padding:.52rem .62rem;
+  border:1px solid var(--xv-frame-border);
+  border-radius:.5rem;
+  background:var(--xv-panel-bg);
+}
+#spectrum-analysis .xv-pinned-list{
+  display:grid;
+  gap:.26rem;
+  margin-top:.38rem;
+}
+#spectrum-analysis .xv-pinned-empty{
+  color:var(--muted);
+  font-size:.63rem;
+  padding:.28rem 0;
+}
+#spectrum-analysis .xv-pinned-row{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  align-items:center;
+  gap:.4rem;
+  padding:.34rem .42rem;
+  border:1px solid var(--xv-control-border);
+  border-radius:.38rem;
+  background:color-mix(in srgb,var(--good) 7%,var(--surface));
+}
+#spectrum-analysis .xv-pinned-copy{
+  min-width:0;
+  display:grid;
+  grid-template-columns:minmax(72px,.55fr) minmax(0,1.45fr);
+  gap:.45rem;
+  align-items:center;
+  font-size:.63rem;
+}
+#spectrum-analysis .xv-pinned-copy b{
+  color:var(--good-text);
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+#spectrum-analysis .xv-pinned-copy span{
+  color:var(--text-soft);
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+#spectrum-analysis .xv-unpin{
+  width:26px;
+  height:26px;
+  border:1px solid var(--xv-control-border);
+  border-radius:.32rem;
+  background:transparent;
+  color:var(--text-soft);
+  cursor:pointer;
+  font-size:.8rem;
+}
+#spectrum-analysis .xv-pinned-note{
+  margin-top:.38rem;
+  padding-top:.35rem;
+  border-top:1px solid var(--border-soft);
+  color:var(--muted);
+  font-size:.59rem;
+  line-height:1.25;
+}
+
+@media(max-width:1300px){
+  #spectrum-analysis .xv-calibration-strip{
+    grid-template-columns:auto 1fr 1fr minmax(140px,1fr) auto auto;
+  }
+  #spectrum-analysis .xv-calibration-strip .xv-reset-calibration{
+    grid-column:1 / -1;
+    width:min(220px,100%);
+    justify-self:end;
+  }
+}
+@media(max-width:1120px){
+  #spectrum-analysis .xv-calibration-strip{grid-template-columns:1fr 1fr}
+  #spectrum-analysis .xv-calibration-strip > *{grid-column:auto!important;width:100%!important}
+  #spectrum-analysis .xv-core-search-row{grid-template-columns:1fr}
+}
+
+
+/* ----- v0.1h: compact explorer header, shorter database, detailed pinned compounds ----- */
+#spectrum-analysis .xv-core-command-card{
+  overflow:visible;
+}
+#spectrum-analysis .xv-core-command-head,
+#spectrum-analysis .xv-database-head{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:.65rem;
+  min-width:0;
+}
+#spectrum-analysis .xv-core-help,
+#spectrum-analysis .xv-database-hint{
+  min-width:0;
+  color:var(--muted);
+  font-size:.58rem;
+  line-height:1.2;
+  text-align:right;
+}
+#spectrum-analysis .xv-core-help{white-space:nowrap}
+#spectrum-analysis .xv-database-hint{white-space:normal}
+
+#spectrum-analysis .xv-core-search-row{
+  display:grid;
+  grid-template-columns:minmax(175px,210px) minmax(0,1fr);
+  align-items:center;
+  gap:.4rem;
+  margin-top:.4rem;
+}
+#spectrum-analysis .xv-core-class-filter{
+  min-width:0;
+}
+#spectrum-analysis .xv-core-class-toggle,
+#spectrum-analysis .xv-core-search{
+  width:100%;
+  max-width:100%;
+  min-width:0;
+  min-height:31px;
+  padding:.28rem .45rem;
+  font-size:.61rem;
+}
+#spectrum-analysis .xv-core-search{
+  box-sizing:border-box;
+}
+
+#spectrum-analysis .xv-core-database-card{
+  padding:.5rem .62rem .58rem;
+}
+#spectrum-analysis .xv-database-summary{
+  margin-top:.12rem;
+  margin-bottom:.3rem;
+}
+#spectrum-analysis .xv-database-list{
+  max-height:315px;
+  overflow-y:auto;
+  overflow-x:hidden;
+  scrollbar-gutter:stable;
+}
+#spectrum-analysis .xv-db-header{
+  margin-top:0;
+}
+#spectrum-analysis .xv-db-row{
+  padding:.32rem .4rem;
+}
+#spectrum-analysis .xv-linked-compounds{
+  margin-bottom:.22rem;
+}
+
+#spectrum-analysis .xv-pinned-card{
+  min-height:118px;
+}
+#spectrum-analysis .xv-pinned-list{
+  max-height:360px;
+  overflow-y:auto;
+  overflow-x:hidden;
+  padding-right:.08rem;
+}
+#spectrum-analysis .xv-pinned-item{
+  border:1px solid var(--xv-control-border);
+  border-radius:.4rem;
+  background:color-mix(in srgb,var(--good) 6%,var(--surface));
+  overflow:hidden;
+}
+#spectrum-analysis .xv-pinned-row{
+  grid-template-columns:minmax(0,1fr) auto;
+  padding:0;
+  border:0;
+  border-radius:0;
+  background:transparent;
+}
+#spectrum-analysis .xv-pinned-toggle{
+  min-width:0;
+  width:100%;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  align-items:center;
+  gap:.36rem;
+  padding:.38rem .42rem;
+  border:0;
+  background:transparent;
+  color:var(--text);
+  cursor:pointer;
+  text-align:left;
+}
+#spectrum-analysis .xv-pinned-toggle:hover{
+  background:color-mix(in srgb,var(--text) 4%,transparent);
+}
+#spectrum-analysis .xv-pinned-chevron{
+  color:var(--muted);
+  font-size:.82rem;
+  line-height:1;
+}
+#spectrum-analysis .xv-unpin{
+  margin-right:.34rem;
+  flex:0 0 auto;
+}
+#spectrum-analysis .xv-pinned-details{
+  padding:.15rem .42rem .4rem;
+  border-top:1px solid var(--border-soft);
+  background:color-mix(in srgb,var(--plot-bg) 28%,transparent);
+}
+#spectrum-analysis .xv-reported-title{
+  margin:.18rem 0 .22rem;
+  color:var(--text-soft);
+  font-size:.57rem;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+}
+#spectrum-analysis .xv-reported-row{
+  display:grid;
+  grid-template-columns:58px minmax(0,1fr) 30px;
+  gap:.34rem;
+  align-items:center;
+  padding:0rem .18rem;
+  border-bottom:1px solid color-mix(in srgb,var(--text) 9%,var(--border));
+  font-size:.58rem;
+}
+#spectrum-analysis .xv-reported-row:last-child{border-bottom:0}
+#spectrum-analysis .xv-reported-core{
+  color:var(--text);
+  font-weight:800;
+}
+#spectrum-analysis .xv-reported-values{
+  min-width:0;
+  color:var(--muted);
+  line-height:1.18;
+}
+#spectrum-analysis .xv-reported-action{
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+}
+#spectrum-analysis .xv-reported-open{
+  width:28px;
+  height:25px;
+  padding:0;
+  border:1px solid var(--xv-control-border);
+  border-radius:.3rem;
+  background:transparent;
+  color:var(--good-text);
+  font-size:.78rem;
+  font-weight:850;
+  cursor:pointer;
+}
+#spectrum-analysis .xv-reported-open:hover{
+  border-color:var(--good);
+  background:color-mix(in srgb,var(--good) 9%,transparent);
+}
+#spectrum-analysis .xv-reported-current{
+  color:var(--good-text);
+  font-size:.53rem;
+  font-weight:750;
+}
+
+@media(max-width:1120px){
+  #spectrum-analysis .xv-core-command-head,
+  #spectrum-analysis .xv-database-head{align-items:flex-start;flex-direction:column;gap:.2rem}
+  #spectrum-analysis .xv-core-help,
+  #spectrum-analysis .xv-database-hint{text-align:left;white-space:normal}
+  #spectrum-analysis .xv-core-search-row{grid-template-columns:1fr}
+}
+
+
+/* v0.1i — expected compounds + shared movable energy window */
+#spectrum-analysis .xv-chart-left-tools{display:flex;align-items:center;gap:.38rem;min-width:0}
+#spectrum-analysis .xv-energy-window-toggle{padding:.24rem .46rem;border:1px solid var(--xv-control-border);border-radius:.34rem;background:transparent;color:var(--text-soft);font-size:.61rem;font-weight:720;cursor:pointer;white-space:nowrap}
+#spectrum-analysis .xv-energy-window-toggle.is-active{border-color:var(--warn);color:var(--warn);background:color-mix(in srgb,var(--warn) 10%,transparent)}
+#spectrum-analysis .xv-energy-results-card{margin-top:.48rem;padding:.55rem .65rem;border:1px solid var(--xv-frame-border);border-radius:.48rem;background:var(--xv-panel-bg)}
+#spectrum-analysis .xv-energy-summary{font-size:.6rem;color:var(--muted);text-align:right}
+#spectrum-analysis .xv-energy-results{margin-top:.38rem;max-height:180px;overflow:auto;border-top:1px solid var(--border-soft)}
+#spectrum-analysis .xv-energy-result-row{display:grid;grid-template-columns:72px minmax(0,1fr) 74px;gap:.4rem;align-items:center;padding:.28rem .1rem;border-bottom:1px solid var(--border-soft);font-size:.61rem}
+#spectrum-analysis .xv-energy-result-row b{color:var(--text)}
+#spectrum-analysis .xv-energy-result-row span:last-child{text-align:right;font-variant-numeric:tabular-nums}
+#spectrum-analysis .xv-compound-search-row{display:block!important}
+#spectrum-analysis .xv-compound-search-row .xv-core-search{width:100%;max-width:none}
+#spectrum-analysis .xv-line-info[data-copy-energy]{cursor:copy}
+#spectrum-analysis .xv-line-info[data-copy-energy]:hover{filter:brightness(1.12)}
+#spectrum-analysis .xv-energy-window-center{stroke:var(--warn);stroke-width:2.4;vector-effect:non-scaling-stroke;cursor:ew-resize}
+#spectrum-analysis .xv-energy-window-edge{stroke:var(--warn);stroke-width:1.6;stroke-dasharray:7 6;vector-effect:non-scaling-stroke;cursor:ew-resize;opacity:.95}
+#spectrum-analysis .xv-energy-window-hit{stroke:transparent;stroke-width:18;vector-effect:non-scaling-stroke;cursor:ew-resize;pointer-events:stroke}
+#spectrum-analysis .xv-energy-window-label{fill:var(--warn)!important;font-size:12px;font-weight:800}
+#spectrum-analysis .xv-db-reference-line.is-pinned-ref{cursor:pointer}
+#spectrum-analysis .xv-db-reference-label.is-pinned-ref{cursor:pointer}
+#spectrum-analysis .xv-db-reference-sub{font-size:11px;opacity:.82}
+#spectrum-analysis .xv-db-reference-label{font-size:13px;font-weight:800}
+#spectrum-analysis .xv-database-list{max-height:300px}
+#spectrum-analysis .xv-pinned-list{max-height:250px;overflow:auto}
+@media(max-width:1120px){#spectrum-analysis .xv-chart-left-tools{flex-wrap:wrap}}
+
+/* v0.1j — command cards, copy feedback, compact calibration and core-window polish */
+#spectrum-analysis .xv-analysis-grid{align-items:stretch}
+#spectrum-analysis .xv-left-panel{display:flex;flex-direction:column;min-height:100%}
+
+/* Survey/Core command cards share the same hierarchy. */
+#spectrum-analysis .xv-survey-command-card,
+#spectrum-analysis .xv-core-command-card{
+  padding:.58rem .68rem;
+}
+#spectrum-analysis .xv-survey-command-row,
+#spectrum-analysis .xv-core-command-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:.5rem;
+  margin-top:.42rem;
+}
+#spectrum-analysis .xv-command-left{
+  display:flex;
+  align-items:center;
+  gap:.38rem;
+  min-width:0;
+}
+#spectrum-analysis .xv-survey-command-card .xv-mode-button,
+#spectrum-analysis .xv-survey-command-card .xv-energy-window-toggle,
+#spectrum-analysis .xv-survey-command-card .xv-clear-elements,
+#spectrum-analysis .xv-core-command-card .xv-energy-window-toggle,
+#spectrum-analysis .xv-core-command-card .xv-core-clear{
+  min-height:34px;
+  padding:.34rem .58rem;
+  font-size:.67rem;
+  font-weight:800;
+  color:var(--text);
+}
+#spectrum-analysis .xv-core-command-left{flex:1 1 auto}
+#spectrum-analysis .xv-core-command-left .xv-core-search{
+  flex:1 1 260px;
+  width:auto;
+  min-width:150px;
+  min-height:34px;
+  font-size:.65rem;
+}
+#spectrum-analysis .xv-core-clear{
+  flex:0 0 auto;
+  border:1px solid var(--xv-control-border);
+  border-radius:.34rem;
+  background:transparent;
+  cursor:pointer;
+}
+#spectrum-analysis .xv-core-clear:hover,
+#spectrum-analysis .xv-clear-elements:hover:not(:disabled){border-color:color-mix(in srgb,var(--text) 60%,var(--border))}
+#spectrum-analysis .xv-auto-summary{
+  display:block;
+  width:100%;
+  margin-top:.34rem;
+  padding-top:.28rem;
+  border-top:1px solid var(--border-soft);
+  text-align:left;
+  white-space:normal;
+}
+
+/* Let the Survey energy-window card occupy the remaining left-column height. */
+#spectrum-analysis .xv-survey-energy-results:not([hidden]){
+  display:flex;
+  flex-direction:column;
+  flex:1 1 auto;
+  min-height:150px;
+}
+#spectrum-analysis .xv-survey-energy-results .xv-energy-results{
+  flex:1 1 auto;
+  max-height:none;
+}
+
+/* Full content of a transition info box is copied; feedback appears inside the box. */
+#spectrum-analysis .xv-line-info[data-copy-content]{cursor:copy;position:relative;padding-right:3.2rem}
+#spectrum-analysis .xv-line-info[data-copy-content]:hover{filter:brightness(1.12)}
+#spectrum-analysis .xv-copy-feedback{
+  position:absolute;
+  top:.18rem;
+  right:.35rem;
+  color:var(--good-text);
+  font-size:.54rem;
+  font-weight:850;
+  letter-spacing:.02em;
+  pointer-events:none;
+}
+
+/* Core reference annotations: assignment same visual weight as Survey transitions; compound smaller below. */
+#spectrum-analysis .xv-db-reference-label{
+  font-size:16px;
+  font-weight:800;
+  pointer-events:none;
+}
+#spectrum-analysis .xv-db-reference-sub{
+  font-size:12px;
+  font-weight:650;
+  opacity:.82;
+}
+#spectrum-analysis .xv-db-reference-label.is-pinned-ref{
+  pointer-events:auto;
+  cursor:pointer;
+}
+#spectrum-analysis .xv-db-reference-line.is-pinned-ref{
+  pointer-events:none;
+  cursor:default;
+}
+
+/* Explain why text search is not driving the database while the core energy window is active. */
+#spectrum-analysis .xv-energy-mode-note{
+  margin-top:.28rem;
+  padding:.2rem .35rem;
+  color:var(--muted);
+  font-size:.56rem;
+  line-height:1.25;
+  text-align:center;
+}
+
+/* Calibration stays inside the right column even on narrower layouts. */
+#spectrum-analysis .xv-calibration-strip{
+  width:100%;
+  max-width:100%;
+  box-sizing:border-box;
+  display:grid;
+  grid-template-columns:auto minmax(82px,.9fr) minmax(82px,.9fr) minmax(132px,1.25fr) auto minmax(70px,.7fr) minmax(112px,1fr);
+  gap:.32rem;
+  align-items:center;
+  overflow:hidden;
+}
+#spectrum-analysis .xv-calibration-strip > *{min-width:0;max-width:100%}
+#spectrum-analysis .xv-calibration-strip input,
+#spectrum-analysis .xv-calibration-strip select,
+#spectrum-analysis .xv-calibration-strip button{
+  min-height:31px;
+  padding:.26rem .42rem;
+  font-size:.59rem;
+}
+#spectrum-analysis .xv-calibration-status{
+  text-align:center;
+  white-space:nowrap;
+  font-size:.58rem;
+}
+
+@media(max-width:1280px){
+  #spectrum-analysis .xv-calibration-strip{
+    grid-template-columns:auto minmax(78px,1fr) minmax(78px,1fr) minmax(120px,1.2fr) auto minmax(68px,.8fr);
+  }
+  #spectrum-analysis .xv-reset-calibration{grid-column:1/-1;width:180px;justify-self:end}
+}
+@media(max-width:1120px){
+  #spectrum-analysis .xv-survey-command-row,
+  #spectrum-analysis .xv-core-command-row{align-items:stretch}
+  #spectrum-analysis .xv-core-command-left{flex-wrap:wrap}
+  #spectrum-analysis .xv-calibration-strip{grid-template-columns:repeat(2,minmax(0,1fr));overflow:visible}
+  #spectrum-analysis .xv-reset-calibration{grid-column:auto;width:auto;justify-self:stretch}
+}
+
+/* ----- v0.1k polish: command hierarchy, scrolling, calibration fit, BE/KE toggle ----- */
+#spectrum-analysis .xv-survey-command-card{
+  display:block!important;
+}
+#spectrum-analysis .xv-survey-command-card .xv-command-title{
+  display:block;
+  width:100%;
+  margin:0 0 .42rem 0;
+}
+#spectrum-analysis .xv-survey-command-row{
+  margin-top:0;
+  width:100%;
+}
+
+/* The survey Energy Window must not grow below the graph: scroll the list instead. */
+#spectrum-analysis .xv-survey-energy-results:not([hidden]){
+  flex:0 1 auto;
+  min-height:140px;
+  max-height:360px;
+  overflow:hidden;
+}
+#spectrum-analysis .xv-survey-energy-results .xv-energy-results{
+  min-height:0;
+  max-height:305px;
+  overflow-y:auto;
+  overscroll-behavior:contain;
+}
+
+/* Calibration: reserve enough room for Pick observed BE, shrink scope/reset first. */
+#spectrum-analysis .xv-calibration-strip{
+  grid-template-columns:minmax(118px,.95fr) minmax(94px,.78fr) minmax(94px,.78fr) minmax(118px,.9fr) auto minmax(65px,.58fr) minmax(92px,.75fr);
+  gap:.28rem;
+}
+#spectrum-analysis .xv-calibration-strip .xv-cal-pick{
+  min-width:118px;
+  white-space:nowrap;
+}
+#spectrum-analysis .xv-calibration-strip .xv-cal-scope{
+  font-size:.56rem;
+  padding-left:.28rem;
+  padding-right:1.25rem;
+}
+#spectrum-analysis .xv-calibration-strip .xv-reset-calibration{
+  font-size:.56rem;
+}
+
+/* BE/KE display button beside Counts, same visual language. */
+#spectrum-analysis .xv-energy-axis-toggle{
+  min-width:48px;
+  padding:.16rem .3rem;
+  border:1px solid var(--xv-border);
+  border-radius:.28rem;
+  background:color-mix(in srgb,var(--plot-bg) 92%,transparent);
+  color:inherit;
+  cursor:pointer;
+  font-size:.57rem;
+  line-height:1.05;
+  font-weight:800;
+}
+#spectrum-analysis .xv-energy-axis-toggle.is-active{
+  background:var(--xv-neutral-active-bg);
+  border-color:var(--xv-neutral-active-border);
+  color:var(--text);
+}
+
+/* Core annotations are intentionally larger than survey transition labels. */
+#spectrum-analysis .xv-db-reference-label{
+  font-size:19px;
+  font-weight:850;
+}
+#spectrum-analysis .xv-db-reference-sub{
+  font-size:14px;
+  font-weight:700;
+  opacity:.88;
+}
+#spectrum-analysis .xv-db-reference-label.is-pinned-ref:hover{
+  filter:brightness(1.25);
+  text-decoration:underline;
+}
+
+/* Survey/core energy-window explanation under graph. */
+#spectrum-analysis .xv-energy-mode-note{
+  margin-top:.3rem;
+  padding:.22rem .38rem;
+  border-top:1px solid var(--border-soft);
+  color:var(--muted);
+  font-size:.57rem;
+  line-height:1.25;
+  text-align:center;
+}
+
+@media(max-width:1280px){
+  #spectrum-analysis .xv-calibration-strip{
+    grid-template-columns:minmax(110px,.9fr) minmax(86px,.75fr) minmax(86px,.75fr) minmax(108px,.85fr) auto minmax(60px,.55fr);
+  }
+  #spectrum-analysis .xv-reset-calibration{grid-column:1/-1;width:150px;justify-self:end}
+}
+
+
+/* ----- v0.1l: bounded left column, cleaner calibration/database hierarchy ----- */
+#spectrum-analysis .xv-left-panel{
+  min-height:0;
+  max-height:none;
+  overflow:hidden;
+}
+#spectrum-analysis .xv-survey-energy-results:not([hidden]){
+  min-height:0;
+  max-height:none;
+  flex:1 1 auto;
+  overflow:hidden;
+}
+#spectrum-analysis .xv-survey-energy-results .xv-energy-results{
+  min-height:0;
+  max-height:none;
+  flex:1 1 auto;
+  overflow-y:auto;
+  overscroll-behavior:contain;
+}
+#spectrum-analysis .xv-core-placeholder:not([hidden]){
+  display:flex;
+  flex-direction:column;
+  min-height:0;
+  height:100%;
+  overflow:hidden;
+}
+#spectrum-analysis .xv-core-database-card{
+  min-height:0;
+  flex:1 1 auto;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+}
+#spectrum-analysis .xv-core-database-card .xv-database-list{
+  min-height:0;
+  max-height:none;
+  flex:1 1 auto;
+  overflow-y:auto;
+}
+#spectrum-analysis .xv-pinned-card{
+  flex:0 0 auto;
+  max-height:230px;
+  overflow:hidden;
+}
+#spectrum-analysis .xv-pinned-list{
+  max-height:150px;
+  overflow:auto;
+}
+#spectrum-analysis .xv-database-click-hint{
+  margin:.18rem 0 .28rem;
+  color:var(--muted);
+  font-size:.58rem;
+  text-align:center;
+  line-height:1.2;
+}
+#spectrum-analysis .xv-database-summary:empty{display:none}
+#spectrum-analysis .xv-database-hint{
+  color:var(--muted);
+  font-size:.58rem;
+  white-space:nowrap;
+}
+#spectrum-analysis .xv-calibration-status[hidden]{display:none!important}
+#spectrum-analysis .xv-calibration-status.is-set{
+  color:var(--good-text);
+  font-weight:800;
+}
+#spectrum-analysis .xv-calibration-strip{
+  grid-template-columns:minmax(118px,.95fr) minmax(88px,.72fr) minmax(88px,.72fr) minmax(104px,.82fr) auto minmax(118px,.95fr);
+}
+#spectrum-analysis .xv-calibration-strip .xv-cal-scope{
+  min-width:0;
+  font-size:.54rem;
+}
+#spectrum-analysis .xv-pinned-note{
+  font-size:.55rem;
+}
+@media(max-width:1280px){
+  #spectrum-analysis .xv-calibration-strip{
+    grid-template-columns:minmax(110px,.92fr) minmax(82px,.72fr) minmax(82px,.72fr) minmax(96px,.8fr) auto;
+  }
+  #spectrum-analysis .xv-reset-calibration{grid-column:1/-1;width:145px;justify-self:end}
+}
+@media(max-width:1120px){
+  #spectrum-analysis .xv-left-panel{height:auto!important;overflow:visible}
+  #spectrum-analysis .xv-core-placeholder:not([hidden]){height:auto;overflow:visible}
+}
+
+/* ----- v0.1m: small layout/stability pass before pause ----- */
+/* Survey Identification: fixed two-level hierarchy, no movement when Energy window is toggled. */
+#spectrum-analysis .xv-survey-command-card{
+  overflow:hidden;
+}
+#spectrum-analysis .xv-survey-command-row{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  align-items:center;
+  gap:.5rem;
+  width:100%;
+  min-height:36px;
+}
+#spectrum-analysis .xv-survey-command-row .xv-command-left{
+  min-width:0;
+  display:flex;
+  flex-wrap:nowrap;
+  align-items:center;
+  gap:.38rem;
+}
+#spectrum-analysis .xv-survey-command-row .xv-mode-controls{
+  flex:0 1 auto;
+  min-width:0;
+  transform:none;
+}
+#spectrum-analysis .xv-survey-command-row .xv-energy-window-toggle{
+  flex:0 0 auto;
+}
+#spectrum-analysis .xv-survey-command-row .xv-clear-elements{
+  position:static!important;
+  margin:0!important;
+  flex:0 0 auto;
+}
+
+/* Calibration strip now has only the useful controls; calibrated ΔBE remains above the graph. */
+#spectrum-analysis .xv-calibration-strip{
+  grid-template-columns:minmax(118px,.95fr) minmax(88px,.72fr) minmax(88px,.72fr) minmax(104px,.82fr) auto minmax(118px,.95fr);
+}
+
+/* Keep pinned rows fully inside their card even with several compounds. */
+#spectrum-analysis .xv-pinned-card,
+#spectrum-analysis .xv-pinned-list,
+#spectrum-analysis .xv-pinned-item,
+#spectrum-analysis .xv-pinned-row{
+  min-width:0;
+  max-width:100%;
+  box-sizing:border-box;
+}
+#spectrum-analysis .xv-pinned-row{
+  width:100%;
+  grid-template-columns:minmax(0,1fr) 38px;
+  gap:0;
+}
+#spectrum-analysis .xv-pinned-toggle{
+  overflow:hidden;
+}
+#spectrum-analysis .xv-unpin{
+  width:32px;
+  min-width:32px;
+  max-width:32px;
+  margin:0 .22rem 0 0;
+  padding:.25rem 0;
+  justify-self:end;
+}
+
+@media(max-width:1280px){
+  #spectrum-analysis .xv-calibration-strip{
+    grid-template-columns:minmax(110px,.92fr) minmax(82px,.72fr) minmax(82px,.72fr) minmax(96px,.8fr) auto;
+  }
+  #spectrum-analysis .xv-reset-calibration{grid-column:1/-1;width:145px;justify-self:end}
+}
+@media(max-width:1120px){
+  #spectrum-analysis .xv-survey-command-row .xv-command-left{flex-wrap:wrap}
+}
+
+/* ----- v0.1n: keep Survey Identification + Periodic Table fixed when Energy Window opens ----- */
+/* The left survey column is height-matched to the graph.  Only Energy Window is allowed to shrink/scroll. */
+#spectrum-analysis .xv-survey-command-card,
+#spectrum-analysis .xv-survey-tools{
+  flex:0 0 auto!important;
+  min-height:max-content;
+}
+#spectrum-analysis .xv-survey-command-card{
+  overflow:visible;
+}
+#spectrum-analysis .xv-survey-command-row{
+  flex:0 0 auto;
+}
+#spectrum-analysis .xv-survey-energy-results:not([hidden]){
+  flex:0 0 215px !important;
+  min-height:215px !important;
+  max-height:215px !important;
+  overflow:hidden !important;
+}
+#spectrum-analysis .xv-survey-energy-results .xv-energy-results{
+  height:100% !important;
+  max-height:none !important;
+  overflow-y:auto !important;
+  overscroll-behavior:contain !important;
+}
+
+/* ----- v0.1o: stable core layout + energy-region aware pinned navigation ----- */
+/* Respect the semantic hidden state even when earlier card rules set display/flex. */
+#spectrum-analysis .xv-survey-command-card[hidden],
+#spectrum-analysis .xv-survey-tools[hidden],
+#spectrum-analysis .xv-survey-energy-results[hidden],
+#spectrum-analysis .xv-core-placeholder[hidden]{display:none!important}
+
+/* Core-level command card mirrors Survey Identification height. */
+#spectrum-analysis .xv-core-command-card{
+  flex:0 0 108px;
+  min-height:108px;
+  max-height:108px;
+  box-sizing:border-box;
+}
+
+/* Reference Database and Pinned Compounds share the remaining space equally. */
+#spectrum-analysis .xv-core-placeholder:not([hidden]){
+  gap:0rem;
+}
+#spectrum-analysis .xv-core-database-card,
+#spectrum-analysis .xv-pinned-card{
+  flex:0 0 240px !important;
+  height:240px !important;
+  min-height:240px !important;
+  max-height:240px !important;
+  box-sizing:border-box;
+  overflow:hidden;
+}
+#spectrum-analysis .xv-core-database-card .xv-database-list,
+#spectrum-analysis .xv-pinned-list{
+  flex:1 1 auto;
+  min-height:0;
+  max-height:none;
+  overflow-y:auto;
+  overflow-x:hidden;
+  overscroll-behavior:contain;
+}
+#spectrum-analysis .xv-pinned-list{
+  align-content:start;
+  grid-auto-rows:max-content;
+}
+#spectrum-analysis .xv-pinned-card{
+  display:flex;
+  flex-direction:column;
+}
+#spectrum-analysis .xv-pinned-note{
+  flex:0 0 auto;
+}
+
+/* Pinned title stays on a single line; subtitle is intentionally quiet. */
+#spectrum-analysis .xv-pinned-title{
+  display:flex;
+  align-items:baseline;
+  gap:.38rem;
+  white-space:nowrap;
+}
+#spectrum-analysis .xv-pinned-title > span{
+  color:var(--muted);
+  font-size:.56rem;
+  font-weight:500;
+}
+
+/* Compact pinned rows so expand/collapse does not make the panel jump. */
+#spectrum-analysis .xv-pinned-row{
+  min-height:25px;
+  max-height:25px;
+  height:25px;
+}
+#spectrum-analysis .xv-pinned-toggle{
+  min-height:21px;
+  height:21px;
+  padding:.12rem .38rem;
+}
+#spectrum-analysis .xv-pinned-chevron{
+  width:18px;
+  min-width:18px;
+  text-align:center;
+  font-size:.75rem;
+}
+#spectrum-analysis .xv-unpin{
+  min-height:21px;
+  height:21px;
+  align-self:center;
+}
+
+/* Expanded rows: one line per core level, with all assignments/BE combined. */
+#spectrum-analysis .xv-reported-title,
+#spectrum-analysis .xv-reported-row{
+  display:grid;
+  grid-template-columns:74px minmax(0,1fr) 34px;
+  column-gap:.42rem;
+  align-items:center;
+}
+#spectrum-analysis .xv-reported-title{
+  padding:.25rem .28rem .2rem;
+  color:var(--text-soft);
+  font-size:.54rem;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.03em;
+}
+#spectrum-analysis .xv-reported-row{
+  min-height:31px;
+  padding:.18rem .28rem;
+}
+#spectrum-analysis .xv-reported-open{
+  width:28px;
+  min-width:28px;
+  height:26px;
+  min-height:26px;
+  padding:0;
+}
+
+/* Give the energy-region column more room and keep eV on the same line where possible. */
+#spectrum-analysis .xv-db-header,
+#spectrum-analysis .xv-db-row{
+  grid-template-columns:minmax(110px,.92fr) minmax(130px,1.02fr) minmax(155px,1.15fr);
+  column-gap:.45rem;
+}
+#spectrum-analysis .xv-db-energy{
+  white-space:normal;
+  line-height:1.14;
+}
+
+@media(max-width:1120px){
+  #spectrum-analysis .xv-core-command-card{height:auto;min-height:0;max-height:none;flex:0 0 auto}
+  #spectrum-analysis .xv-core-database-card,
+  #spectrum-analysis .xv-pinned-card{min-height:260px}
+}
+
+/* To have the same survey identification and core level explorer card. */
+#spectrum-analysis .xv-survey-command-card,
+#spectrum-analysis .xv-core-command-card {
+  flex: 0 0 80px !important;
+  height: 80px !important;
+  min-height: 80px !important;
+  max-height: 80px !important;
+  box-sizing: border-box;
+}
+
+
+
+/* ----- v0.1p: pinned summary + multi-region view ----- */
+#spectrum-analysis .xv-pinned-title{
+  width:100%;
+  align-items:center;
+}
+#spectrum-analysis .xv-pinned-title > span{
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+#spectrum-analysis .xv-multiregion-toggle{
+  margin-left:auto;
+  flex:0 0 auto;
+  padding:.2rem .48rem;
+  border:1px solid var(--xv-control-border);
+  border-radius:.34rem;
+  background:transparent;
+  color:var(--text);
+  font-size:.58rem;
+  font-weight:750;
+  cursor:pointer;
+}
+#spectrum-analysis .xv-multiregion-toggle.is-active{
+  border-color:var(--warn);
+  background:color-mix(in srgb,var(--warn) 16%,var(--surface));
+  color:var(--warn);
+}
+#spectrum-analysis .xv-pinned-details{
+  padding-top:.08rem;
+}
+#spectrum-analysis .xv-reported-title{display:none!important}
+
+#spectrum-analysis .xv-multiregion-view{
+  width:100%;
+  aspect-ratio:1120 / 820;
+  padding:.45rem;
+  display:grid;
+  gap:.42rem;
+  background:var(--plot-bg);
+  overflow:hidden;
+}
+#spectrum-analysis .xv-multiregion-view[hidden]{display:none!important}
+#spectrum-analysis .xv-multiregion-view[data-count="1"]{grid-template-columns:1fr}
+#spectrum-analysis .xv-multiregion-view[data-count="2"]{grid-template-columns:repeat(2,1fr)}
+#spectrum-analysis .xv-multiregion-view[data-count="3"],
+#spectrum-analysis .xv-multiregion-view[data-count="4"]{grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(2,1fr)}
+#spectrum-analysis .xv-multiregion-view[data-count="5"],
+#spectrum-analysis .xv-multiregion-view[data-count="6"]{grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr)}
+#spectrum-analysis .xv-multiregion-tile{
+  min-width:0;
+  min-height:0;
+  display:flex;
+  flex-direction:column;
+  border:1px solid color-mix(in srgb,var(--text) 22%,var(--border));
+  border-radius:.38rem;
+  overflow:hidden;
+  background:color-mix(in srgb,var(--plot-bg) 95%,var(--surface));
+}
+#spectrum-analysis .xv-multiregion-head{
+  flex:0 0 auto;
+  min-height:28px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:.35rem;
+  padding:.22rem .36rem;
+  border-bottom:1px solid var(--border-soft);
+  color:var(--muted);
+  font-size:.54rem;
+}
+#spectrum-analysis .xv-multiregion-open{
+  padding:0;
+  border:0;
+  background:none;
+  color:var(--good-text);
+  font-weight:800;
+  cursor:pointer;
+}
+#spectrum-analysis .xv-multiregion-open:hover{text-decoration:underline}
+#spectrum-analysis .xv-multiregion-chart{
+  display:block;
+  width:100%;
+  height:100%;
+  min-height:0;
+  color:var(--text);
+}
+#spectrum-analysis .xv-multi-tick{fill:currentColor;font-size:12px;opacity:.88}
+#spectrum-analysis .xv-multi-axis{fill:currentColor;font-size:12px;font-weight:700}
+#spectrum-analysis .xv-multi-ref-label{fill:var(--good-text);font-size:16px;font-weight:800}
+#spectrum-analysis .xv-multi-ref-sub{font-size:12px;font-weight:600;opacity:.9}
+#spectrum-analysis .xv-multiregion-empty{
+  grid-column:1/-1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--muted);
+  font-size:.72rem;
+}
+#spectrum-analysis .xv-multiregion-limit{
+  position:absolute;
+  right:.65rem;
+  bottom:.45rem;
+  color:var(--muted);
+  font-size:.52rem;
+}
+#spectrum-analysis .xv-multiregion-view{position:relative}
+
+/* ----- v0.1q: survey auto hint, compact pinned details, full-height multi-region tiles ----- */
+#spectrum-analysis .xv-survey-command-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:.55rem;
+  min-width:0;
+}
+#spectrum-analysis .xv-survey-command-head .xv-auto-summary{
+  flex:1 1 auto;
+  width:auto;
+  min-width:0;
+  margin:0;
+  padding:0;
+  border:0;
+  text-align:right;
+  color:var(--muted);
+  font-size:.56rem;
+  line-height:1.12;
+  white-space:normal;
+}
+
+/* Expanded pinned compound: compact rows, compact open arrow. */
+#spectrum-analysis .xv-pinned-details{
+  padding:.05rem .28rem .14rem;
+}
+#spectrum-analysis .xv-reported-row{
+  min-height:23px!important;
+  height:auto!important;
+  padding:.05rem .16rem!important;
+  grid-template-columns:62px minmax(0,1fr) 26px!important;
+  column-gap:.28rem!important;
+  line-height:1.08;
+}
+#spectrum-analysis .xv-reported-open{
+  width:22px!important;
+  min-width:22px!important;
+  height:20px!important;
+  min-height:20px!important;
+  padding:0!important;
+  line-height:1!important;
+  border-radius:.25rem;
+}
+#spectrum-analysis .xv-reported-action{
+  min-width:22px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* Multi-region SVGs use the full tile; no unused vertical letterbox. */
+#spectrum-analysis .xv-multiregion-chart{
+  flex:1 1 0;
+  min-height:0;
+}
+
+/* ----- v0.1r: compact top navigation + narrower tool column + fixed graph width ----- */
+.appMain > .toolHead,
+.appMain > #spectrum-analysis{
+  width:min(100%,1240px);
+}
+
+#spectrum-analysis{
+  --xv-left-col: 365px;
+  --xv-layout-gap: .62rem;
+  --xv-periodic-width: 445px;
+  --xv-periodic-overhang: calc(var(--xv-periodic-width) - var(--xv-left-col));
+}
+
+/* The file card and graph navigation now share the same columns as the analysis area. */
+#spectrum-analysis .xv-top-grid{
+  display:grid;
+  grid-template-columns:var(--xv-left-col) minmax(0,1fr);
+  gap:var(--xv-layout-gap);
+  align-items:stretch;
+  margin-bottom:.48rem;
+  overflow:visible;
+}
+#spectrum-analysis .xv-upload-card,
+#spectrum-analysis .xv-navigation{
+  margin:0!important;
+  min-width:0;
+  box-sizing:border-box;
+}
+#spectrum-analysis .xv-upload-card{
+  min-height:92px;
+  padding:.52rem .58rem;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:.35rem;
+}
+#spectrum-analysis .xv-upload-main-row{
+  display:flex;
+  align-items:center;
+  gap:.42rem;
+}
+#spectrum-analysis .xv-file-button{
+  display:inline-flex;
+  align-items:center;
+  gap:.38rem;
+  min-height:34px;
+  padding:.34rem .58rem;
+}
+#spectrum-analysis .xv-file-info-button{
+  margin-left:auto;
+  width:28px;
+  height:28px;
+  border:0;
+  background:transparent;
+  color:var(--muted);
+  font-size:.86rem;
+  cursor:default;
+}
+#spectrum-analysis .xv-file-meta{
+  width:100%;
+  font-size:.65rem;
+  font-weight:750;
+  color:var(--text-soft);
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+#spectrum-analysis .xv-subtitle{
+  margin:0;
+  font-size:.6rem;
+}
+
+/* Navigation right: regions on line 1, commands on line 2. */
+#spectrum-analysis .xv-navigation{
+  min-height:92px;
+  padding:.42rem .48rem;
+  display:grid;
+  grid-template-rows:auto auto;
+  row-gap:.38rem;
+  overflow:hidden;
+}
+#spectrum-analysis .xv-navigation[hidden]{display:none!important}
+#spectrum-analysis .xv-navigation-primary{
+  min-width:0;
+  display:flex;
+  align-items:flex-end;
+  gap:.4rem;
+  overflow:hidden;
+}
+#spectrum-analysis .xv-nav-sample{
+  flex:0 0 190px;
+  min-width:190px;
+}
+#spectrum-analysis .xv-sample-stepper{
+  display:grid;
+  grid-template-columns:28px minmax(0,1fr) 28px;
+  gap:.22rem;
+  align-items:center;
+}
+#spectrum-analysis .xv-sample-step{
+  width:28px;
+  min-width:28px;
+  height:29px;
+  padding:0;
+  border:1px solid var(--xv-control-border);
+  border-radius:.32rem;
+  background:transparent;
+  color:var(--text);
+  font-size:1rem;
+  line-height:1;
+  cursor:pointer;
+}
+#spectrum-analysis .xv-sample-select{
+  width:100%;
+  min-width:0;
+}
+#spectrum-analysis .xv-block-list{
+  min-width:0;
+  flex:1 1 auto;
+  display:flex;
+  overflow-x:auto;
+  overflow-y:hidden;
+  scrollbar-width:thin;
+  padding-bottom:2px;
+}
+#spectrum-analysis .xv-block-group{
+  flex:0 0 auto;
+  min-width:max-content;
+}
+#spectrum-analysis .xv-block-buttons{
+  flex-wrap:nowrap;
+  white-space:nowrap;
+}
+#spectrum-analysis .xv-navigation-actions{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:.55rem;
+  min-width:0;
+}
+#spectrum-analysis .xv-graph-calibration{
+  position:static!important;
+  transform:none!important;
+  margin:0!important;
+  min-width:154px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.34rem;
+}
+#spectrum-analysis .xv-view-mode-controls{
+  display:flex;
+  align-items:center;
+  gap:.28rem;
+}
+#spectrum-analysis .xv-view-mode-button{
+  min-height:30px;
+  padding:.28rem .52rem;
+  border:1px solid var(--xv-control-border);
+  border-radius:.34rem;
+  background:transparent;
+  color:var(--text-soft);
+  font-size:.62rem;
+  font-weight:760;
+  display:inline-flex;
+  align-items:center;
+  gap:.32rem;
+  cursor:pointer;
+}
+#spectrum-analysis .xv-view-mode-button.is-active{
+  border-color:var(--warn);
+  background:color-mix(in srgb,var(--warn) 15%,var(--surface));
+  color:var(--warn);
+}
+#spectrum-analysis .xv-view-mode-button:disabled{
+  opacity:.42;
+  cursor:default;
+}
+#spectrum-analysis .xv-btn-icon{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  line-height:1;
+  font-size:.8em;
+}
+
+/* Same right-column width in Survey and Core-level modes. */
+#spectrum-analysis .xv-analysis-grid{
+  grid-template-columns:var(--xv-left-col) minmax(0,1fr)!important;
+  gap:var(--xv-layout-gap)!important;
+  overflow:visible;
+}
+#spectrum-analysis .xv-left-panel{
+  min-width:0;
+  overflow:visible!important;
+}
+#spectrum-analysis .xv-right-panel{
+  min-width:0;
+}
+
+/* Tool cards become narrower; the periodic table alone keeps its present width and overhangs left. */
+#spectrum-analysis .xv-survey-command-card,
+#spectrum-analysis .xv-core-command-card,
+#spectrum-analysis .xv-core-database-card,
+#spectrum-analysis .xv-pinned-card,
+#spectrum-analysis .xv-survey-energy-results{
+  width:100%;
+  max-width:100%;
+}
+#spectrum-analysis .xv-survey-tools{
+  width:var(--xv-periodic-width)!important;
+  max-width:var(--xv-periodic-width)!important;
+  margin-left:calc(-1 * var(--xv-periodic-overhang))!important;
+  box-sizing:border-box;
+}
+
+/* Compact left command bars. */
+#spectrum-analysis .xv-survey-command-row,
+#spectrum-analysis .xv-core-command-row{
+  gap:.32rem!important;
+}
+#spectrum-analysis .xv-command-left,
+#spectrum-analysis .xv-core-command-left{
+  gap:.22rem!important;
+  min-width:0;
+}
+#spectrum-analysis .xv-survey-command-card .xv-mode-button,
+#spectrum-analysis .xv-survey-command-card .xv-energy-window-toggle,
+#spectrum-analysis .xv-survey-command-card .xv-clear-elements,
+#spectrum-analysis .xv-core-command-card .xv-energy-window-toggle,
+#spectrum-analysis .xv-core-command-card .xv-core-clear{
+  min-height:29px!important;
+  padding:.25rem .38rem!important;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.26rem;
+}
+#spectrum-analysis .xv-core-search{
+  min-width:0!important;
+  width:100%!important;
+}
+#spectrum-analysis .xv-core-command-left{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) auto;
+  flex:1 1 auto;
+}
+#spectrum-analysis .xv-core-help{
+  max-width:185px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+/* Survey energy results use compact columns rather than a large empty centre. */
+#spectrum-analysis .xv-energy-result-row{
+  grid-template-columns:42px minmax(105px,1fr) 74px!important;
+  column-gap:.32rem!important;
+}
+
+/* Expected-compound database: formula + region lines only. Full name remains available after pinning. */
+#spectrum-analysis .xv-core-database-card .xv-expected-db-header,
+#spectrum-analysis .xv-core-database-card .xv-compound-row{
+  grid-template-columns:minmax(105px,.78fr) minmax(0,1.42fr)!important;
+}
+#spectrum-analysis .xv-core-database-card .xv-compound-row .xv-db-name{
+  display:none!important;
+}
+#spectrum-analysis .xv-core-database-card .xv-compound-row .xv-db-energy{
+  text-align:right;
+}
+
+/* Graph context remains inside the plot card and simply identifies the displayed sample/region. */
+#spectrum-analysis .xv-graph-context{
+  min-height:32px;
+  padding:0 .12rem .24rem;
+  display:flex;
+  align-items:center;
+}
+#spectrum-analysis .xv-graph-block-title{
+  display:inline-flex;
+  align-items:center;
+  min-height:28px;
+  padding:.24rem .5rem;
+  border:1px solid var(--good);
+  border-radius:.36rem;
+  background:color-mix(in srgb,var(--good) 17%,var(--surface));
+  color:var(--good-text);
+  font-size:.72rem;
+  font-weight:820;
+}
+
+/* Critical: when multi-view is active the hidden single SVG must not reserve its old 820px space. */
+#spectrum-analysis .xv-chart[hidden]{display:none!important}
+#spectrum-analysis .xv-multiregion-view{
+  align-content:start!important;
+  align-items:stretch!important;
+  justify-content:stretch!important;
+}
+#spectrum-analysis .xv-multiregion-tile{
+  align-self:stretch!important;
+}
+
+/* Pinned button uses the same icon/button language as the top view controls. */
+#spectrum-analysis .xv-multiregion-toggle{
+  display:inline-flex;
+  align-items:center;
+  gap:.28rem;
+}
+
+@media(max-width:1180px){
+  #spectrum-analysis{--xv-left-col:345px;--xv-periodic-width:425px}
+  #spectrum-analysis .xv-nav-sample{flex-basis:175px;min-width:175px}
+}
+@media(max-width:980px){
+  #spectrum-analysis .xv-top-grid,
+  #spectrum-analysis .xv-analysis-grid{grid-template-columns:1fr!important}
+  #spectrum-analysis .xv-survey-tools{width:100%!important;max-width:100%!important;margin-left:0!important}
+  #spectrum-analysis .xv-navigation-primary{overflow-x:auto}
+}
+
+/* ----- v0.1s: stable controls + manual multi-view + fixed multi-view geometry ----- */
+#spectrum-analysis .xv-navigation-actions{
+  display:grid!important;
+  grid-template-columns:minmax(170px,1fr) auto;
+  align-items:center;
+  column-gap:.55rem;
+}
+#spectrum-analysis .xv-calibration-slot{
+  min-width:170px;
+  min-height:32px;
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+}
+#spectrum-analysis .xv-view-mode-controls{
+  justify-self:end;
+  min-width:196px;
+  justify-content:flex-end;
+}
+#spectrum-analysis .xv-svg-icon{
+  width:15px;
+  height:15px;
+  flex:0 0 15px;
+}
+#spectrum-analysis .xv-svg-icon svg{
+  width:100%;
+  height:100%;
+  display:block;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.7;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+#spectrum-analysis .xv-view-mode-button{
+  min-width:92px;
+  justify-content:center;
+}
+
+/* Energy-window database always keeps the chemically useful three columns. */
+#spectrum-analysis .xv-core-database-card .xv-database-list .xv-db-header:not(.xv-expected-db-header),
+#spectrum-analysis .xv-core-database-card .xv-database-list .xv-compound-row:not(.xv-expected-compound-row){
+  grid-template-columns:minmax(88px,.82fr) minmax(100px,1.2fr) 72px!important;
+  column-gap:.35rem!important;
+}
+#spectrum-analysis .xv-core-database-card .xv-database-list .xv-compound-row:not(.xv-expected-compound-row) .xv-db-name{
+  display:block!important;
+  min-width:0;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+/* Multi-view replaces the single plot area instead of sitting at its bottom. */
+#spectrum-analysis .xv-chart-card{
+  display:flex!important;
+  flex-direction:column;
+  min-height:0;
+  height:auto;
+}
+#spectrum-analysis .xv-chart-head{
+  flex:0 0 auto;
+}
+#spectrum-analysis .xv-multiregion-view:not([hidden]){
+  flex:1 1 auto!important;
+  width:100%!important;
+  height:820px!important;
+  min-height:820px!important;
+  aspect-ratio:auto!important;
+  align-content:stretch!important;
+  align-items:stretch!important;
+  justify-content:stretch!important;
+  grid-auto-rows:minmax(0,1fr)!important;
+}
+#spectrum-analysis .xv-multiregion-view[data-count="1"]{grid-template-rows:1fr!important}
+#spectrum-analysis .xv-multiregion-view[data-count="2"]{grid-template-rows:1fr!important}
+#spectrum-analysis .xv-multiregion-view[data-count="3"],
+#spectrum-analysis .xv-multiregion-view[data-count="4"],
+#spectrum-analysis .xv-multiregion-view[data-count="5"],
+#spectrum-analysis .xv-multiregion-view[data-count="6"]{grid-template-rows:repeat(2,minmax(0,1fr))!important}
+#spectrum-analysis .xv-multiregion-tile{
+  height:100%!important;
+  min-height:0!important;
+}
+#spectrum-analysis .xv-multiregion-chart{
+  flex:1 1 auto!important;
+  height:100%!important;
+  min-height:0!important;
+}
+
+/* Keep the temporary 6-element warning inside Survey Identification. */
+#spectrum-analysis .xv-survey-command-head .xv-auto-summary{
+  min-height:1.15em;
+}
+
+/* ----- v0.1t: compact file card, shared icons, graph context, stable multi-view ----- */
+#spectrum-analysis .xv-upload-card{
+  padding:.42rem .5rem!important;
+  min-height:0!important;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+#spectrum-analysis .xv-upload-main-row{
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+  min-height:34px;
+}
+#spectrum-analysis .xv-file-button{
+  min-height:32px!important;
+  padding:.34rem .58rem!important;
+  gap:.34rem;
+}
+#spectrum-analysis .xv-folder-icon{
+  width:19px!important;
+  height:17px!important;
+  flex-basis:19px!important;
+}
+#spectrum-analysis .xv-file-meta-row{
+  min-width:0;
+  display:flex;
+  align-items:center;
+  gap:.3rem;
+  flex:1 1 auto;
+}
+#spectrum-analysis .xv-file-info-button{
+  order:0;
+  flex:0 0 auto;
+  width:24px;
+  height:24px;
+  padding:0;
+  border:0;
+  background:transparent;
+  color:var(--muted);
+  font-size:.8rem;
+  cursor:pointer;
+}
+#spectrum-analysis .xv-file-meta{
+  order:1;
+  min-width:0;
+  font-size:.64rem!important;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+#spectrum-analysis .xv-upload-card .xv-subtitle{
+  margin-top:.15rem;
+  font-size:.6rem;
+}
+#spectrum-analysis .xv-btn-icon.xv-svg-icon{
+  width:15px;
+  height:15px;
+  flex:0 0 15px;
+}
+
+/* Periodic-table line filter belongs with the survey reference controls. */
+#spectrum-analysis .xv-periodic-central{
+  height:92px!important;
+}
+#spectrum-analysis .xv-periodic-central .xv-central-controls{
+  flex-direction:column;
+  gap:.24rem!important;
+}
+#spectrum-analysis .xv-table-line-filter{
+  display:inline-flex!important;
+  width:auto;
+  transform:none!important;
+}
+#spectrum-analysis .xv-table-line-filter button{
+  min-height:24px;
+  padding:.18rem .34rem;
+  font-size:.56rem;
+}
+
+/* Keep a stable pre-graph band; calibration opens here without moving the graph context. */
+#spectrum-analysis .xv-pregraph-slot{
+  min-height:40px;
+  display:flex;
+  align-items:center;
+  padding:0 0 .28rem;
+  box-sizing:border-box;
+}
+#spectrum-analysis .xv-pregraph-slot .xv-calibration-strip{
+  width:100%;
+  margin:0!important;
+}
+
+/* Sample + region now occupy the former XPS/Auger/Both graph position. */
+#spectrum-analysis .xv-chart-head{
+  grid-template-columns:minmax(180px,1fr) minmax(180px,1.4fr) auto!important;
+}
+#spectrum-analysis .xv-graph-context{
+  min-height:28px!important;
+  padding:0!important;
+  display:flex!important;
+  align-items:center;
+  gap:.3rem;
+}
+#spectrum-analysis .xv-graph-sample-title,
+#spectrum-analysis .xv-graph-block-title{
+  display:inline-flex;
+  align-items:center;
+  min-height:27px;
+  padding:.22rem .48rem;
+  border:1px solid var(--good);
+  border-radius:.36rem;
+  background:color-mix(in srgb,var(--good) 17%,var(--surface));
+  color:var(--good-text);
+  font-size:.69rem;
+  font-weight:820;
+  white-space:nowrap;
+}
+#spectrum-analysis .xv-graph-block-title{
+  min-width:0;
+}
+
+/* Core list cards: use the vertical space recovered from the compact file card. */
+#spectrum-analysis .xv-core-database-card,
+#spectrum-analysis .xv-pinned-card{
+  flex:0 0 250px!important;
+  height:250px!important;
+  min-height:250px!important;
+  max-height:250px!important;
+}
+
+/* Pinned multi-view uses exactly the same grid icon as the top control. */
+#spectrum-analysis .xv-multiregion-toggle .xv-svg-icon{
+  width:14px!important;
+  height:14px!important;
+}
+
+/* Multi-view must replace the plot from its top edge, never flow below a hidden single spectrum. */
+#spectrum-analysis .xv-chart-card.is-multiview{
+  position:relative!important;
+  height:820px!important;
+  min-height:820px!important;
+  max-height:820px!important;
+  display:block!important;
+  overflow:hidden!important;
+}
+#spectrum-analysis .xv-chart-card.is-multiview .xv-multiregion-view:not([hidden]){
+  position:absolute!important;
+  inset:0!important;
+  margin:0!important;
+  box-sizing:border-box!important;
+  width:100%!important;
+  height:100%!important;
+  min-height:0!important;
+  max-height:none!important;
+  display:grid!important;
+  align-content:stretch!important;
+  align-items:stretch!important;
+  justify-content:stretch!important;
+}
+#spectrum-analysis .xv-chart-card.is-multiview .xv-chart-head,
+#spectrum-analysis .xv-chart-card.is-multiview .xv-chart{
+  display:none!important;
+}
+#spectrum-analysis .xv-multiregion-title-wrap{
+  display:flex;
+  align-items:center;
+  gap:.25rem;
+  min-width:0;
+}
+#spectrum-analysis .xv-multiregion-sample-badge,
+#spectrum-analysis .xv-multiregion-open{
+  display:inline-flex;
+  align-items:center;
+  min-height:22px;
+  padding:.13rem .34rem!important;
+  border:1px solid var(--good)!important;
+  border-radius:.3rem!important;
+  background:color-mix(in srgb,var(--good) 15%,var(--surface))!important;
+  color:var(--good-text)!important;
+  font-size:.56rem!important;
+  font-weight:800!important;
+  line-height:1!important;
+  white-space:nowrap;
+}
+#spectrum-analysis .xv-multiregion-sample-badge{
+  opacity:.95;
+}
+
+/* Core explorer no longer needs explanatory copy in the title row. */
+#spectrum-analysis .xv-core-command-head{
+  grid-template-columns:1fr!important;
+}
+
+
+/* ----- v0.1u: compact fixed cards, icon titles, shorter spectra ----- */
+#spectrum-analysis .xv-upload-card{
+  height:76px!important;
+  min-height:76px!important;
+  max-height:76px!important;
+  padding:.38rem .52rem!important;
+  justify-content:flex-start!important;
+  box-sizing:border-box;
+  overflow:hidden;
+}
+#spectrum-analysis .xv-upload-main-row{
+  min-height:32px!important;
+  height:32px!important;
+  flex:0 0 32px;
+  display:flex;
+  align-items:center;
+  gap:.55rem;
+}
+#spectrum-analysis .xv-upload-main-row .xv-subtitle{
+  margin:0!important;
+  min-width:0;
+  color:var(--muted);
+  font-size:.62rem!important;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+#spectrum-analysis .xv-file-meta-row:not([hidden]){
+  height:27px;
+  min-height:27px;
+  margin-top:.18rem;
+  display:flex!important;
+  align-items:center;
+  gap:.28rem;
+  flex:0 0 27px;
+}
+#spectrum-analysis .xv-file-info-button{
+  width:22px!important;
+  height:22px!important;
+  flex:0 0 22px!important;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+}
+#spectrum-analysis .xv-file-info-button .xv-svg-icon{width:16px;height:16px}
+#spectrum-analysis .xv-file-meta{font-size:.62rem!important}
+#spectrum-analysis .xv-folder-icon{width:21px!important;height:18px!important;flex-basis:21px!important}
+
+/* Section-title icons. */
+#spectrum-analysis .xv-command-title,
+#spectrum-analysis .xv-panel-title{
+  display:flex;
+  align-items:center;
+  gap:.32rem;
+}
+#spectrum-analysis .xv-title-icon{
+  width:16px!important;
+  height:16px!important;
+  flex:0 0 16px!important;
+  color:var(--text-soft);
+}
+#spectrum-analysis .xv-pinned-title{display:flex!important}
+#spectrum-analysis .xv-pinned-title .xv-multiregion-toggle{margin-left:auto}
+
+/* Survey auto copy always reserves exactly two lines so the card never grows. */
+#spectrum-analysis .xv-survey-command-head{
+  min-height:34px!important;
+  align-items:start!important;
+}
+#spectrum-analysis .xv-survey-command-head .xv-auto-summary{
+  width:190px!important;
+  max-width:190px!important;
+  min-height:2.3em!important;
+  max-height:2.3em!important;
+  line-height:1.15!important;
+  white-space:normal!important;
+  overflow:hidden!important;
+  text-align:right;
+}
+
+/* No source selector in Spectrum Identification: VAMAS already defines the source. */
+#spectrum-analysis .xv-periodic-central{
+  height:76px!important;
+}
+#spectrum-analysis .xv-periodic-note{
+  transform:translateY(-3px);
+}
+#spectrum-analysis .xv-periodic-central .xv-central-controls{
+  margin-top:.05rem;
+}
+#spectrum-analysis .xv-table-line-filter button{
+  min-height:25px!important;
+  padding:.2rem .42rem!important;
+}
+
+/* Left-aligned database helper. */
+#spectrum-analysis .xv-database-click-hint{
+  text-align:left!important;
+  justify-content:flex-start!important;
+}
+
+/* Solid, compact sample step arrows. */
+#spectrum-analysis .xv-sample-step{
+  width:28px!important;
+  min-width:28px!important;
+  height:28px!important;
+  padding:0!important;
+  display:inline-flex!important;
+  align-items:center;
+  justify-content:center;
+}
+#spectrum-analysis .xv-sample-step svg{width:13px;height:13px;fill:currentColor;stroke:none}
+
+/* 20% shorter single spectrum and multi-view, same footprint in either mode. */
+#spectrum-analysis .xv-chart-card.is-multiview{
+  height:656px!important;
+  min-height:656px!important;
+  max-height:656px!important;
+}
+#spectrum-analysis .xv-multiregion-view:not([hidden]){
+  height:656px!important;
+  min-height:0!important;
+  max-height:656px!important;
+}
+#spectrum-analysis .xv-chart-card.is-multiview .xv-multiregion-view:not([hidden]){
+  top:0!important;
+  right:0!important;
+  bottom:0!important;
+  left:0!important;
+  inset:0!important;
+  padding:.42rem!important;
+  margin:0!important;
+  transform:none!important;
+}
+#spectrum-analysis .xv-chart-card.is-multiview .xv-multiregion-tile{
+  align-self:stretch!important;
+  justify-self:stretch!important;
+}
+#spectrum-analysis .xv-chart-card.is-multiview .xv-multiregion-chart{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  flex:1 1 0!important;
+}
+
+/* Multi-view titles use the same green visual language as the single-view badges. */
+#spectrum-analysis .xv-multiregion-sample-badge,
+#spectrum-analysis .xv-multiregion-open{
+  border-color:var(--good)!important;
+  background:color-mix(in srgb,var(--good) 18%,var(--surface))!important;
+  color:var(--good-text)!important;
+}
+
+/* Strongly restore the three useful Energy-window database columns. */
+#spectrum-analysis .xv-core-database-card .xv-database-list .xv-compound-row:not(.xv-expected-compound-row){
+  grid-template-columns:minmax(88px,.85fr) minmax(105px,1.2fr) 72px!important;
+}
+#spectrum-analysis .xv-core-database-card .xv-database-list .xv-compound-row:not(.xv-expected-compound-row) .xv-db-name{
+  display:block!important;
+}
+
+/* ----- v0.1v: compact file row + stable title icons/cards ----- */
+/* Open VAMAS is icon-only; before load the helper sits at right, after load two file-info lines take its place. */
+#spectrum-analysis .xv-upload-card{
+  height:54px!important;
+  min-height:54px!important;
+  max-height:54px!important;
+  padding:.34rem .48rem!important;
+  overflow:hidden!important;
+}
+#spectrum-analysis .xv-upload-main-row{
+  width:100%;
+  height:100%!important;
+  min-height:0!important;
+  flex:1 1 auto!important;
+  display:flex!important;
+  align-items:center!important;
+  gap:.5rem!important;
+}
+#spectrum-analysis .xv-file-button{
+  width:38px!important;
+  min-width:38px!important;
+  max-width:38px!important;
+  height:34px!important;
+  min-height:34px!important;
+  padding:0!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  flex:0 0 38px!important;
+}
+#spectrum-analysis .xv-folder-icon{
+  width:17px!important;
+  height:15px!important;
+  flex:0 0 17px!important;
+}
+#spectrum-analysis .xv-upload-copy{
+  min-width:0;
+  flex:1 1 auto;
+  display:flex;
+  align-items:center;
+  min-height:34px;
+}
+#spectrum-analysis .xv-upload-copy .xv-subtitle{
+  margin:0!important;
+  font-size:.62rem!important;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+#spectrum-analysis .xv-file-meta-row:not([hidden]){
+  display:grid!important;
+  grid-template-columns:20px minmax(0,1fr);
+  align-items:center!important;
+  gap:.3rem!important;
+  width:100%;
+  height:auto!important;
+  min-height:34px!important;
+  margin:0!important;
+  flex:1 1 auto!important;
+}
+#spectrum-analysis .xv-file-info-button{
+  width:20px!important;
+  min-width:20px!important;
+  height:20px!important;
+  min-height:20px!important;
+  padding:0!important;
+}
+#spectrum-analysis .xv-file-info-button .xv-svg-icon{width:13px!important;height:13px!important}
+#spectrum-analysis .xv-file-meta{
+  display:grid!important;
+  grid-template-rows:auto auto;
+  gap:.06rem;
+  line-height:1.08;
+  min-width:0;
+}
+#spectrum-analysis .xv-file-meta-name{
+  color:var(--text);
+  font-size:.64rem;
+  font-weight:800;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+#spectrum-analysis .xv-file-meta-info{
+  color:var(--muted);
+  font-size:.57rem;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+/* Force title icons to stay true 16px icons even where older Survey rules used display:block. */
+#spectrum-analysis .xv-survey-command-card .xv-command-title,
+#spectrum-analysis .xv-core-command-card .xv-command-title,
+#spectrum-analysis .xv-core-database-card .xv-command-title,
+#spectrum-analysis .xv-energy-results-card .xv-command-title,
+#spectrum-analysis .xv-pinned-card .xv-command-title,
+#spectrum-analysis .xv-panel-title{
+  display:flex!important;
+  align-items:center!important;
+  gap:.32rem!important;
+}
+#spectrum-analysis .xv-title-icon,
+#spectrum-analysis .xv-title-icon svg{
+  width:16px!important;
+  height:16px!important;
+  min-width:16px!important;
+  max-width:16px!important;
+  min-height:16px!important;
+  max-height:16px!important;
+}
+/* Restore Pinned Compounds as a real card title; older subtitle rules caught the title span too. */
+#spectrum-analysis .xv-pinned-title > span:not(.xv-title-icon){
+  color:var(--text)!important;
+  font-size:.76rem!important;
+  font-weight:800!important;
+  line-height:1!important;
+}
+#spectrum-analysis .xv-pinned-title > .xv-title-icon{
+  color:var(--text-soft)!important;
+}
+
+/* Use the reclaimed height for the core-level lists. */
+#spectrum-analysis .xv-core-database-card,
+#spectrum-analysis .xv-pinned-card{
+  flex:0 0 260px!important;
+  height:260px!important;
+  min-height:260px!important;
+  max-height:260px!important;
+}
+
+/* Survey Energy Window: user's 215px baseline + 15px. */
+#spectrum-analysis .xv-survey-energy-results:not([hidden]){
+  flex:0 0 230px!important;
+  height:230px!important;
+  min-height:230px!important;
+  max-height:230px!important;
+  overflow:hidden!important;
+}
+
+/* ----- v0.1w: no Auto helper resize + multi-view footprint matches single view ----- */
+/* Auto mode is self-explanatory from the marked maxima; keep the command card identical to Core-level Explorer. */
+#spectrum-analysis .xv-survey-command-head{
+  min-height:0!important;
+  height:auto!important;
+  max-height:none!important;
+  align-items:center!important;
+}
+#spectrum-analysis .xv-survey-command-head .xv-auto-summary[hidden]{
+  display:none!important;
+}
+#spectrum-analysis .xv-survey-command-row{
+  margin-top:.42rem!important;
+}
+
+/* The single view height is responsive (SVG 1120×656 + its header).
+   Give Multi-view the same responsive outer footprint instead of a fixed 656px card. */
+#spectrum-analysis .xv-chart-card.is-multiview{
+  width:100%!important;
+  height:auto!important;
+  min-height:0!important;
+  max-height:none!important;
+  aspect-ratio:1120 / 700!important;
+  position:relative!important;
+  overflow:hidden!important;
+}
+#spectrum-analysis .xv-chart-card.is-multiview .xv-multiregion-view:not([hidden]){
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  min-height:0!important;
+  max-height:none!important;
+  margin:0!important;
+  padding:.42rem!important;
+  box-sizing:border-box!important;
+}
+
+/* ----- v0.1x: analysis-mode switch + fixed dataset navigation + contextual calibration ----- */
+#spectrum-analysis .xv-analysis-mode-bar{
+  width:var(--xv-left-col);
+  box-sizing:border-box;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:.34rem;
+  margin:0 0 .48rem 0;
+  min-height:34px;
+  padding:.18rem .3rem;
+}
+#spectrum-analysis .xv-analysis-mode-bar[hidden]{display:none!important}
+#spectrum-analysis .xv-mode-search-icon{
+  width:15px!important;
+  height:15px!important;
+  color:var(--text-soft);
+  flex:0 0 15px;
+}
+#spectrum-analysis .xv-analysis-mode-button{
+  min-height:29px;
+  padding:.26rem .72rem;
+  border:1px solid var(--xv-control-border);
+  border-radius:.36rem;
+  background:transparent;
+  color:var(--text-soft);
+  font-size:.64rem;
+  font-weight:760;
+  cursor:pointer;
+}
+#spectrum-analysis .xv-analysis-mode-button.is-active{
+  border-color:var(--warn);
+  background:color-mix(in srgb,var(--warn) 14%,var(--surface));
+  color:var(--warn);
+}
+#spectrum-analysis .xv-analysis-mode-button:disabled{opacity:.32;cursor:default}
+
+/* Keep line-1 dataset navigation stable: sample selector and VAMAS-order region groups. */
+#spectrum-analysis .xv-sample-fixed{display:block;width:100%}
+#spectrum-analysis .xv-navigation-primary{align-items:flex-end!important}
+#spectrum-analysis .xv-nav-sample{flex:0 0 170px!important;min-width:170px!important}
+#spectrum-analysis .xv-block-list{
+  flex:1 1 auto!important;
+  min-width:0!important;
+  overflow-x:auto!important;
+  overflow-y:hidden!important;
+  scrollbar-width:thin;
+  padding-bottom:2px;
+}
+#spectrum-analysis .xv-block-group{flex:0 0 auto!important}
+#spectrum-analysis .xv-block-buttons{flex-wrap:nowrap!important;white-space:nowrap!important}
+
+/* Line 2: calibration, sample/region stepping, then Single/Multi view. */
+#spectrum-analysis .xv-navigation-actions{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  gap:.55rem!important;
+}
+#spectrum-analysis .xv-navigation-tools-left{
+  display:flex;
+  align-items:center;
+  gap:.34rem;
+  min-width:0;
+  flex:1 1 auto;
+}
+#spectrum-analysis .xv-calibration-slot{
+  min-width:0!important;
+  min-height:30px!important;
+  flex:0 0 auto;
+}
+#spectrum-analysis .xv-graph-calibration{
+  min-width:132px!important;
+  min-height:29px!important;
+  padding:.24rem .46rem!important;
+  font-size:.6rem!important;
+}
+#spectrum-analysis .xv-step-control{
+  display:grid;
+  grid-template-columns:25px auto 25px;
+  align-items:center;
+  gap:.18rem;
+  min-height:29px;
+  border:1px solid var(--xv-control-border);
+  border-radius:.36rem;
+  padding:1px 2px;
+  background:color-mix(in srgb,var(--surface) 68%,transparent);
+  color:var(--text-soft);
+  font-size:.58rem;
+  font-weight:760;
+}
+#spectrum-analysis .xv-nav-step{
+  width:25px;
+  min-width:25px;
+  height:25px;
+  min-height:25px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:0;
+  border-radius:.28rem;
+  background:transparent;
+  color:var(--text);
+  padding:0;
+  cursor:pointer;
+}
+#spectrum-analysis .xv-nav-step:hover:not(:disabled){background:color-mix(in srgb,var(--text) 9%,transparent)}
+#spectrum-analysis .xv-nav-step:disabled{opacity:.22;cursor:default}
+#spectrum-analysis .xv-nav-step svg{width:12px;height:12px;fill:currentColor;stroke:none}
+#spectrum-analysis .xv-view-mode-controls{flex:0 0 auto!important;min-width:auto!important}
+
+/* Context strip is intentionally empty when closed; options/calibration can reuse it later. */
+#spectrum-analysis .xv-pregraph-slot{
+  min-height:30px;
+  display:flex;
+  align-items:center;
+  margin-bottom:.2rem;
+}
+#spectrum-analysis .xv-calibration-strip:not([hidden]){
+  width:100%;
+  min-height:29px!important;
+  padding:.18rem .28rem!important;
+  gap:.24rem!important;
+  box-sizing:border-box;
+}
+#spectrum-analysis .xv-calibration-strip input{min-width:0!important;height:27px!important}
+#spectrum-analysis .xv-calibration-strip .xv-cal-observed,
+#spectrum-analysis .xv-calibration-strip .xv-cal-reference{width:110px!important}
+#spectrum-analysis .xv-calibration-strip .xv-cal-scope{width:150px!important;min-width:150px!important;height:27px!important}
+#spectrum-analysis .xv-calibration-strip button,
+#spectrum-analysis .xv-calibration-strip select{min-height:27px!important;height:27px!important}
+
+/* Active calibration is informational, therefore orange rather than green. */
+#spectrum-analysis .xv-graph-calibration-badge{
+  display:inline-flex;
+  align-items:center;
+  min-height:26px;
+  padding:.18rem .4rem;
+  border:1px solid var(--warn);
+  border-radius:.34rem;
+  background:color-mix(in srgb,var(--warn) 14%,var(--surface));
+  color:var(--warn);
+  font-size:.61rem;
+  font-weight:800;
+  white-space:nowrap;
+}
+#spectrum-analysis .xv-graph-calibration-badge[hidden]{display:none!important}
+
+/* Reset is lighter: icon + View. */
+#spectrum-analysis .xv-reset-view{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.24rem;
+}
+#spectrum-analysis .xv-reset-view .xv-btn-icon,
+#spectrum-analysis .xv-reset-view .xv-btn-icon svg{width:13px!important;height:13px!important}
+
+/* Manual multi-view keeps empty slots for regions unavailable in the current sample. */
+#spectrum-analysis .xv-multiregion-unavailable{
+  flex:1 1 auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:0;
+  color:var(--muted);
+  font-size:.64rem;
+}
+
+@media(max-width:1180px){
+  #spectrum-analysis .xv-analysis-mode-bar{width:var(--xv-left-col)}
+  #spectrum-analysis .xv-nav-sample{flex-basis:160px!important;min-width:160px!important}
+  #spectrum-analysis .xv-step-control{grid-template-columns:23px auto 23px}
+  #spectrum-analysis .xv-nav-step{width:23px;min-width:23px}
+}
+@media(max-width:980px){
+  #spectrum-analysis .xv-analysis-mode-bar{width:100%}
+  #spectrum-analysis .xv-navigation-actions{flex-wrap:wrap!important}
+}
+
+/* ----- v0.1y: stabilize navigation + multi-view tiles ----- */
+/* The Survey/Core-level analysis switch lives only above the left tools.
+   Collapse its footprint on the graph side so it no longer creates a full-width empty band. */
+#spectrum-analysis .xv-analysis-mode-bar{
+  position:relative!important;
+  z-index:3!important;
+  margin:0 0 -38px 0!important;
+  min-height:34px!important;
+  padding:.12rem .3rem!important;
+}
+#spectrum-analysis .xv-left-panel{
+  padding-top:38px!important;
+  box-sizing:border-box!important;
+}
+
+/* Navigation line 2: calibration left, sample/region steppers truly centred, view mode right. */
+#spectrum-analysis .xv-navigation-actions{
+  display:grid!important;
+  grid-template-columns:minmax(150px,1fr) auto minmax(150px,1fr)!important;
+  align-items:center!important;
+  column-gap:.5rem!important;
+}
+#spectrum-analysis .xv-navigation-tools-left{display:contents!important}
+#spectrum-analysis .xv-calibration-slot{grid-column:1;justify-self:start!important}
+#spectrum-analysis .xv-navigation-steppers{
+  grid-column:2;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:.34rem;
+}
+#spectrum-analysis .xv-view-mode-controls{grid-column:3;justify-self:end!important}
+
+/* Single-view context: region first, sample second, with breathing room for long labels such as Valence. */
+#spectrum-analysis .xv-graph-context{gap:.48rem!important}
+#spectrum-analysis .xv-graph-block-title{order:1!important}
+#spectrum-analysis .xv-graph-sample-title{order:2!important}
+#spectrum-analysis .xv-graph-calibration-badge{order:3!important}
+
+/* Multi-view: no dead band between tile header and spectrum. */
+#spectrum-analysis .xv-chart-card.is-multiview .xv-multiregion-view:not([hidden]){
+  padding:.2rem!important;
+  gap:.28rem!important;
+}
+#spectrum-analysis .xv-multiregion-tile{
+  display:flex!important;
+  flex-direction:column!important;
+  min-height:0!important;
+  overflow:hidden!important;
+}
+#spectrum-analysis .xv-multiregion-head{
+  flex:0 0 31px!important;
+  min-height:31px!important;
+  padding:.16rem .28rem!important;
+  box-sizing:border-box!important;
+  gap:.25rem!important;
+}
+#spectrum-analysis .xv-multiregion-chart{
+  flex:1 1 0!important;
+  min-height:0!important;
+  height:calc(100% - 31px)!important;
+  margin:0!important;
+  padding:0!important;
+}
+#spectrum-analysis .xv-multiregion-title-wrap{
+  gap:.48rem!important;
+}
+#spectrum-analysis .xv-multiregion-open{order:1!important}
+#spectrum-analysis .xv-multiregion-sample-badge{order:2!important}
+
+/* Compact, stable reference labels in Multi-view. */
+#spectrum-analysis .xv-multi-ref-label{
+  font-size:11px!important;
+  font-weight:800!important;
+}
+#spectrum-analysis .xv-multi-ref-sub{
+  font-size:8.5px!important;
+  font-weight:600!important;
+}
+#spectrum-analysis .xv-multi-tick{font-size:9px!important}
+#spectrum-analysis .xv-multi-axis{font-size:9.5px!important}
+
+/* Per-tile controls: each mini-spectrum owns Counts / Reset because those actions are local. */
+#spectrum-analysis .xv-multiregion-controls{
+  margin-left:auto;
+  display:flex;
+  align-items:center;
+  gap:.18rem;
+  min-width:0;
+}
+#spectrum-analysis .xv-multiregion-meta{
+  color:var(--muted);
+  font-size:.48rem;
+  white-space:nowrap;
+}
+#spectrum-analysis .xv-multi-counts,
+#spectrum-analysis .xv-multi-reset{
+  min-height:22px!important;
+  height:22px!important;
+  padding:.08rem .28rem!important;
+  border:1px solid var(--xv-control-border);
+  border-radius:.28rem;
+  background:transparent;
+  color:var(--text-soft);
+  font-size:.48rem!important;
+  font-weight:700;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.12rem;
+  cursor:pointer;
+}
+#spectrum-analysis .xv-multi-counts.is-active{
+  background:color-mix(in srgb,var(--text) 12%,var(--surface));
+  color:var(--text);
+}
+#spectrum-analysis .xv-multi-reset .xv-btn-icon,
+#spectrum-analysis .xv-multi-reset .xv-btn-icon svg{
+  width:10px!important;
+  height:10px!important;
+}
+
+@media(max-width:980px){
+  #spectrum-analysis .xv-navigation-actions{grid-template-columns:1fr!important;row-gap:.28rem!important}
+  #spectrum-analysis .xv-calibration-slot,
+  #spectrum-analysis .xv-navigation-steppers,
+  #spectrum-analysis .xv-view-mode-controls{grid-column:1!important;justify-self:center!important}
+}
+
+/* ----- v0.1z: multi-sample + search-master stabilization ----- */
+/* Put Survey/Core-level analysis choice directly below Open VAMAS so the left side no longer has a dead band. */
+#spectrum-analysis .xv-top-left-stack{
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  gap:.32rem;
+  align-self:start;
+}
+#spectrum-analysis .xv-top-left-stack .xv-analysis-mode-bar{
+  position:static!important;
+  z-index:auto!important;
+  width:100%!important;
+  min-height:34px!important;
+  margin:0!important;
+  padding:.08rem .22rem!important;
+  box-sizing:border-box;
+  justify-content:center!important;
+}
+#spectrum-analysis .xv-left-panel{padding-top:0!important}
+
+/* Survey Clear visually matches Core-level Clear; behavior remains independent. */
+#spectrum-analysis .xv-survey-command-row .xv-clear-elements{
+  min-height:34px!important;
+  height:34px!important;
+  padding:.22rem .48rem!important;
+  border:1px solid var(--xv-control-border)!important;
+  border-radius:.38rem!important;
+  background:transparent!important;
+  color:var(--text)!important;
+  font-size:.64rem!important;
+  font-weight:760!important;
+}
+#spectrum-analysis .xv-survey-command-row .xv-clear-elements:disabled{
+  opacity:.38!important;
+  color:var(--muted)!important;
+}
+
+/* Existing Sample field becomes a custom picker. Single-view = one choice; Multi-view can expose checkboxes. */
+#spectrum-analysis .xv-sample-picker{position:relative;min-width:0;width:100%}
+#spectrum-analysis .xv-sample-picker-button{
+  width:100%;min-height:31px;height:31px;padding:.18rem .42rem;
+  display:flex;align-items:center;justify-content:space-between;gap:.5rem;
+  border:1px solid var(--xv-control-border);border-radius:.36rem;
+  background:var(--surface);color:var(--text);font:inherit;font-size:.64rem;cursor:pointer;
+}
+#spectrum-analysis .xv-sample-picker-button:hover{border-color:color-mix(in srgb,var(--text) 52%,var(--border))}
+#spectrum-analysis .xv-sample-picker-chevron{font-size:.7rem;color:var(--muted)}
+#spectrum-analysis .xv-sample-menu{
+  position:absolute;z-index:40;left:0;right:0;top:calc(100% + 4px);
+  max-height:250px;overflow-y:auto;padding:.25rem;
+  border:1px solid var(--xv-frame-border);border-radius:.42rem;
+  background:var(--surface-raised);box-shadow:0 10px 28px rgba(0,0,0,.28);
+}
+#spectrum-analysis .xv-sample-menu[hidden]{display:none!important}
+#spectrum-analysis .xv-sample-menu-row{
+  width:100%;min-height:29px;padding:.18rem .32rem;border:0;border-radius:.3rem;
+  display:flex;align-items:center;gap:.36rem;text-align:left;
+  background:transparent;color:var(--text-soft);font:inherit;font-size:.61rem;cursor:pointer;
+}
+#spectrum-analysis .xv-sample-menu-row:hover{background:color-mix(in srgb,var(--text) 7%,transparent);color:var(--text)}
+#spectrum-analysis .xv-sample-menu-row.is-selected{color:var(--text);font-weight:760}
+#spectrum-analysis .xv-sample-menu-check{
+  width:15px;height:15px;flex:0 0 15px;border:1px solid var(--xv-control-border);border-radius:3px;
+  display:inline-flex;align-items:center;justify-content:center;font-size:10px;color:var(--good-text);
+  background:color-mix(in srgb,var(--good) 12%,transparent);
+}
+#spectrum-analysis .xv-sample-menu-note{padding:.28rem .32rem .16rem;color:var(--muted);font-size:.52rem;line-height:1.25}
+
+/* The active Multi-view tile is the master spectrum for the Survey/Core-level search. */
+#spectrum-analysis .xv-multiregion-tile.is-search-master{
+  border-color:color-mix(in srgb,var(--warning,#f59e0b) 72%,var(--xv-frame-border))!important;
+  box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--warning,#f59e0b) 42%,transparent)!important;
+}
+#spectrum-analysis .xv-database-context{
+  margin-left:.3rem;color:#f59e0b;font-size:.54rem;font-weight:700;white-space:nowrap;
+}
+
+/* Multi-view is intentionally compact: header touches the plotting area, controls remain local. */
+#spectrum-analysis .xv-chart-card.is-multiview .xv-multiregion-view:not([hidden]){
+  padding:.12rem!important;gap:.22rem!important;
+}
+#spectrum-analysis .xv-multiregion-head{
+  flex-basis:27px!important;min-height:27px!important;height:27px!important;
+  padding:.08rem .22rem!important;
+}
+#spectrum-analysis .xv-multiregion-chart{
+  height:calc(100% - 27px)!important;
+  touch-action:none;
+  cursor:grab;
+}
+#spectrum-analysis .xv-multiregion-chart.is-panning{cursor:grabbing}
+
+/* Disabled navigation explicitly communicates which Multi-view axis is currently locked. */
+#spectrum-analysis .xv-step-control button:disabled{opacity:.26!important;cursor:default!important}
+
+@media(max-width:980px){
+  #spectrum-analysis .xv-top-left-stack{width:100%}
+}
+
+/* ----- v0.1aa: predictable Single/Multi state + working multi-sample picker ----- */
+/* Sample menu must be allowed to escape the fixed navigation band. Region list keeps its own horizontal scroll. */
+#spectrum-analysis .xv-navigation{
+  overflow:visible!important;
+  position:relative;
+  z-index:20;
+}
+#spectrum-analysis .xv-navigation-primary{
+  overflow:visible!important;
+  position:relative;
+  z-index:21;
+}
+#spectrum-analysis .xv-nav-sample,
+#spectrum-analysis .xv-sample-fixed,
+#spectrum-analysis .xv-sample-picker{
+  overflow:visible!important;
+  position:relative;
+  z-index:30;
+}
+#spectrum-analysis .xv-sample-menu{
+  z-index:100!important;
+}
+
+/* Single and Multi labels use the same semantic order: sample first, region second. */
+#spectrum-analysis .xv-multiregion-sample-badge{order:1!important}
+#spectrum-analysis .xv-multiregion-open{order:2!important}
+
+/* Keep compound/assignment annotations at fixed readable sizes, independent of tile count. */
+#spectrum-analysis .xv-db-reference-label{
+  font-size:15px!important;
+  font-weight:820!important;
+}
+#spectrum-analysis .xv-db-reference-sub{
+  font-size:10.5px!important;
+  font-weight:650!important;
+}
+#spectrum-analysis .xv-multi-ref-label{
+  font-size:11px!important;
+  font-weight:800!important;
+}
+#spectrum-analysis .xv-multi-ref-sub{
+  font-size:8px!important;
+  font-weight:620!important;
+}
+
+/* Pinned view shortcuts are intentionally icon-only and reuse the top Single/Multi symbols. */
+#spectrum-analysis .xv-pinned-view-controls{
+  margin-left:auto;
+  display:inline-flex;
+  align-items:center;
+  gap:.18rem;
+}
+#spectrum-analysis .xv-pinned-single-view,
+#spectrum-analysis .xv-pinned-view-controls .xv-multiregion-toggle{
+  width:28px!important;
+  min-width:28px!important;
+  height:25px!important;
+  min-height:25px!important;
+  padding:0!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  border:1px solid var(--xv-control-border)!important;
+  border-radius:.32rem!important;
+  background:transparent!important;
+  color:var(--text-soft)!important;
+}
+#spectrum-analysis .xv-pinned-single-view[hidden],
+#spectrum-analysis .xv-pinned-view-controls .xv-multiregion-toggle[hidden]{display:none!important}
+#spectrum-analysis .xv-pinned-single-view.is-active,
+#spectrum-analysis .xv-pinned-view-controls .xv-multiregion-toggle.is-active{
+  border-color:var(--warn)!important;
+  background:color-mix(in srgb,var(--warn) 13%,var(--surface))!important;
+  color:var(--warn)!important;
+}
+#spectrum-analysis .xv-pinned-single-view .xv-svg-icon,
+#spectrum-analysis .xv-pinned-view-controls .xv-multiregion-toggle .xv-svg-icon,
+#spectrum-analysis .xv-pinned-single-view svg,
+#spectrum-analysis .xv-pinned-view-controls .xv-multiregion-toggle svg{
+  width:13px!important;
+  height:13px!important;
+}
+
+
+/* ----- v0.1ab: calmer open/navigate/analyse workflow ----- */
+#spectrum-analysis .xv-workflow-reset{
+  min-width:auto!important;padding-left:.48rem!important;padding-right:.48rem!important;
+}
+#spectrum-analysis .xv-multi-energy-axis{
+  min-height:22px;padding:.08rem .28rem;border:1px solid var(--xv-control-border);border-radius:.3rem;
+  background:transparent;color:var(--text-soft);font:inherit;font-size:.52rem;font-weight:720;cursor:pointer;
+}
+#spectrum-analysis .xv-multi-energy-axis:hover{color:var(--text);border-color:color-mix(in srgb,var(--text) 48%,var(--border));}
+\n\n/* ----- v0.1ac: comparison-only multi-sample + calibration/navigation stabilization ----- */
+#spectrum-analysis .xv-graph-sample-title{order:1!important}
+#spectrum-analysis .xv-graph-block-title{order:2!important}
+#spectrum-analysis .xv-graph-context{gap:.5rem!important}
+#spectrum-analysis .xv-graph-calibration:disabled{
+  opacity:.42!important;
+  cursor:default!important;
+  border-color:var(--xv-control-border)!important;
+  background:var(--xv-neutral-active-bg)!important;
+  color:var(--text-soft)!important;
+  box-shadow:none!important;
+}
+#spectrum-analysis .xv-db-reference-label{font-size:10px!important}
+#spectrum-analysis .xv-db-reference-label .xv-db-reference-compound{font-size:8px!important}
+#spectrum-analysis .xv-multiregion-chart .xv-db-reference-label{font-size:9px!important}
+#spectrum-analysis .xv-multiregion-chart .xv-db-reference-compound{font-size:7px!important}
+\n\n/* ----- v0.1ad: calibration/multiview consistency ----- */\n#spectrum-analysis .xv-workflow-reset:disabled{\n  opacity:.42!important;cursor:default!important;box-shadow:none!important;\n  border-color:var(--xv-control-border)!important;background:transparent!important;color:var(--text-soft)!important;\n}\n#spectrum-analysis .xv-multiregion-calibration-badge{\n  display:inline-flex;align-items:center;min-height:20px;padding:.08rem .34rem;border-radius:.34rem;\n  border:1px solid var(--warn);background:color-mix(in srgb,var(--warn) 13%,transparent);\n  color:var(--warn);font-size:.58rem;font-weight:780;line-height:1;white-space:nowrap;\n}\n
+/* ----- v0.1ae: calmer Multi entry, local image export, multi calibration/window polish ----- */
+#spectrum-analysis .xv-export-image{
+  width:38px!important;
+  min-width:38px!important;
+  height:36px!important;
+  padding:0!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  border:1px solid var(--border)!important;
+  border-radius:8px!important;
+  background:var(--surface)!important;
+  color:var(--text)!important;
+  margin-left:8px!important;
+  margin-right:14px!important;
+}
+#spectrum-analysis .xv-export-image[hidden]{display:none!important}
+#spectrum-analysis .xv-export-image:hover:not(:disabled){border-color:var(--muted)!important;background:color-mix(in srgb,var(--surface) 82%,white 3%)!important}
+#spectrum-analysis .xv-export-image:disabled{opacity:.38!important;cursor:not-allowed!important}
+#spectrum-analysis .xv-export-image .xv-svg-icon{width:18px!important;height:18px!important}
+
+/* Calibration is an informational orange state in both Single and Multi-view. */
+#spectrum-analysis .xv-multiregion-calibration-badge{
+  color:var(--warn-text, #fbbf24)!important;
+  border-color:color-mix(in srgb,var(--warn,#f59e0b) 78%,transparent)!important;
+  background:color-mix(in srgb,var(--warn,#f59e0b) 15%,transparent)!important;
+  font-weight:800!important;
+}
+
+/* ----- v0.1af: export placement + Multi Energy Window reset ----- */
+#spectrum-analysis .xv-calibration-slot{
+  display:flex!important;
+  align-items:center!important;
+  gap:.5rem!important;
+}
+#spectrum-analysis .xv-calibration-slot .xv-export-image{
+  margin:0!important;
+  flex:0 0 38px!important;
+}
+
+
+/* ----- site v0.4: restore crisp plot text + classic core reference markers ----- */
+/* The global site shell no longer strokes every SVG. These explicit plot rules keep text crisp. */
+#spectrum-analysis .xv-chart text,
+#spectrum-analysis .xv-multiregion-chart text{
+  stroke:none!important;
+  paint-order:normal!important;
+  text-shadow:none!important;
+}
+/* Core-level references: solid central BE line with a soft uncertainty band. */
+#spectrum-analysis .xv-db-reference-band{
+  fill:color-mix(in srgb,var(--good) 11%,transparent)!important;
+  opacity:1!important;
+}
+#spectrum-analysis .xv-db-reference-line{
+  stroke:var(--good)!important;
+  stroke-width:2!important;
+  stroke-dasharray:none!important;
+  opacity:.95!important;
+  vector-effect:non-scaling-stroke!important;
+}
+
+/* ----- site v0.47: consistent reference inspection and compound copy ----- */
+#spectrum-analysis .xv-db-reference-line,
+#spectrum-analysis .xv-db-reference-label{
+  cursor:pointer!important;
+  pointer-events:auto!important;
+}
+#spectrum-analysis .xv-db-reference-hit{
+  stroke:transparent;
+  stroke-width:15;
+  pointer-events:stroke;
+  cursor:pointer;
+  vector-effect:non-scaling-stroke;
+}
+#spectrum-analysis .xv-pinned-row{
+  position:relative;
+  grid-template-columns:minmax(0,1fr) 27px 32px!important;
+}
+#spectrum-analysis .xv-copy-pinned{
+  display:grid;
+  place-items:center;
+  align-self:center;
+  width:24px;
+  min-width:24px;
+  max-width:24px;
+  height:21px;
+  min-height:21px;
+  padding:0;
+  border:1px solid transparent;
+  border-radius:.28rem;
+  background:transparent;
+  color:var(--text-soft);
+  cursor:pointer;
+}
+#spectrum-analysis .xv-copy-pinned:hover{
+  border-color:var(--xv-control-border);
+  color:var(--text);
+}
+#spectrum-analysis .xv-copy-pinned .xv-svg-icon,
+#spectrum-analysis .xv-copy-pinned svg{
+  width:14px!important;
+  height:14px!important;
+}
+#spectrum-analysis .xv-pinned-copy-feedback{
+  position:absolute;
+  z-index:5;
+  right:55px;
+  top:5px;
+  padding:0 .2rem;
+  border:0;
+  border-radius:.2rem;
+  background:var(--surface-raised);
+  color:var(--good-text);
+  font-size:.54rem;
+  font-weight:850;
+  line-height:1;
+  pointer-events:none;
+}
+#spectrum-analysis .xv-pinned-copy-feedback[hidden]{display:none!important}
+/* Recover the vertical space used by the shared site header. */
+#spectrum-analysis .xv-core-database-card,
+#spectrum-analysis .xv-pinned-card{
+  flex-basis:250px!important;
+  height:250px!important;
+  min-height:250px!important;
+  max-height:250px!important;
+}

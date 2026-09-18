@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en" data-theme="ocean" data-theme-mode="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>XPS Figure Builder — XPS Tools v0.4</title>
+<script src="../../../assets/xps-theme.js"></script>
+<link rel="stylesheet" href="../../../assets/xps-themes.css">
+<link rel="stylesheet" href="../../../assets/xps-base.css">
+<link rel="stylesheet" href="../../../assets/site.css">
+<link rel="stylesheet" href="./figure-builder.css">
+</head>
+<body class="figureBuilderPage">
+<header class="hubTopbar hubAppTopbar">
+  <a class="hubBrand" href="../../../"><img class="hubMarkImg" src="../../../assets/images/hub-logo.png" alt=""><span class="hubBrandText">Surface &amp; Interface Hub</span></a>
+  <nav class="hubTopNav" aria-label="Primary navigation"></nav>
+  <div class="hubActions"><button class="hubShare" type="button" data-share-page>Share</button><div class="hubTheme"><span class="hubThemeLabel">Theme</span><div data-theme-picker></div></div></div>
+</header>
+<div class="appShell withHubHeader">
+  <nav class="xpsNav" data-xps-nav data-active="figure-builder" aria-label="XPS navigation"></nav>
+  <div class="appMain figureBuilderMain">
+    <header class="head toolHead fbHead">
+      <div class="headCopy"><h1>XPS Figure Builder</h1><button id="demoData" class="btn small" type="button" title="Load the complete example figure">Demo</button><span class="headHelpWrap"><button id="figureHelp" class="iconBtn helpBtn" type="button" title="Figure Builder help and keyboard shortcuts" aria-expanded="false">?</button><span id="figureHelpPopover" class="toolbarPopover figureHelpPopover hidden">
+        <span class="toolbarPopoverHead"><strong>Figure Builder help</strong><button id="closeFigureHelp" class="iconBtn" type="button" title="Close help">×</button></span>
+        <span class="helpGrid">
+          <span><strong>Panels</strong><span>Click to select. Drag to move. Arrow keys move by 1 px; Shift + arrow moves by 10 px.</span></span>
+          <span><strong>Text, legends and lines</strong><span>Click an object to edit it. Drag or use the arrow keys to reposition it.</span></span>
+          <span><strong>Draw a line or arrow</strong><span>Choose the ↗ tool, then drag on the figure. Hold Shift to constrain its angle.</span></span>
+          <span><strong>Snap</strong><span>Objects align to nearby edges, centres and annotations. Use the arrow keys for precise positioning without snapping.</span></span>
+          <span><strong>Copy to another panel</strong><span>Select an annotation, press Ctrl/Cmd + C, select the destination panel, then press Ctrl/Cmd + V.</span></span>
+          <span><strong>Duplicate</strong><span>Ctrl/Cmd + D creates a copy in the current panel or figure.</span></span>
+          <span><strong>Delete</strong><span>Delete or Backspace removes the selected panel or annotation.</span></span>
+          <span><strong>Undo and redo</strong><span>Ctrl/Cmd + Z undoes a change; Ctrl/Cmd + Y restores it.</span></span>
+          <span><strong>Automatic recovery</strong><span>An unsaved local draft can be restored after an accidental tab or browser closure.</span></span>
+        </span>
+      </span></span></div>
+      <div class="headUtility" aria-label="Tool information">
+        <div class="headInfo"><span class="appVersionIcon"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6.5V3h3.5L17 13.5 13.5 17 3 6.5Z"></path><circle cx="6.1" cy="6.1" r=".8" fill="currentColor" stroke="none"></circle></svg>XPS Tools · v0.4</span><span aria-hidden="true">·</span><span>Local processing</span></div>
+      </div>
+    </header>
+
+    <section class="fbWorkspace">
+      <aside class="fbSidebar card">
+        <details id="dataSection" class="fbSection" open>
+          <summary><span><b>1</b> Data</span><span class="chev">⌄</span></summary>
+          <div class="fbSectionBody">
+            <div class="dataTopRow">
+              <label class="btn small primary fileBtn">Open CSV<input id="csvFiles" type="file" accept=".csv,.txt,.tsv,text/csv,text/plain,text/tab-separated-values" multiple hidden></label>
+              <span id="dataSummary" class="microText">No data loaded</span>
+            </div>
+            <div class="datasetRow">
+              <label class="fieldLabel grow">Dataset<select id="datasetSelect"></select></label>
+            </div>
+            <div class="xyFields">
+              <label class="fieldLabel">X<select id="xSelect"></select></label>
+              <div class="fieldLabel"><span>Y</span><div class="multiSelect" id="yMulti"><button id="yMultiButton" type="button">Select Y columns</button><div id="yMultiMenu" class="multiMenu hidden"></div></div></div>
+            </div>
+            <button id="addCurve" class="btn small primary wideBtn" type="button">Apply to selected panel</button>
+            <div id="panelContentsSummary" class="panelContentsSummary">Panel 1 · no curves</div>
+          </div>
+        </details>
+
+        <details id="layoutSection" class="fbSection">
+          <summary><span><b>2</b> Layout &amp; panels</span><span class="chev">⌄</span></summary>
+          <div class="fbSectionBody layoutPanelBody">
+            <div class="layoutControlRow canvasControlRow">
+              <strong>Canvas</strong>
+              <label class="fieldLabel">Width<input id="canvasW" type="number" min="200" max="6000" step="10"></label>
+              <label class="fieldLabel">Height<input id="canvasH" type="number" min="150" max="6000" step="10"></label>
+              <button id="applyCanvas" class="iconBtn applyIconBtn" type="button" title="Apply canvas size" aria-label="Apply canvas size">✓</button>
+            </div>
+            <div class="layoutControlRow gridControlRow">
+              <strong>Grid</strong>
+              <label class="fieldLabel">Rows<input id="gridRows" type="number" min="1" max="6" value="1"></label>
+              <label class="fieldLabel">Columns<input id="gridCols" type="number" min="1" max="6" value="1"></label>
+              <label class="fieldLabel">H gap<input id="gapX" type="number" min="0" max="120" value="0"></label>
+              <label class="fieldLabel">V gap<input id="gapY" type="number" min="0" max="120" value="0"></label>
+              <button id="applyGrid" class="iconBtn applyIconBtn" type="button" title="Apply grid" aria-label="Apply grid">✓</button>
+            </div>
+            <div class="selectedPanelHeader"><span>Selected panel</span><strong id="panelName" class="selectedPanelBadge">Panel 1</strong><label class="panelLock"><input id="lockPanel" type="checkbox"> Lock</label></div>
+            <div class="panelActionRow">
+              <div class="buttonRow compact"><button id="addPanel" class="iconBtn" title="Add a free panel">＋</button><button id="dupPanel" class="iconBtn" title="Duplicate selected panel">⧉</button><button id="removePanel" class="iconBtn dangerBtn" title="Remove selected panel">×</button></div>
+              <div class="segmented two"><button data-unit="px" class="active" title="Use pixels">px</button><button data-unit="percent" title="Use percentages">%</button></div>
+            </div>
+            <div class="panelGeometryRow">
+              <label class="fieldLabel">X<input id="panelX" type="number" step="0.1"></label><label class="fieldLabel">Y<input id="panelY" type="number" step="0.1"></label><label class="fieldLabel">W<input id="panelW" type="number" step="0.1"></label><label class="fieldLabel">H<input id="panelH" type="number" step="0.1"></label>
+              <button id="applyPanelGeometry" class="iconBtn applyIconBtn" type="button" title="Apply panel geometry" aria-label="Apply panel geometry">✓</button>
+            </div>
+          </div>
+        </details>
+
+        <details id="axesSection" class="fbSection">
+          <summary><span><b>3</b> Axes <strong id="axesPanelBadge" class="summaryPanelBadge">Panel 1</strong></span><span class="chev">⌄</span></summary>
+          <div class="fbSectionBody axesBody">
+            <div class="axesOverview">
+              <div class="borderSquare" aria-label="Visible sides of the selected panel">
+                <button id="borderTop" class="side top active" title="Show or hide top side"></button><button id="borderRight" class="side right active" title="Show or hide right side"></button><button id="borderBottom" class="side bottom active" title="Show or hide bottom side"></button><button id="borderLeft" class="side left active" title="Show or hide left side"></button><span></span>
+              </div>
+              <div class="axisLinkBlock"><span class="fieldCaption">Link axes · Figure</span><div class="twoFields"><label class="fieldLabel">X<select id="xAxisMode"><option value="independent">Independent</option><option value="column">Same column</option><option value="all">All panels</option></select></label><label class="fieldLabel">Y<select id="yAxisMode"><option value="independent">Independent</option><option value="row">Same row</option><option value="all">All panels</option></select></label></div></div>
+            </div>
+
+            <div class="axisCard" data-axis-card="x">
+              <div class="axisCardHeader"><strong>X axis</strong><span id="xLinkStatus" class="axisLinkPill">X · Independent</span><label class="reverseAxis"><input id="reverseX" type="checkbox" checked> Reverse</label></div>
+              <div class="axisRangeBlock"><div class="scaleButtons"><button data-xscale="auto" title="Automatic range">A</button><button data-xscale="tight" class="active" title="Tight range">T</button><button data-xscale="manual" title="Manual range">M</button></div><label class="rangeField"><span>Min</span><input id="xMin" type="number" step="0.1"></label><label class="rangeField"><span>Max</span><input id="xMax" type="number" step="0.1"></label></div>
+              <div class="axisTicksRow"><label class="axisCheck rowTitle"><input id="xTicks" type="checkbox" checked> Ticks</label><label>Major<select id="xTickMode"><option value="auto">Auto</option><option value="count">Count</option><option value="step">Step</option></select></label><label id="xTickCountField" class="tickCountField">Count<input id="xTickCount" type="number" min="2" max="20"></label><label class="tickStepField">Step<input id="xTickStep" type="number" step="0.1"></label><label class="tickStepField">First<input id="xTickFirst" type="number" step="0.1"></label><label>Minor<select id="xMinorTicks"><option value="0">Off</option><option value="1">1</option><option value="2">2</option><option value="4">4</option></select></label><button id="xTickMore" class="moreBtn" type="button" title="Tick lengths, width and color" aria-expanded="false">…</button></div>
+              <div id="xTickAdvanced" class="tickAdvanced hidden"><div class="advancedRow"><label>Major length<input id="xTickLength" type="number" min="0" max="30"></label><label>Minor length<input id="xMinorLength" type="number" min="0" max="30"></label><label>Width<input id="xTickWidth" type="number" min="0.25" max="8" step="0.25"></label><label>Color<input id="xTickColor" class="compactColor" type="color"></label></div></div>
+              <div class="axisLabelsRow"><label class="axisCheck rowTitle"><input id="xLabels" type="checkbox" checked> Labels</label><label>Size<input id="xTickLabelSize" type="number" min="4" max="48"></label><label>Color<input id="xTickLabelColor" class="compactColor" type="color"></label><button id="xTickLabelBold" class="toggleBtn" type="button" title="Bold labels"><b>B</b></button><button id="xTickLabelItalic" class="toggleBtn" type="button" title="Italic labels"><i>I</i></button><span id="xLabelOffsetValue" class="offsetValue">0 px</span><button id="resetXLabelOffset" class="iconBtn resetPositionBtn" type="button" title="Reset label position">↺</button></div>
+            </div>
+
+            <div class="axisCard" data-axis-card="y">
+              <div class="axisCardHeader"><strong>Y axis</strong><span id="yLinkStatus" class="axisLinkPill">Y · Independent</span><label class="reverseAxis"><input id="reverseY" type="checkbox"> Reverse</label></div>
+              <div class="axisRangeBlock"><div class="scaleButtons"><button data-yscale="auto" title="Automatic range">A</button><button data-yscale="tight" class="active" title="Tight range">T</button><button data-yscale="manual" title="Manual range">M</button></div><label class="rangeField"><span>Min</span><input id="yMin" type="number" step="any"></label><label class="rangeField"><span>Max</span><input id="yMax" type="number" step="any"></label></div>
+              <div class="axisTicksRow"><label class="axisCheck rowTitle"><input id="yTicks" type="checkbox"> Ticks</label><label>Major<select id="yTickMode"><option value="auto">Auto</option><option value="count">Count</option><option value="step">Step</option></select></label><label id="yTickCountField" class="tickCountField">Count<input id="yTickCount" type="number" min="2" max="20"></label><label class="tickStepField">Step<input id="yTickStep" type="number" step="any"></label><label class="tickStepField">First<input id="yTickFirst" type="number" step="any"></label><label>Minor<select id="yMinorTicks"><option value="0">Off</option><option value="1">1</option><option value="2">2</option><option value="4">4</option></select></label><button id="yTickMore" class="moreBtn" type="button" title="Tick lengths, width and color" aria-expanded="false">…</button></div>
+              <div id="yTickAdvanced" class="tickAdvanced hidden"><div class="advancedRow"><label>Major length<input id="yTickLength" type="number" min="0" max="30"></label><label>Minor length<input id="yMinorLength" type="number" min="0" max="30"></label><label>Width<input id="yTickWidth" type="number" min="0.25" max="8" step="0.25"></label><label>Color<input id="yTickColor" class="compactColor" type="color"></label></div></div>
+              <div class="axisLabelsRow"><label class="axisCheck rowTitle"><input id="yLabels" type="checkbox"> Labels</label><label>Size<input id="yTickLabelSize" type="number" min="4" max="48"></label><label>Color<input id="yTickLabelColor" class="compactColor" type="color"></label><button id="yTickLabelBold" class="toggleBtn" type="button" title="Bold labels"><b>B</b></button><button id="yTickLabelItalic" class="toggleBtn" type="button" title="Italic labels"><i>I</i></button><span id="yLabelOffsetValue" class="offsetValue">0 px</span><button id="resetYLabelOffset" class="iconBtn resetPositionBtn" type="button" title="Reset label position">↺</button></div>
+            </div>
+          </div>
+        </details>
+
+        <details id="curvesSection" class="fbSection">
+          <summary><span><b>4</b> Curves <strong id="curvesPanelBadge" class="summaryPanelBadge">Panel 1</strong></span><span class="chev">⌄</span></summary>
+          <div class="fbSectionBody">
+            <div id="curveList" class="curveList"><div class="microText">No curve in this panel.</div></div>
+            <div id="curveEditor" class="curveEditor hidden">
+              <div class="curveNameEdit"><label class="fieldLabel grow">Name<input id="curveName" type="text"></label><label class="fieldLabel roleSmall">Role<select id="curveRole"><option value="generic">Generic</option><option value="raw">Raw data</option><option value="fit">Fit envelope</option><option value="background">Background</option><option value="component">Component</option></select></label></div>
+              <div class="styleGrid">
+                <label class="fieldLabel">Line<select id="lineStyle"><option value="solid">Solid</option><option value="dash">Dash</option><option value="dot">Dot</option><option value="none">None</option></select></label>
+                <label class="fieldLabel">Width<input id="lineWidth" type="number" min="0" max="8" step="0.25"></label>
+                <label class="fieldLabel">Color<input id="curveColor" type="color"></label>
+              </div>
+              <div class="styleGrid markerGrid">
+                <label class="fieldLabel">Marker<select id="markerStyle"><option value="none">None</option><option value="circle">Circle</option><option value="square">Square</option><option value="diamond">Diamond</option></select></label>
+                <label class="fieldLabel">Size<input id="markerSize" type="number" min="1" max="12" step="0.5"></label>
+                <label class="fieldLabel">Color<input id="markerColor" type="color"></label>
+              </div>
+              <div class="twoFields"><label class="fieldLabel">Fill<select id="fillMode"><option value="none">None</option><option value="axis">To axis</option><option value="background">To background</option></select></label><label class="fieldLabel">Fill opacity<input id="fillOpacity" type="number" min="0" max="100" step="5"></label></div>
+              <label id="backgroundField" class="fieldLabel hidden">Fill background<select id="backgroundSelect"></select></label>
+              <div class="stackBox"><span class="fieldCaption">Panel stack</span><div class="stackControls"><label class="fieldLabel">Increment<input id="stackIncrement" type="number" step="any" value="500"></label><button id="stackPlus" class="iconBtn" title="Increase stack offset">＋</button><button id="stackReset" class="btn small" type="button">Reset</button></div></div>
+            </div>
+          </div>
+        </details>
+
+        <details class="fbSection">
+          <summary><span><b>5</b> Save &amp; export</span><span class="chev">⌄</span></summary>
+          <div class="fbSectionBody">
+            <div class="buttonGrid"><label class="btn small fileBtn">Load project<input id="loadProject" type="file" accept=".json,.xpsfig-project.json" hidden></label><label class="btn small fileBtn">Load template<input id="loadTemplate" type="file" accept=".json,.xpsfig-template.json" hidden></label><button id="saveProject" class="btn small">Save project</button><button id="saveTemplate" class="btn small">Save template</button></div>
+            <div class="buttonRow"><button id="exportPng" class="btn small primary">Export PNG</button><button id="exportSvg" class="btn small">Export SVG</button></div>
+          </div>
+        </details>
+      </aside>
+
+      <main class="fbStage card">
+        <div class="figureTabsBar">
+          <div class="viewTabs"><button id="viewData" class="viewTab">Data</button><button id="viewFigure" class="viewTab active">Figure</button></div>
+          <div class="historyActions" aria-label="Edit history"><button id="undoAction" class="iconBtn" type="button" title="Undo (Ctrl+Z)" disabled>↶</button><button id="redoAction" class="iconBtn" type="button" title="Redo (Ctrl+Y)" disabled>↷</button><span id="autosaveStatus" class="autosaveStatus" role="status" aria-live="polite">Autosave ready</span></div>
+          <div id="figureContext" class="toolbarContext"><div id="figureTabs" class="figureTabs"></div><div class="figureTabActions"><button id="newFigure" class="iconBtn" title="New figure">＋</button><button id="duplicateFigure" class="iconBtn" title="Duplicate figure">⧉</button><button id="renameFigure" class="iconBtn" title="Rename figure">✎</button><button id="deleteFigure" class="iconBtn dangerBtn" title="Delete figure">×</button></div></div>
+          <div id="dataContext" class="toolbarContext hidden"><span class="contextLabel">Dataset</span><select id="topDatasetSelect"></select><div class="figureTabActions"><button id="newDataset" class="iconBtn" title="New empty dataset">＋</button><button id="renameDataset" class="iconBtn" title="Rename dataset">✎</button><button id="deleteDatasetTop" class="iconBtn dangerBtn" title="Delete dataset">×</button></div></div>
+        </div>
+        <div class="annotationBar">
+          <div id="annotationCreate" class="annotationCreate"><button id="addPanelText" class="btn small">Panel text</button><button id="addFigureText" class="btn small">Figure text</button><button id="addLegend" class="btn small">Legend</button><span class="annotationDivider"></span><button id="addVector" class="iconBtn vectorToolBtn" title="Draw a line or arrow" aria-label="Draw a line or arrow">↗</button></div>
+          <div id="annotationEditor" class="annotationToolbarEditor hidden">
+            <span id="annotationScopeBadge" class="annotationScopeBadge">Panel 1 text</span>
+            <label class="fieldLabel annotationTextField">Text<input id="annotationText" type="text"></label>
+            <label class="fieldLabel">Size<input id="annotationSize" type="number" min="8" max="72" step="1"></label>
+            <label class="fieldLabel rotationField">Rotation<select id="annotationRotation"><option value="0">Horizontal</option><option value="-90">Vertical ↑</option><option value="90">Vertical ↓</option></select></label>
+            <label class="fieldLabel colorField">Color<input id="annotationColor" type="color"></label>
+            <button id="annotationBold" class="toggleBtn" type="button" title="Bold"><b>B</b></button>
+            <button id="annotationItalic" class="toggleBtn" type="button" title="Italic"><i>I</i></button>
+            <button id="annotationSubscript" class="toggleBtn scriptBtn" type="button" title="Format selected characters as subscript">x₂</button>
+            <button id="annotationSuperscript" class="toggleBtn scriptBtn" type="button" title="Format selected characters as superscript">x²</button>
+          </div>
+          <div id="legendEditor" class="annotationToolbarEditor hidden">
+            <span id="legendScopeBadge" class="annotationScopeBadge">Panel 1 legend</span>
+            <label class="fieldLabel">Scope<select id="legendScope"><option value="panel">Panel</option><option value="figure">Figure</option></select></label>
+            <label class="fieldLabel">Mode<select id="legendMode"><option value="auto">Auto</option><option value="manual">Manual</option></select></label>
+            <label class="fieldLabel">Size<input id="legendSize" type="number" min="8" max="72"></label>
+            <button id="legendBackground" class="toggleBtn" type="button" title="Show or hide legend background" aria-pressed="true">▣</button>
+            <button id="editLegendEntries" class="btn small" type="button" aria-expanded="false">Edit entries…</button>
+          </div>
+          <div id="shapeEditor" class="annotationToolbarEditor hidden">
+            <span id="shapeScopeBadge" class="annotationScopeBadge">Panel 1 line</span>
+            <label class="fieldLabel">Scope<select id="shapeScope"><option value="panel">Panel</option><option value="figure">Figure</option></select></label>
+            <label class="fieldLabel colorField">Color<input id="shapeColor" type="color"></label>
+            <label class="fieldLabel">Width<input id="shapeWidth" type="number" min="0.25" max="12" step="0.25"></label>
+            <label class="fieldLabel">Style<select id="shapeStyle"><option value="solid">Solid</option><option value="dash">Dash</option><option value="dot">Dot</option></select></label>
+            <label class="fieldLabel">Start<select id="shapeStartCap"><option value="none">None</option><option value="arrow">Arrow</option></select></label>
+            <label class="fieldLabel">End<select id="shapeEndCap"><option value="none">None</option><option value="arrow">Arrow</option></select></label>
+          </div>
+          <div id="legendEntriesPopover" class="toolbarPopover legendEntriesPopover hidden">
+            <div class="toolbarPopoverHead"><strong>Legend entries</strong><button id="closeLegendEntries" class="iconBtn" type="button" title="Close legend entries">×</button></div>
+            <div id="legendEntriesList" class="legendEntriesList"></div>
+            <div id="legendManualField" class="legendManualActions hidden"><button id="addLegendLine" class="btn small" type="button">＋ Add line</button></div>
+          </div>
+        </div>
+        <div id="canvasPane" class="canvasPane"><div class="paperWrap"><svg id="figureSvg" class="figureSvg" viewBox="0 0 1200 800" role="img" aria-label="XPS figure preview"></svg></div></div>
+        <div id="dataPane" class="dataPane hidden"><div id="dataTableWrap" class="dataTableWrap" tabindex="0"></div></div>
+      </main>
+    </section>
+    <div class="appGlobalFooter"><span>Surface &amp; Interface Hub</span><span>·</span><span>© 2026 Lénaïc Madec</span><span>·</span><a href="../../../about/">Contact</a><span>·</span><a href="../../../about/">About</a></div>
+  </div>
+</div>
+<script src="../../../assets/xps-nav.js"></script>
+<script src="../../../assets/site.js"></script>
+<script src="./figure-builder.js"></script>
+</body>
+</html>

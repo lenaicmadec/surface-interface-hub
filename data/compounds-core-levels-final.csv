@@ -1,0 +1,453 @@
+﻿Compound,Compound name,Compound aliases,Chemical class,Core level,Binding energy (eV),Uncertainty (eV),Peak assignment,Reference,DOI,Calibration
+KPF6,Potassium hexafluorophosphate,,alkali; phosphate,K 2p3/2,295.0,0.1,K⁺,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+KPF6,Potassium hexafluorophosphate,,alkali; phosphate,F 1s,688.2,0.1,PF₆⁻,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+KPF6,Potassium hexafluorophosphate,,alkali; phosphate,P 2p3/2,138.1,0.1,PF₆⁻,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+NaPF6,Sodium hexafluorophosphate,,alkali; phosphate,Na 1s,1073.2,0.1,Na⁺,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+NaPF6,Sodium hexafluorophosphate,,alkali; phosphate,F 1s,688.1,0.1,PF₆⁻,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+NaPF6,Sodium hexafluorophosphate,,alkali; phosphate,P 2p3/2,138.2,0.1,PF₆⁻,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+LiPF6,Lithium hexafluorophosphate,,alkali; phosphate,Li 1s,58.4,0.1,Li⁺,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+LiPF6,Lithium hexafluorophosphate,,alkali; phosphate,F 1s,688.1,0.1,PF₆⁻,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+LiPF6,Lithium hexafluorophosphate,,alkali; phosphate,P 2p3/2,138.3,0.1,PF₆⁻,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+KBF4,Potassium tetrafluoroborate,,alkali; borate,K 2p3/2,294.4,0.3,K⁺,1; 51,10.1021/acsaem.1c02400; 10.1007/s10812-009-9116-z,C 1s (C-C/C-H) = 285.0 eV; C 1s (C-C/C-H) = 284.8 eV
+KBF4,Potassium tetrafluoroborate,,alkali; borate,F 1s,687.9,0.2,BF₄⁻,1; 51,10.1021/acsaem.1c02400; 10.1007/s10812-009-9116-z,C 1s (C-C/C-H) = 285.0 eV; C 1s (C-C/C-H) = 284.8 eV
+KBF4,Potassium tetrafluoroborate,,alkali; borate,B 1s,195.9,0.3,BF₄⁻,1; 51,10.1021/acsaem.1c02400; 10.1007/s10812-009-9116-z,C 1s (C-C/C-H) = 285.0 eV; C 1s (C-C/C-H) = 284.8 eV
+NaBF4,Sodium tetrafluoroborate,,alkali; borate,Na 1s,1073.2,0.1,Na⁺,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+NaBF4,Sodium tetrafluoroborate,,alkali; borate,F 1s,688.0,0.1,BF₄⁻,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+NaBF4,Sodium tetrafluoroborate,,alkali; borate,B 1s,196.2,0.1,BF₄⁻,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+LiBF4,Lithium tetrafluoroborate,,alkali; borate,Li 1s,57.7,0.1,Li⁺,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+LiBF4,Lithium tetrafluoroborate,,alkali; borate,F 1s,688.0,0.1,BF₄⁻,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+LiBF4,Lithium tetrafluoroborate,,alkali; borate,B 1s,196.2,0.1,BF₄⁻,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+KFSI,Potassium bis(fluorosulfonyl)imide,,alkali; sulfonyl,K 2p3/2,293.7,0.1,K⁺,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+KFSI,Potassium bis(fluorosulfonyl)imide,,alkali; sulfonyl,O 1s,533.4,0.1,FSI⁻,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+KFSI,Potassium bis(fluorosulfonyl)imide,,alkali; sulfonyl,F 1s,688.1,0.1,FSI⁻,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+KFSI,Potassium bis(fluorosulfonyl)imide,,alkali; sulfonyl,N 1s,400.0,0.1,FSI⁻,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+KFSI,Potassium bis(fluorosulfonyl)imide,,alkali; sulfonyl,S 2p3/2,170.3,0.1,FSI⁻,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+NaFSI,Sodium bis(fluorosulfonyl)imide,,alkali; sulfonyl,Na 1s,1072.3,0.1,Na⁺,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+NaFSI,Sodium bis(fluorosulfonyl)imide,,alkali; sulfonyl,O 1s,533.3,0.1,FSI⁻,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+NaFSI,Sodium bis(fluorosulfonyl)imide,,alkali; sulfonyl,F 1s,688.2,0.1,FSI⁻,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+NaFSI,Sodium bis(fluorosulfonyl)imide,,alkali; sulfonyl,N 1s,400.1,0.1,FSI⁻,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+NaFSI,Sodium bis(fluorosulfonyl)imide,,alkali; sulfonyl,S 2p3/2,170.4,0.1,FSI⁻,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+LiFSI,Lithium bis(fluorosulfonyl)imide,,alkali; sulfonyl,Li 1s,56.8,0.1,Li⁺,1; 8,10.1021/acsaem.1c02400; 10.1021/ja403082s,C 1s (C-C/C-H) = 285.0 eV; C 1s (C-C/C-H) = 285.0 eV
+LiFSI,Lithium bis(fluorosulfonyl)imide,,alkali; sulfonyl,O 1s,533.3,0.2,FSI⁻,1; 8,10.1021/acsaem.1c02400; 10.1021/ja403082s,C 1s (C-C/C-H) = 285.0 eV; C 1s (C-C/C-H) = 285.0 eV
+LiFSI,Lithium bis(fluorosulfonyl)imide,,alkali; sulfonyl,F 1s,688.0,0.2,FSI⁻,1; 8,10.1021/acsaem.1c02400; 10.1021/ja403082s,C 1s (C-C/C-H) = 285.0 eV; C 1s (C-C/C-H) = 285.0 eV
+LiFSI,Lithium bis(fluorosulfonyl)imide,,alkali; sulfonyl,N 1s,400.0,0.1,FSI⁻,1; 8,10.1021/acsaem.1c02400; 10.1021/ja403082s,C 1s (C-C/C-H) = 285.0 eV; C 1s (C-C/C-H) = 285.0 eV
+LiFSI,Lithium bis(fluorosulfonyl)imide,,alkali; sulfonyl,S 2p3/2,170.3,0.1,FSI⁻,1; 8,10.1021/acsaem.1c02400; 10.1021/ja403082s,C 1s (C-C/C-H) = 285.0 eV; C 1s (C-C/C-H) = 285.0 eV
+KTFSI,Potassium bis(trifluoromethanesulfonyl)imide,Potassium triflimide,alkali; sulfonyl; halogenated compound,K 2p3/2,294.2,0.1,K⁺,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+KTFSI,Potassium bis(trifluoromethanesulfonyl)imide,Potassium triflimide,alkali; sulfonyl; halogenated compound,C 1s,293.5,0.1,TFSI⁻,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+KTFSI,Potassium bis(trifluoromethanesulfonyl)imide,Potassium triflimide,alkali; sulfonyl; halogenated compound,O 1s,533.4,0.1,TFSI⁻,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+KTFSI,Potassium bis(trifluoromethanesulfonyl)imide,Potassium triflimide,alkali; sulfonyl; halogenated compound,F 1s,689.2,0.1,TFSI⁻,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+KTFSI,Potassium bis(trifluoromethanesulfonyl)imide,Potassium triflimide,alkali; sulfonyl; halogenated compound,N 1s,400.2,0.1,TFSI⁻,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+KTFSI,Potassium bis(trifluoromethanesulfonyl)imide,Potassium triflimide,alkali; sulfonyl; halogenated compound,S 2p3/2,169.8,0.1,TFSI⁻,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+NaTFSI,Sodium bis(trifluoromethanesulfonyl)imide,Sodium triflimide,alkali; sulfonyl; halogenated compound,Na 1s,1072.7,0.1,Na⁺,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+NaTFSI,Sodium bis(trifluoromethanesulfonyl)imide,Sodium triflimide,alkali; sulfonyl; halogenated compound,C 1s,293.5,0.1,TFSI⁻,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+NaTFSI,Sodium bis(trifluoromethanesulfonyl)imide,Sodium triflimide,alkali; sulfonyl; halogenated compound,O 1s,533.5,0.1,TFSI⁻,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+NaTFSI,Sodium bis(trifluoromethanesulfonyl)imide,Sodium triflimide,alkali; sulfonyl; halogenated compound,F 1s,689.2,0.1,TFSI⁻,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+NaTFSI,Sodium bis(trifluoromethanesulfonyl)imide,Sodium triflimide,alkali; sulfonyl; halogenated compound,N 1s,400.2,0.1,TFSI⁻,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+NaTFSI,Sodium bis(trifluoromethanesulfonyl)imide,Sodium triflimide,alkali; sulfonyl; halogenated compound,S 2p3/2,169.9,0.1,TFSI⁻,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+LiTFSI,Lithium bis(trifluoromethanesulfonyl)imide,Lithium triflimide,alkali; sulfonyl; halogenated compound,Li 1s,57.0,0.1,Li⁺,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+LiTFSI,Lithium bis(trifluoromethanesulfonyl)imide,Lithium triflimide,alkali; sulfonyl; halogenated compound,C 1s,293.5,0.1,TFSI⁻,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+LiTFSI,Lithium bis(trifluoromethanesulfonyl)imide,Lithium triflimide,alkali; sulfonyl; halogenated compound,O 1s,533.5,0.1,TFSI⁻,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+LiTFSI,Lithium bis(trifluoromethanesulfonyl)imide,Lithium triflimide,alkali; sulfonyl; halogenated compound,F 1s,689.2,0.1,TFSI⁻,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+LiTFSI,Lithium bis(trifluoromethanesulfonyl)imide,Lithium triflimide,alkali; sulfonyl; halogenated compound,N 1s,400.3,0.1,TFSI⁻,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+LiTFSI,Lithium bis(trifluoromethanesulfonyl)imide,Lithium triflimide,alkali; sulfonyl; halogenated compound,S 2p3/2,170.0,0.1,TFSI⁻,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+KF,Potassium fluoride,,alkali; fluoride,K 2p3/2,293.7,0.1,K⁺,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+KF,Potassium fluoride,,alkali; fluoride,F 1s,684.2,0.1,F⁻,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+NaF,Sodium fluoride,,alkali; fluoride,Na 1s,1071.2,0.1,Na⁺,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+NaF,Sodium fluoride,,alkali; fluoride,F 1s,684.8,0.1,F⁻,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+LiF,Lithium fluoride,,alkali; fluoride,Li 1s,56.2,0.1,Li⁺,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+LiF,Lithium fluoride,,alkali; fluoride,F 1s,685.1,0.1,F⁻,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+K2CO3,Potassium carbonate,,alkali; carbonate,K 2p3/2,292.4,0.3,K⁺,1; 5; 23,10.1021/acsaem.1c02400; 10.2478/BF02475578; 10.1021/acsami.4c17461,C 1s (C-C/C-H) = 285.0 eV; C 1s (C-C/C-H) = 285.0 eV; C 1s (C-C/C-H) = 285.0 eV
+K2CO3,Potassium carbonate,,alkali; carbonate,C 1s,288.6,0.2,CO₃²⁻,1; 5; 23,10.1021/acsaem.1c02400; 10.2478/BF02475578; 10.1021/acsami.4c17461,C 1s (C-C/C-H) = 285.0 eV; C 1s (C-C/C-H) = 285.0 eV; C 1s (C-C/C-H) = 285.0 eV
+K2CO3,Potassium carbonate,,alkali; carbonate,O 1s,530.4,0.4,CO₃²⁻,1; 5; 23,10.1021/acsaem.1c02400; 10.2478/BF02475578; 10.1021/acsami.4c17461,C 1s (C-C/C-H) = 285.0 eV; C 1s (C-C/C-H) = 285.0 eV; C 1s (C-C/C-H) = 285.0 eV
+Na2CO3,Sodium carbonate,,alkali; carbonate,Na 1s,1071.0,0.1,Na⁺,1; 5,10.1021/acsaem.1c02400; 10.2478/BF02475578,C 1s (C-C/C-H) = 285.0 eV; C 1s (C-C/C-H) = 285.0 eV
+Na2CO3,Sodium carbonate,,alkali; carbonate,C 1s,289.4,0.2,CO₃²⁻,1; 5,10.1021/acsaem.1c02400; 10.2478/BF02475578,C 1s (C-C/C-H) = 285.0 eV; C 1s (C-C/C-H) = 285.0 eV
+Na2CO3,Sodium carbonate,,alkali; carbonate,O 1s,531.1,0.2,CO₃²⁻,1; 5,10.1021/acsaem.1c02400; 10.2478/BF02475578,C 1s (C-C/C-H) = 285.0 eV; C 1s (C-C/C-H) = 285.0 eV
+Li2CO3,Lithium carbonate,,alkali; carbonate,Li 1s,55.4,0.2,Li⁺,1; 5,10.1021/acsaem.1c02400; 10.2478/BF02475578,C 1s (C-C/C-H) = 285.0 eV; C 1s (C-C/C-H) = 285.0 eV
+Li2CO3,Lithium carbonate,,alkali; carbonate,C 1s,290.1,0.1,CO₃²⁻,1; 5,10.1021/acsaem.1c02400; 10.2478/BF02475578,C 1s (C-C/C-H) = 285.0 eV; C 1s (C-C/C-H) = 285.0 eV
+Li2CO3,Lithium carbonate,,alkali; carbonate,O 1s,531.8,0.1,CO₃²⁻,1; 5,10.1021/acsaem.1c02400; 10.2478/BF02475578,C 1s (C-C/C-H) = 285.0 eV; C 1s (C-C/C-H) = 285.0 eV
+KOH,Potassium hydroxide,Caustic potash,alkali; hydroxide,K 2p3/2,292.1,0.1,K⁺,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+KOH,Potassium hydroxide,Caustic potash,alkali; hydroxide,O 1s,529.3,0.1,OH⁻,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+NaOH,Sodium hydroxide,Caustic soda,alkali; hydroxide,Na 1s,1070.1,0.1,Na⁺,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+NaOH,Sodium hydroxide,Caustic soda,alkali; hydroxide,O 1s,529.8,0.1,OH⁻,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+LiOH,Lithium hydroxide,,alkali; hydroxide,Li 1s,54.8,0.2,Li⁺,1; 33,10.1021/acsaem.1c02400; 10.1021/cm0311269,C 1s (C-C/C-H) = 285.0 eV; C 1s (C-C/C-H) = 285.0 eV
+LiOH,Lithium hydroxide,,alkali; hydroxide,O 1s,531.2,0.2,OH⁻,1; 33,10.1021/acsaem.1c02400; 10.1021/cm0311269,C 1s (C-C/C-H) = 285.0 eV; C 1s (C-C/C-H) = 285.0 eV
+CH3OK,Potassium methoxide,Potassium methanolate,alkali; alcohol,K 2p3/2,292.6,0.1,K⁺,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+CH3OK,Potassium methoxide,Potassium methanolate,alkali; alcohol,C 1s,286.1,0.1,CH₃O⁻,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+CH3OK,Potassium methoxide,Potassium methanolate,alkali; alcohol,O 1s,531.4,0.1,CH₃O⁻,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+CH3CH2OK,Potassium ethoxide,Potassium ethanolate,alkali; alcohol,K 2p3/2,292.7,0.1,K⁺,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+CH3CH2OK,Potassium ethoxide,Potassium ethanolate,alkali; alcohol,C 1s,285.0,0.1,CH₃,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+CH3CH2OK,Potassium ethoxide,Potassium ethanolate,alkali; alcohol,C 1s,286.1,0.1,CO⁻,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+CH3CH2OK,Potassium ethoxide,Potassium ethanolate,alkali; alcohol,O 1s,531.3,0.1,CO⁻,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+CH3CH2COOK,Potassium propionate,Potassium propanoate,alkali; carboxylic acid,K 2p3/2,292.5,0.1,K⁺,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+CH3CH2COOK,Potassium propionate,Potassium propanoate,alkali; carboxylic acid,C 1s,285.0,0.1,"CC, CH",1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+CH3CH2COOK,Potassium propionate,Potassium propanoate,alkali; carboxylic acid,C 1s,288.1,0.1,CO₂⁻,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+CH3CH2COOK,Potassium propionate,Potassium propanoate,alkali; carboxylic acid,O 1s,531.0,0.1,CO₂⁻,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+K2C2O4,Potassium oxalate,Dipotassium oxalate,alkali; oxalate,K 2p3/2,292.6,0.2,K⁺,1; 23,10.1021/acsaem.1c02400; 10.1021/acsami.4c17461,C 1s (C-C/C-H) = 285.0 eV; C 1s (C-C/C-H) = 285.0 eV
+K2C2O4,Potassium oxalate,Dipotassium oxalate,alkali; oxalate,C 1s,288.1,0.1,CO₂⁻,1; 23,10.1021/acsaem.1c02400; 10.1021/acsami.4c17461,C 1s (C-C/C-H) = 285.0 eV; C 1s (C-C/C-H) = 285.0 eV
+K2C2O4,Potassium oxalate,Dipotassium oxalate,alkali; oxalate,O 1s,531.2,0.2,CO₂⁻,1; 23,10.1021/acsaem.1c02400; 10.1021/acsami.4c17461,C 1s (C-C/C-H) = 285.0 eV; C 1s (C-C/C-H) = 285.0 eV
+CH3OCOOK,Potassium methyl carbonate,,alkali; carbonate,K 2p3/2,292.1,0.1,K⁺,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+CH3OCOOK,Potassium methyl carbonate,,alkali; carbonate,C 1s,286.3,0.1,CO,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+CH3OCOOK,Potassium methyl carbonate,,alkali; carbonate,C 1s,289.4,0.1,CO₃⁻,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+CH3OCOOK,Potassium methyl carbonate,,alkali; carbonate,O 1s,531.1,0.1,CO₃⁻,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+CH3OCOOK,Potassium methyl carbonate,,alkali; carbonate,O 1s,532.9,0.1,CO,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+CMC,Sodium carboxymethyl cellulose,NaCMC; Sodium CMC; Carboxymethylcellulose sodium,cellulose; polymer,C 1s,286.5,0.1,CO,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+CMC,Sodium carboxymethyl cellulose,NaCMC; Sodium CMC; Carboxymethylcellulose sodium,cellulose; polymer,C 1s,288.2,0.1,CO₂,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+CMC,Sodium carboxymethyl cellulose,NaCMC; Sodium CMC; Carboxymethylcellulose sodium,cellulose; polymer,O 1s,531.5,0.1,CO₂,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+CMC,Sodium carboxymethyl cellulose,NaCMC; Sodium CMC; Carboxymethylcellulose sodium,cellulose; polymer,O 1s,533.2,0.1,CO,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+PEO,Poly(ethylene oxide),PEO; Polyethylene oxide,ether; polymer,C 1s,286.4,0.1,CO,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+PEO,Poly(ethylene oxide),PEO; Polyethylene oxide,ether; polymer,O 1s,532.6,0.1,CO,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+PVDF,Poly(vinylidene fluoride),PVDF,halogenated compound; polymer,C 1s,286.3,0.1,CH₂,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+PVDF,Poly(vinylidene fluoride),PVDF,halogenated compound; polymer,C 1s,290.8,0.1,CF₂,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+PVDF,Poly(vinylidene fluoride),PVDF,halogenated compound; polymer,F 1s,687.7,0.1,CF₂,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+PTFE,Polytetrafluoroethylene,PTFE,halogenated compound; polymer,C 1s,292.5,0.1,CF₂,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+PTFE,Polytetrafluoroethylene,PTFE,halogenated compound; polymer,F 1s,689.7,0.1,CF₂,1,10.1021/acsaem.1c02400,C 1s (C-C/C-H) = 285.0 eV
+Graphite,Graphite,,element,C 1s,284.4,0.1,C sp²,2,10.1016/S0169-4332(00)00525-0,Graphite C 1s = 284.4 eV
+Graphite,Graphite,,element,C 1s,285.0,0.1,"CC, CH",2,10.1016/S0169-4332(00)00525-0,Graphite C 1s = 284.4 eV
+Graphite,Graphite,,element,C 1s,286.2,0.1,"C-OH, C-O-C",2,10.1016/S0169-4332(00)00525-0,Graphite C 1s = 284.4 eV
+Graphite,Graphite,,element,C 1s,287.7,0.05,C=O,2,10.1016/S0169-4332(00)00525-0,Graphite C 1s = 284.4 eV
+Graphite,Graphite,,element,C 1s,288.9,0.25,"COOH, COOR",2,10.1016/S0169-4332(00)00525-0,Graphite C 1s = 284.4 eV
+Graphite,Graphite,,element,C 1s,290.5,0.15,"CO₃, π–π*",2,10.1016/S0169-4332(00)00525-0,Graphite C 1s = 284.4 eV
+CH3OCO2Li,Lithium methyl carbonate,MeOCO₂Li; LMC,alkali; carbonate,Li 1s,55.5,0.2,Li⁺,3; 52,10.1021/jp051626k; 10.1038/s41557-019-0304-z,C 1s (C-C/C-H) = 285.0 eV; C 1s (C-C/C-H) = 284.8 eV
+CH3OCO2Li,Lithium methyl carbonate,MeOCO₂Li; LMC,alkali; carbonate,C 1s,286.6,0.2,CO,3; 52,10.1021/jp051626k; 10.1038/s41557-019-0304-z,C 1s (C-C/C-H) = 285.0 eV; C 1s (C-C/C-H) = 284.8 eV
+CH3OCO2Li,Lithium methyl carbonate,MeOCO₂Li; LMC,alkali; carbonate,C 1s,290.1,0.2,CO₃,3; 52,10.1021/jp051626k; 10.1038/s41557-019-0304-z,C 1s (C-C/C-H) = 285.0 eV; C 1s (C-C/C-H) = 284.8 eV
+CH3OCO2Li,Lithium methyl carbonate,MeOCO₂Li; LMC,alkali; carbonate,O 1s,531.8,0.2,CO₃,3; 52,10.1021/jp051626k; 10.1038/s41557-019-0304-z,C 1s (C-C/C-H) = 285.0 eV; C 1s (C-C/C-H) = 284.8 eV
+CH3OCO2Li,Lithium methyl carbonate,MeOCO₂Li; LMC,alkali; carbonate,O 1s,533.3,0.2,CO,3; 52,10.1021/jp051626k; 10.1038/s41557-019-0304-z,C 1s (C-C/C-H) = 285.0 eV; C 1s (C-C/C-H) = 284.8 eV
+CH3CH2OCO2Li,Lithium ethyl carbonate,EtOCO₂Li,alkali; carbonate,Li 1s,55.5,0.15,Li⁺,3,10.1021/jp051626k,C 1s (C-C/C-H) = 285.0 eV
+CH3CH2OCO2Li,Lithium ethyl carbonate,EtOCO₂Li,alkali; carbonate,C 1s,285.2,0.15,"CC, CH",3,10.1021/jp051626k,C 1s (C-C/C-H) = 285.0 eV
+CH3CH2OCO2Li,Lithium ethyl carbonate,EtOCO₂Li,alkali; carbonate,C 1s,286.4,0.15,CO,3,10.1021/jp051626k,C 1s (C-C/C-H) = 285.0 eV
+CH3CH2OCO2Li,Lithium ethyl carbonate,EtOCO₂Li,alkali; carbonate,C 1s,290.1,0.15,CO₃,3,10.1021/jp051626k,C 1s (C-C/C-H) = 285.0 eV
+CH3CH2OCO2Li,Lithium ethyl carbonate,EtOCO₂Li,alkali; carbonate,O 1s,531.8,0.15,CO₃,3,10.1021/jp051626k,C 1s (C-C/C-H) = 285.0 eV
+CH3CH2OCO2Li,Lithium ethyl carbonate,EtOCO₂Li,alkali; carbonate,O 1s,533.3,0.15,CO,3,10.1021/jp051626k,C 1s (C-C/C-H) = 285.0 eV
+VC-Polymer,Poly(vinylene carbonate),Poly-VC; Poly(VC); poly(vinylene carbonate),carbonate; polymer,C 1s,288.0,0.15,CO,4,10.1149/1.3029674,C 1s (C-C/C-H) = 285.0 eV
+VC-Polymer,Poly(vinylene carbonate),Poly-VC; Poly(VC); poly(vinylene carbonate),carbonate; polymer,C 1s,291.3,0.15,CO₃,4,10.1149/1.3029674,C 1s (C-C/C-H) = 285.0 eV
+VC-Polymer,Poly(vinylene carbonate),Poly-VC; Poly(VC); poly(vinylene carbonate),carbonate; polymer,O 1s,533.0,0.15,C=O,4,10.1149/1.3029674,C 1s (C-C/C-H) = 285.0 eV
+VC-Polymer,Poly(vinylene carbonate),Poly-VC; Poly(VC); poly(vinylene carbonate),carbonate; polymer,O 1s,534.7,0.15,ring CO,4,10.1149/1.3029674,C 1s (C-C/C-H) = 285.0 eV
+Na2CO3,Sodium carbonate,,alkali; carbonate,Na 2s,63.0,0.1,Na⁺,5,10.2478/BF02475578,C 1s (C-C/C-H) = 285.0 eV
+NaHCO3,sodium hydrogen carbonate,SODIUM BICARBONATE; Sodium hydrogen carbonate; Baking soda; Sodium hydrogencarbonate; Bicarbonate of soda,alkali; carbonate,C 1s,289.9,0.1,C(OH)O₂⁻,5,10.2478/BF02475578,C 1s (C-C/C-H) = 285.0 eV
+NaHCO3,sodium hydrogen carbonate,SODIUM BICARBONATE; Sodium hydrogen carbonate; Baking soda; Sodium hydrogencarbonate; Bicarbonate of soda,alkali; carbonate,O 1s,531.6,0.1,CO₂⁻,5,10.2478/BF02475578,C 1s (C-C/C-H) = 285.0 eV
+NaHCO3,sodium hydrogen carbonate,SODIUM BICARBONATE; Sodium hydrogen carbonate; Baking soda; Sodium hydrogencarbonate; Bicarbonate of soda,alkali; carbonate,O 1s,532.9,0.1,COH,5,10.2478/BF02475578,C 1s (C-C/C-H) = 285.0 eV
+NaHCO3,sodium hydrogen carbonate,SODIUM BICARBONATE; Sodium hydrogen carbonate; Baking soda; Sodium hydrogencarbonate; Bicarbonate of soda,alkali; carbonate,Na 1s,1071.2,0.1,Na⁺,5,10.2478/BF02475578,C 1s (C-C/C-H) = 285.0 eV
+NaHCO3,sodium hydrogen carbonate,SODIUM BICARBONATE; Sodium hydrogen carbonate; Baking soda; Sodium hydrogencarbonate; Bicarbonate of soda,alkali; carbonate,Na 2s,63.2,0.1,Na⁺,5,10.2478/BF02475578,C 1s (C-C/C-H) = 285.0 eV
+KHCO3,potassium hydrogen carbonate,"Potassium bicarbonate; Potassium hydrogen carbonate; Potassium hydrogencarbonate; Monopotassium carbonate; CARBONIC ACID, MONOPOTASSIUM SALT",alkali; carbonate,C 1s,289.9,0.1,C(OH)O₂⁻,5; 22; 23,10.2478/BF02475578; 10.1039/D6LF00207B; 10.1021/acsami.4c17461,C 1s (C-C/C-H) = 285.0 eV; C 1s (C-C/C-H) = 285.0 eV; C 1s (C-C/C-H) = 285.0 eV
+KHCO3,potassium hydrogen carbonate,"Potassium bicarbonate; Potassium hydrogen carbonate; Potassium hydrogencarbonate; Monopotassium carbonate; CARBONIC ACID, MONOPOTASSIUM SALT",alkali; carbonate,O 1s,531.3,0.4,CO₂⁻,5; 22; 23,10.2478/BF02475578; 10.1039/D6LF00207B; 10.1021/acsami.4c17461,C 1s (C-C/C-H) = 285.0 eV; C 1s (C-C/C-H) = 285.0 eV; C 1s (C-C/C-H) = 285.0 eV
+KHCO3,potassium hydrogen carbonate,"Potassium bicarbonate; Potassium hydrogen carbonate; Potassium hydrogencarbonate; Monopotassium carbonate; CARBONIC ACID, MONOPOTASSIUM SALT",alkali; carbonate,O 1s,532.9,0.2,COH,5; 22; 23,10.2478/BF02475578; 10.1039/D6LF00207B; 10.1021/acsami.4c17461,C 1s (C-C/C-H) = 285.0 eV; C 1s (C-C/C-H) = 285.0 eV; C 1s (C-C/C-H) = 285.0 eV
+KHCO3,potassium hydrogen carbonate,"Potassium bicarbonate; Potassium hydrogen carbonate; Potassium hydrogencarbonate; Monopotassium carbonate; CARBONIC ACID, MONOPOTASSIUM SALT",alkali; carbonate,K 2p3/2,292.8,0.2,K⁺,5; 22; 23,10.2478/BF02475578; 10.1039/D6LF00207B; 10.1021/acsami.4c17461,C 1s (C-C/C-H) = 285.0 eV; C 1s (C-C/C-H) = 285.0 eV; C 1s (C-C/C-H) = 285.0 eV
+Rb2CO3,bis(rubidium(1+));carbonate,"Rubidium carbonate; Dirubidium carbonate; Dirubidium monocarbonate; CARBONIC ACID, DIRUBIDIUM SALT; Carbonic acid, rubidium salt (1:2)",alkali; carbonate,C 1s,288.4,0.1,CO₃²⁻,5,10.2478/BF02475578,C 1s (C-C/C-H) = 285.0 eV
+Rb2CO3,bis(rubidium(1+));carbonate,"Rubidium carbonate; Dirubidium carbonate; Dirubidium monocarbonate; CARBONIC ACID, DIRUBIDIUM SALT; Carbonic acid, rubidium salt (1:2)",alkali; carbonate,O 1s,530.1,0.1,CO₃²⁻,5,10.2478/BF02475578,C 1s (C-C/C-H) = 285.0 eV
+Rb2CO3,bis(rubidium(1+));carbonate,"Rubidium carbonate; Dirubidium carbonate; Dirubidium monocarbonate; CARBONIC ACID, DIRUBIDIUM SALT; Carbonic acid, rubidium salt (1:2)",alkali; carbonate,Rb 3d5/2,109.4,0.1,Rb⁺,5,10.2478/BF02475578,C 1s (C-C/C-H) = 285.0 eV
+Cs2CO3,dicesium carbonate,CESIUM CARBONATE,alkali; carbonate,C 1s,288.1,0.1,CO₃²⁻,5,10.2478/BF02475578,C 1s (C-C/C-H) = 285.0 eV
+Cs2CO3,dicesium carbonate,CESIUM CARBONATE,alkali; carbonate,O 1s,529.9,0.1,CO₃²⁻,5,10.2478/BF02475578,C 1s (C-C/C-H) = 285.0 eV
+Cs2CO3,dicesium carbonate,CESIUM CARBONATE,alkali; carbonate,Cs 3d5/2,723.8,0.1,Cs⁺,5,10.2478/BF02475578,C 1s (C-C/C-H) = 285.0 eV
+LiMn1.6Ni0.4O4,lithium manganese nickel oxide,LNMO,alkali; oxide,Mn 3p,50.0,0.15,Mn⁴⁺,6,10.1021/jp1026509,C 1s (C-C/C-H) = 285.0 eV
+LiMn1.6Ni0.4O4,lithium manganese nickel oxide,LNMO,alkali; oxide,Mn 3p,48.5,0.15,Mn³⁺,6,10.1021/jp1026509,C 1s (C-C/C-H) = 285.0 eV
+LiMn1.6Ni0.4O4,lithium manganese nickel oxide,LNMO,alkali; oxide,Mn 3p,62.5,0.2,shake up,6,10.1021/jp1026509,C 1s (C-C/C-H) = 285.0 eV
+LiMn1.6Ni0.4O4,lithium manganese nickel oxide,LNMO,alkali; oxide,Ni 3p,67.3,0.15,Ni²⁺,6,10.1021/jp1026509,C 1s (C-C/C-H) = 285.0 eV
+LiMn1.6Ni0.4O4,lithium manganese nickel oxide,LNMO,alkali; oxide,Li 1s,54.1,0.15,Li⁺,6,10.1021/jp1026509,C 1s (C-C/C-H) = 285.0 eV
+LiMn1.6Ni0.4O4,lithium manganese nickel oxide,LNMO,alkali; oxide,Ni 3p,69.0,0.15,Ni⁴⁺ (ox.),6,10.1021/jp1026509,C 1s (C-C/C-H) = 285.0 eV
+LiMn1.6Ni0.4O4,lithium manganese nickel oxide,LNMO,alkali; oxide,O 1s,529.9,0.15,O²⁻,6,10.1021/jp1026509,C 1s (C-C/C-H) = 285.0 eV
+Li4Ti5O12,lithium titanium oxide,lithium titanate; LTO,alkali; oxide,Ti 2p3/2,458.6,0.15,Ti⁴⁺,6,10.1021/jp1026509,C 1s (C-C/C-H) = 285.0 eV
+Li4Ti5O12,lithium titanium oxide,lithium titanate; LTO,alkali; oxide,Ti 2p3/2,456.8,0.15,Ti³⁺ (red.),6,10.1021/jp1026509,C 1s (C-C/C-H) = 285.0 eV
+Li4Ti5O12,lithium titanium oxide,lithium titanate; LTO,alkali; oxide,Ti 3s,62.1,0.15,Ti⁴⁺,6,10.1021/jp1026509,C 1s (C-C/C-H) = 285.0 eV
+Li4Ti5O12,lithium titanium oxide,lithium titanate; LTO,alkali; oxide,Li 1s,54.6,0.15,Li⁺,6,10.1021/jp1026509,C 1s (C-C/C-H) = 285.0 eV
+Li4Ti5O12,lithium titanium oxide,lithium titanate; LTO,alkali; oxide,O 1s,529.9,0.15,O²⁻,6,10.1021/jp1026509,C 1s (C-C/C-H) = 285.0 eV
+Li2SO4,dilithium sulfate,"Lithium sulfate; Lithium sulphate; dilithium sulfate; Sulfuric acid, dilithium salt",alkali; sulfate,S 2p3/2,169.6,0.15,SO₄²⁻,7,10.1016/S0378-7753(03)00291-X,Not reported
+Na2SO4,disodium sulfate,SODIUM SULFATE; Disodium sulfate; Sodium sulfate anhydrous; Sodium sulfate,alkali; sulfate,S 2p3/2,169.4,0.15,SO₄²⁻,7,10.1016/S0378-7753(03)00291-X,Not reported
+Na2SO3,disodium sulfite,SODIUM SULFITE; Disodium sulfite; Sodium sulfite anhydrous; Sodium sulphite,alkali; sulfite,S 2p3/2,167.8,0.15,SO₃²⁻,7,10.1016/S0378-7753(03)00291-X,Not reported
+S,sulfur,,sulfur,S 2p3/2,164.0,0.15,S⁰,7,10.1016/S0378-7753(03)00291-X,Not reported
+Na2S,disodium sulfide,Sodium sulphide; Sodium sulfuret; sodium sulfide anhydrous; sodium monosulphide,alkali; sulfide,S 2p3/2,161.4,0.15,S²⁻,7,10.1016/S0378-7753(03)00291-X,Not reported
+Si,silicon,Silicon metal,IV semiconductor,Si 2p3/2,99.4,0.15,Si⁰,10,10.1103/PhysRevB.38.6084,Bulk Si 2p3/2 (ΔBE)
+Si,silicon,Silicon metal,IV semiconductor,Si 2p3/2,100.4,0.15,Si⁺,10,10.1103/PhysRevB.38.6084,Bulk Si 2p3/2 (ΔBE)
+Si,silicon,Silicon metal,IV semiconductor,Si 2p3/2,101.2,0.15,Si²⁺,10,10.1103/PhysRevB.38.6084,Bulk Si 2p3/2 (ΔBE)
+Si,silicon,Silicon metal,IV semiconductor,Si 2p3/2,101.9,0.15,Si³⁺,10,10.1103/PhysRevB.38.6084,Bulk Si 2p3/2 (ΔBE)
+Si,silicon,Silicon metal,IV semiconductor,Si 2p3/2,103.3,0.15,Si⁴⁺,10,10.1103/PhysRevB.38.6084,Bulk Si 2p3/2 (ΔBE)
+SiO2,dioxosilane,SILICON DIOXIDE; Silica; Dioxosilane; Silicic anhydride; Diatomaceous silica,oxide,Si 2p3/2,103.5,0.15,SiO₂,8,10.1021/ja403082s,C 1s (C-C/C-H) = 285.0 eV
+SiOxFy,Silicon oxyfluoride,,fluoride; oxide,Si 2p3/2,106.0,0.2,SiOₓFᵧ,8,10.1021/ja403082s,C 1s (C-C/C-H) = 285.0 eV
+LixSi,Lithiated silicon,,alloy; intermetallic; silicide,Si 2p3/2,96.8,0.6,LiₓSi,8,10.1021/ja403082s,C 1s (C-C/C-H) = 285.0 eV
+Li2SiO3,Lithium metasilicate,,alkali; silicate,Si 2p3/2,102.3,0.1,Li₂SiO₃,9,10.1021/cm2034195,C 1s (C-C/C-H) = 285.0 eV
+Li4SiO4,Lithium orthosilicate,,alkali; silicate,Si 2p3/2,100.9,0.1,Li₄SiO₄,9,10.1021/cm2034195,C 1s (C-C/C-H) = 285.0 eV
+Ni,nickel,nickel metal; metallic nickel; nickel particles,element,Ni 2p3/2,852.6,0.2,Ni⁰ (peak 1),11; 13; 14,10.1002/sia.3026; 10.1039/c2cp22419d; 10.1016/j.apsusc.2010.10.051,Au 4f7/2 = 83.95 eV; Au 4f7/2 = 83.95 eV; Au 4f7/2 = 83.95 eV
+NiO,nickel(II) oxide,nickel monoxide; nickel oxide; nickelous oxide; oxonickel,oxide,Ni 2p3/2,853.7,0.2,Ni²⁺ (peak 1),11; 13; 14,10.1002/sia.3026; 10.1039/c2cp22419d; 10.1016/j.apsusc.2010.10.051,C 1s (C-C/C-H) = 284.8 eV; C 1s (C-C/C-H) = 284.8 eV; C 1s (C-C/C-H) = 284.8 eV
+NiO,nickel(II) oxide,nickel monoxide; nickel oxide; nickelous oxide; oxonickel,oxide,O 1s,529.3,0.05,O²⁻,11; 14,10.1002/sia.3026; 10.1016/j.apsusc.2010.10.051,C 1s (C-C/C-H) = 284.8 eV; C 1s (C-C/C-H) = 284.8 eV
+Ni(OH)2,nickel(II) hydroxide,nickel hydroxide; nickel dihydroxide; nickelous hydroxide,hydroxide,Ni 2p3/2,854.9,0.15,Ni²⁺ (peak 1),11; 14,10.1002/sia.3026; 10.1016/j.apsusc.2010.10.051,C 1s (C-C/C-H) = 284.8 eV; C 1s (C-C/C-H) = 284.8 eV
+Ni(OH)2,nickel(II) hydroxide,nickel hydroxide; nickel dihydroxide; nickelous hydroxide,hydroxide,O 1s,530.9,0.1,OH⁻,11; 14,10.1002/sia.3026; 10.1016/j.apsusc.2010.10.051,C 1s (C-C/C-H) = 284.8 eV; C 1s (C-C/C-H) = 284.8 eV
+γ-NiOOH,gamma nickel oxyhydroxide,gamma-NiOOH; γ-nickel oxyhydroxide; nickel oxyhydroxide; nickel(III) oxide hydroxide,oxide; hydroxide,Ni 2p3/2,854.6,0.1,Ni³⁺ (peak 1),12; 14,10.1016/j.susc.2006.01.041; 10.1016/j.apsusc.2010.10.051,C 1s = 284.8 eV; C 1s (C-C/C-H) = 284.8 eV
+β-NiOOH,beta nickel oxyhydroxide,beta-NiOOH; β-nickel oxyhydroxide; nickel oxyhydroxide; nickel(III) oxide hydroxide,oxide; hydroxide,Ni 2p3/2,854.6,0.1,Ni³⁺ (peak 1),12; 14,10.1016/j.susc.2006.01.041; 10.1016/j.apsusc.2010.10.051,C 1s = 284.8 eV; C 1s (C-C/C-H) = 284.8 eV
+β-NiOOH,beta nickel oxyhydroxide,beta-NiOOH; β-nickel oxyhydroxide; nickel oxyhydroxide; nickel(III) oxide hydroxide,oxide; hydroxide,Ni 2p3/2,854.9,0.1,Ni²⁺ (peak 1),12; 14,10.1016/j.susc.2006.01.041; 10.1016/j.apsusc.2010.10.051,C 1s = 284.8 eV; C 1s (C-C/C-H) = 284.8 eV
+NiF2,difluoronickel,NICKEL FLUORIDE; difluoronickel; Nickel difluoride; Nickelous fluoride; Nickel(II) fluoride (1:2),fluoride,Ni 2p3/2,858.1,0.1,Ni²⁺ (peak 1),13,10.1039/c2cp22419d,F 1s = 685.23 eV
+NiF2,difluoronickel,NICKEL FLUORIDE; difluoronickel; Nickel difluoride; Nickelous fluoride; Nickel(II) fluoride (1:2),fluoride,F 1s,685.2,0.1,F⁻,13,10.1039/c2cp22419d,F 1s = 685.23 eV
+NiCl2,dichloronickel,NICKEL CHLORIDE; Nickel(II) chloride; Nickel dichloride; dichloronickel; Nickelous chloride,chloride,Ni 2p3/2,856.8,0.1,Ni²⁺ (peak 1),13,10.1039/c2cp22419d,C 1s (C-C/C-H) = 284.8 eV
+NiCl2,dichloronickel,NICKEL CHLORIDE; Nickel(II) chloride; Nickel dichloride; dichloronickel; Nickelous chloride,chloride,Cl 2p3/2,199.9,0.1,Cl⁻,13,10.1039/c2cp22419d,C 1s (C-C/C-H) = 284.8 eV
+NiBr2,dibromonickel,Nickel(II) bromide; Dibromonickel; Nickel dibromide; Nickelous bromide; Br2Ni,bromide,Ni 2p3/2,855.2,0.1,Ni²⁺ (peak 1),13,10.1039/c2cp22419d,C 1s (C-C/C-H) = 284.8 eV
+NiBr2,dibromonickel,Nickel(II) bromide; Dibromonickel; Nickel dibromide; Nickelous bromide; Br2Ni,bromide,Br 3d5/2,69.2,0.1,Br⁻,13,10.1039/c2cp22419d,C 1s (C-C/C-H) = 284.8 eV
+NiI2,Nickel(II) iodide,,iodide,Ni 2p3/2,854.5,0.1,Ni²⁺ (peak 1),13,10.1039/c2cp22419d,C 1s (C-C/C-H) = 284.8 eV
+NiI2,Nickel(II) iodide,,iodide,I 3d5/2,619.5,0.1,I⁻,13,10.1039/c2cp22419d,C 1s (C-C/C-H) = 284.8 eV
+Cr,chromium,chromium metal,element,Cr 2p3/2,574.2,0.1,Cr⁰ (peak 1),14,10.1016/j.apsusc.2010.10.051,Au 4f7/2 = 83.95 eV
+Cr2O3,chromium(III) oxide,chromia; eskolaite; chromium sesquioxide,oxide,Cr 2p3/2,575.7,0.1,Cr³⁺ (peak 1),14,10.1016/j.apsusc.2010.10.051,C 1s (C-C/C-H) = 284.8 eV
+Cr2O3,chromium(III) oxide,chromia; eskolaite; chromium sesquioxide,oxide,O 1s,530.0,0.15,O²⁻,14,10.1016/j.apsusc.2010.10.051,C 1s (C-C/C-H) = 284.8 eV
+Cr(OH)3,chromium(III) hydroxide,chromium hydroxide; chromic hydroxide,hydroxide,Cr 2p3/2,577.3,0.1,Cr³⁺ (peak 1),14,10.1016/j.apsusc.2010.10.051,C 1s (C-C/C-H) = 284.8 eV
+Cr(OH)3,chromium(III) hydroxide,chromium hydroxide; chromic hydroxide,hydroxide,O 1s,531.7,0.1,OH⁻,14,10.1016/j.apsusc.2010.10.051,C 1s (C-C/C-H) = 284.8 eV
+CrO3,chromium(VI) oxide,chromium trioxide; chromic anhydride,oxide,Cr 2p3/2,579.6,0.1,Cr⁶⁺ (peak 1),14,10.1016/j.apsusc.2010.10.051,C 1s (C-C/C-H) = 284.8 eV
+CrO3,chromium(VI) oxide,chromium trioxide; chromic anhydride,oxide,O 1s,530.4,0.05,O²⁻,14,10.1016/j.apsusc.2010.10.051,C 1s (C-C/C-H) = 284.8 eV
+FeCr2O4,iron(II) chromite,chromite; iron chromite; ferrous chromite,oxide,Cr 2p3/2,575.9,0.1,Cr³⁺ (peak 1),14,10.1016/j.apsusc.2010.10.051,C 1s (C-C/C-H) = 284.8 eV
+FeCr2O4,iron(II) chromite,chromite; iron chromite; ferrous chromite,oxide,Fe 2p3/2,709.0,0.1,Fe²⁺ (peak 1),14,10.1016/j.apsusc.2010.10.051,C 1s (C-C/C-H) = 284.8 eV
+FeCr2O4,iron(II) chromite,chromite; iron chromite; ferrous chromite,oxide,O 1s,530.2,0.25,O²⁻,14,10.1016/j.apsusc.2010.10.051,C 1s (C-C/C-H) = 284.8 eV
+NiCr2O4,nickel chromite,nickel chromium oxide,oxide,Cr 2p3/2,575.2,0.1,Cr³⁺ (peak 1),14,10.1016/j.apsusc.2010.10.051,C 1s (C-C/C-H) = 284.8 eV
+NiCr2O4,nickel chromite,nickel chromium oxide,oxide,Ni 2p3/2,853.8,0.1,Ni²⁺ (peak 1),14,10.1016/j.apsusc.2010.10.051,C 1s (C-C/C-H) = 284.8 eV
+NiCr2O4,nickel chromite,nickel chromium oxide,oxide,O 1s,530.0,0.05,O²⁻,14,10.1016/j.apsusc.2010.10.051,C 1s (C-C/C-H) = 284.8 eV
+Mn,manganese,manganese metal,element,Mn 2p3/2,638.6,0.1,Mn⁰ (peak 1),14,10.1016/j.apsusc.2010.10.051,Au 4f7/2 = 83.95 eV
+MnO,manganese(II) oxide,manganese monoxide; manganous oxide,oxide,Mn 2p3/2,640.2,0.1,Mn²⁺ (peak 1),14,10.1016/j.apsusc.2010.10.051,C 1s (C-C/C-H) = 284.8 eV
+MnO,manganese(II) oxide,manganese monoxide; manganous oxide,oxide,O 1s,529.9,0.3,O²⁻,14; 17,10.1016/j.apsusc.2010.10.051; 10.1016/j.apsusc.2017.03.205,C 1s (C-C/C-H) = 284.8 eV; C 1s (C-C/C-H) = 285.0 eV
+Mn2O3,manganese(III) oxide,manganese sesquioxide; manganic oxide; bixbyite,oxide,Mn 2p3/2,640.8,0.1,Mn³⁺ (peak 1),14,10.1016/j.apsusc.2010.10.051,C 1s (C-C/C-H) = 284.8 eV
+Mn2O3,manganese(III) oxide,manganese sesquioxide; manganic oxide; bixbyite,oxide,O 1s,530.0,0.3,O²⁻,14; 17,10.1016/j.apsusc.2010.10.051; 10.1016/j.apsusc.2017.03.205,C 1s (C-C/C-H) = 284.8 eV; C 1s (C-C/C-H) = 285.0 eV
+MnOOH,manganese(III) oxyhydroxide,manganite; manganese oxyhydroxide; MnO(OH),hydroxide; oxide,Mn 2p3/2,640.9,0.2,Mn³⁺ (peak 1),14; 27,10.1016/j.apsusc.2010.10.051; 10.1016/j.apsusc.2015.12.159,C 1s (C-C/C-H) = 284.8 eV; Not reported
+MnOOH,manganese(III) oxyhydroxide,manganite; manganese oxyhydroxide; MnO(OH),hydroxide; oxide,O 1s,530.0,0.05,O²⁻,14,10.1016/j.apsusc.2010.10.051,C 1s (C-C/C-H) = 284.8 eV
+MnOOH,manganese(III) oxyhydroxide,manganite; manganese oxyhydroxide; MnO(OH),hydroxide; oxide,O 1s,531.2,0.05,OH⁻,14,10.1016/j.apsusc.2010.10.051,C 1s (C-C/C-H) = 284.8 eV
+MnO2,manganese(IV) oxide,manganese dioxide; pyrolusite,oxide,Mn 2p3/2,641.9,0.1,Mn⁴⁺ (peak 1),14,10.1016/j.apsusc.2010.10.051,C 1s (C-C/C-H) = 284.8 eV
+MnO2,manganese(IV) oxide,manganese dioxide; pyrolusite,oxide,O 1s,529.5,0.1,O²⁻,14,10.1016/j.apsusc.2010.10.051,C 1s (C-C/C-H) = 284.8 eV
+K2MnO4,potassium manganate,potassium manganate(VI),alkali; manganate,Mn 2p3/2,643.8,0.1,Mn⁶⁺ (peak 1),14,10.1016/j.apsusc.2010.10.051,C 1s (C-C/C-H) = 284.8 eV
+K2MnO4,potassium manganate,potassium manganate(VI),alkali; manganate,O 1s,530.6,0.05,O²⁻,14,10.1016/j.apsusc.2010.10.051,C 1s (C-C/C-H) = 284.8 eV
+KMnO4,potassium permanganate,potassium manganate(VII),alkali; manganate,Mn 2p3/2,645.5,0.1,Mn⁷⁺ (peak 1),14,10.1016/j.apsusc.2010.10.051,C 1s (C-C/C-H) = 284.8 eV
+KMnO4,potassium permanganate,potassium manganate(VII),alkali; manganate,O 1s,530.7,0.05,O²⁻,14,10.1016/j.apsusc.2010.10.051,C 1s (C-C/C-H) = 284.8 eV
+Fe,iron,iron metal,element,Fe 2p3/2,706.6,0.1,Fe⁰ (peak 1),14,10.1016/j.apsusc.2010.10.051,Au 4f7/2 = 83.95 eV
+FeO,iron(II) oxide,ferrous oxide; wustite; wüstite,oxide,Fe 2p3/2,708.4,0.1,Fe²⁺ (peak 1),14,10.1016/j.apsusc.2010.10.051,C 1s (C-C/C-H) = 284.8 eV
+FeO,iron(II) oxide,ferrous oxide; wustite; wüstite,oxide,O 1s,530.0,0.25,O²⁻,14,10.1016/j.apsusc.2010.10.051,C 1s (C-C/C-H) = 284.8 eV
+Fe2O3,iron(III) oxide,ferric oxide; hematite; maghemite; alpha-Fe2O3; gamma-Fe2O3,oxide,Fe 2p3/2,709.8,0.1,Fe³⁺ (peak 1),14,10.1016/j.apsusc.2010.10.051,C 1s (C-C/C-H) = 284.8 eV
+Fe2O3,iron(III) oxide,ferric oxide; hematite; maghemite; alpha-Fe2O3; gamma-Fe2O3,oxide,O 1s,529.9,0.1,O²⁻,14,10.1016/j.apsusc.2010.10.051,C 1s (C-C/C-H) = 284.8 eV
+FeOOH,iron(III) oxyhydroxide,iron oxyhydroxide; goethite; lepidocrocite; alpha-FeOOH; gamma-FeOOH,hydroxide; oxide,Fe 2p3/2,710.3,0.1,Fe³⁺ (peak 1),14,10.1016/j.apsusc.2010.10.051,C 1s (C-C/C-H) = 284.8 eV
+FeOOH,iron(III) oxyhydroxide,iron oxyhydroxide; goethite; lepidocrocite; alpha-FeOOH; gamma-FeOOH,hydroxide; oxide,O 1s,529.9,0.1,O²⁻,14,10.1016/j.apsusc.2010.10.051,C 1s (C-C/C-H) = 284.8 eV
+FeOOH,iron(III) oxyhydroxide,iron oxyhydroxide; goethite; lepidocrocite; alpha-FeOOH; gamma-FeOOH,hydroxide; oxide,O 1s,531.3,0.1,OH⁻,14,10.1016/j.apsusc.2010.10.051,C 1s (C-C/C-H) = 284.8 eV
+Fe3O4,"iron(II,III) oxide",magnetite; ferrosoferric oxide,oxide,Fe 2p3/2,708.4,0.1,Fe²⁺ (peak 1),14,10.1016/j.apsusc.2010.10.051,C 1s (C-C/C-H) = 284.8 eV
+Fe3O4,"iron(II,III) oxide",magnetite; ferrosoferric oxide,oxide,Fe 2p3/2,710.2,0.1,Fe³⁺ (peak 1),14,10.1016/j.apsusc.2010.10.051,C 1s (C-C/C-H) = 284.8 eV
+Fe3O4,"iron(II,III) oxide",magnetite; ferrosoferric oxide,oxide,O 1s,530.1,0.1,O²⁻,14,10.1016/j.apsusc.2010.10.051,C 1s (C-C/C-H) = 284.8 eV
+NiFe2O4,nickel ferrite,nickel iron oxide,oxide,Fe 2p3/2,709.5,0.1,Fe³⁺ (peak 1),14,10.1016/j.apsusc.2010.10.051,C 1s (C-C/C-H) = 284.8 eV
+NiFe2O4,nickel ferrite,nickel iron oxide,oxide,Ni 2p3/2,854.5,0.1,Ni²⁺ (peak 1),14,10.1016/j.apsusc.2010.10.051,C 1s (C-C/C-H) = 284.8 eV
+NiFe2O4,nickel ferrite,nickel iron oxide,oxide,O 1s,529.8,0.05,O²⁻,14,10.1016/j.apsusc.2010.10.051,C 1s (C-C/C-H) = 284.8 eV
+FeCO3,iron(II) carbonate,siderite; ferrous carbonate,carbonate,Fe 2p3/2,709.8,0.1,Fe²⁺ (peak 1),14,10.1016/j.apsusc.2010.10.051,C 1s (C-C/C-H) = 284.8 eV
+FeCO3,iron(II) carbonate,siderite; ferrous carbonate,carbonate,C 1s,290.1,0.1,CO₃²⁻,14,10.1016/j.apsusc.2010.10.051,C 1s (C-C/C-H) = 284.8 eV
+Co,cobalt,cobalt metal,element,Co 2p3/2,778.1,0.1,Co⁰ (peak 1),14,10.1016/j.apsusc.2010.10.051,Au 4f7/2 = 83.95 eV
+CoO,cobalt(II) oxide,cobalt monoxide; cobaltous oxide,oxide,Co 2p3/2,780.1,0.3,Co²⁺ (peak 1),14; 33,10.1016/j.apsusc.2010.10.051; 10.1021/cm0311269,C 1s (C-C/C-H) = 284.8 eV; C 1s (C-C/C-H) = 285.0 eV
+CoO,cobalt(II) oxide,cobalt monoxide; cobaltous oxide,oxide,O 1s,529.8,0.3,O²⁻,14; 33,10.1016/j.apsusc.2010.10.051; 10.1021/cm0311269,C 1s (C-C/C-H) = 284.8 eV; C 1s (C-C/C-H) = 285.0 eV
+Co(OH)2,cobalt(II) hydroxide,cobalt hydroxide; cobaltous hydroxide,hydroxide,Co 2p3/2,780.4,0.1,Co²⁺ (peak 1),14,10.1016/j.apsusc.2010.10.051,C 1s (C-C/C-H) = 284.8 eV
+Co(OH)2,cobalt(II) hydroxide,cobalt hydroxide; cobaltous hydroxide,hydroxide,O 1s,531.1,0.05,OH⁻,14,10.1016/j.apsusc.2010.10.051,C 1s (C-C/C-H) = 284.8 eV
+CoOOH,cobalt(III) oxyhydroxide,cobalt oxyhydroxide; CoO(OH),hydroxide; oxide,Co 2p3/2,780.1,0.1,Co³⁺ (peak 1),14,10.1016/j.apsusc.2010.10.051,C 1s (C-C/C-H) = 284.8 eV
+Co3O4,"cobalt(II,III) oxide",cobalt oxide; tricobalt tetroxide,oxide,Co 2p3/2,779.6,0.1,Co²⁺/Co³⁺ (peak 1),14,10.1016/j.apsusc.2010.10.051,C 1s (C-C/C-H) = 284.8 eV
+Co3O4,"cobalt(II,III) oxide",cobalt oxide; tricobalt tetroxide,oxide,O 1s,530.0,0.1,O²⁻,14,10.1016/j.apsusc.2010.10.051,C 1s (C-C/C-H) = 284.8 eV
+LiMn2O4,lithium manganese oxide spinel,LMO; lithium manganate,alkali; oxide,Mn 2p3/2,641.1,0.2,Mn³⁺ (peak 1),15,10.1016/j.electacta.2015.08.145,C 1s (C-C/C-H) = 285.0 eV
+LiMn2O4,lithium manganese oxide spinel,LMO; lithium manganate,alkali; oxide,O 1s,529.9,0.2,O²⁻,15,10.1016/j.electacta.2015.08.145,C 1s (C-C/C-H) = 285.0 eV
+Li1.25Mn1.75O4,lithium-rich manganese oxide spinel,overlithiated manganese spinel,alkali; oxide,Mn 2p3/2,641.1,0.2,Mn³⁺ (peak 1),15,10.1016/j.electacta.2015.08.145,C 1s (C-C/C-H) = 285.0 eV
+Li1.25Mn1.75O4,lithium-rich manganese oxide spinel,overlithiated manganese spinel,alkali; oxide,O 1s,529.9,0.2,O²⁻,15,10.1016/j.electacta.2015.08.145,C 1s (C-C/C-H) = 285.0 eV
+Li1.2Mn1.8O4,lithium-rich manganese oxide spinel,overlithiated manganese spinel,alkali; oxide,Mn 2p3/2,641.1,0.2,Mn³⁺ (peak 1),15,10.1016/j.electacta.2015.08.145,C 1s (C-C/C-H) = 285.0 eV
+Li1.2Mn1.8O4,lithium-rich manganese oxide spinel,overlithiated manganese spinel,alkali; oxide,O 1s,529.9,0.2,O²⁻,15,10.1016/j.electacta.2015.08.145,C 1s (C-C/C-H) = 285.0 eV
+LiMn1.6Ni0.4O4,lithium manganese nickel oxide,LNMO,alkali; oxide,Mn 2p3/2,641.2,0.15,Mn³⁺ (peak 1),16,10.1021/jp5001573,C 1s (C-C/C-H) = 285.0 eV
+LiMn1.6Ni0.4O4,lithium manganese nickel oxide,LNMO,alkali; oxide,Mn 2p3/2,642.3,0.15,Mn⁴⁺ (peak 1),16,10.1021/jp5001573,C 1s (C-C/C-H) = 285.0 eV
+Li2MnO3,lithium manganese oxide,lithium manganate,alkali; oxide,Mn 2p3/2,642.2,0.2,Mn⁴⁺,17,10.1016/j.apsusc.2017.03.205,C 1s (C-C/C-H) = 285.0 eV
+Li2MnO3,lithium manganese oxide,lithium manganate,alkali; oxide,O 1s,529.9,0.2,O²⁻,17,10.1016/j.apsusc.2017.03.205,C 1s (C-C/C-H) = 285.0 eV
+Fe2(MoO4)3,iron(III) molybdate,ferric molybdate; iron molybdate,molybdate,Fe 2p3/2,711.6,0.4,Fe³⁺ (peak 1),18; 19,10.1016/j.jpowsour.2016.12.117; 10.1016/j.jallcom.2017.11.231,C 1s (C-C/C-H) = 285.0 eV; Not reported
+Fe2(MoO4)3,iron(III) molybdate,ferric molybdate; iron molybdate,molybdate,Mo 3d5/2,232.4,0.15,Mo⁶⁺,18; 19,10.1016/j.jpowsour.2016.12.117; 10.1016/j.jallcom.2017.11.231,C 1s (C-C/C-H) = 285.0 eV; Not reported
+Fe2(MoO4)3,iron(III) molybdate,ferric molybdate; iron molybdate,molybdate,O 1s,530.7,0.3,O²⁻,18; 19,10.1016/j.jpowsour.2016.12.117; 10.1016/j.jallcom.2017.11.231,C 1s (C-C/C-H) = 285.0 eV; Not reported
+Sb,antimony,antimony metal; metallic antimony,element,Sb 3d5/2,528.5,0.15,Sb⁰,20,10.1016/j.jpowsour.2014.09.037,C 1s (C-C/C-H) = 285.0 eV
+VPO4,vanadium(III) phosphate,vanadium phosphate,phosphate,V 2p3/2,514.4,0.2,V²⁺,21,10.1149/1945-7111/abbb0c,O 1s = 530.0 eV
+VPO4,vanadium(III) phosphate,vanadium phosphate,phosphate,V 2p3/2,515.4,0.2,V³⁺,21,10.1149/1945-7111/abbb0c,O 1s = 530.0 eV
+VPO4,vanadium(III) phosphate,vanadium phosphate,phosphate,V 2p3/2,516.2,0.2,V⁴⁺,21,10.1149/1945-7111/abbb0c,O 1s = 530.0 eV
+KVOPO4,potassium vanadyl phosphate,potassium vanadium phosphate,alkali; phosphate,V 2p3/2,516.2,0.2,V⁴⁺,21,10.1149/1945-7111/abbb0c,O 1s = 530.0 eV
+VOPO4,vanadyl phosphate,vanadium oxide phosphate,phosphate,V 2p3/2,515.9,0.2,V⁴⁺,21,10.1149/1945-7111/abbb0c,O 1s = 530.0 eV
+VOPO4,vanadyl phosphate,vanadium oxide phosphate,phosphate,V 2p3/2,517.1,0.2,V⁵⁺,21,10.1149/1945-7111/abbb0c,O 1s = 530.0 eV
+CH3CO2K,potassium acetate,potassium ethanoate,alkali; acetate,K 2p3/2,292.8,0.2,K⁺,22; 23,10.1039/D6LF00207B; 10.1021/acsami.4c17461,C 1s (C-C/C-H) = 285.0 eV; C 1s (C-C/C-H) = 285.0 eV
+CH3CO2K,potassium acetate,potassium ethanoate,alkali; acetate,C 1s,288.4,0.15,CO₂⁻,22; 23,10.1039/D6LF00207B; 10.1021/acsami.4c17461,C 1s (C-C/C-H) = 285.0 eV; C 1s (C-C/C-H) = 285.0 eV
+CH3CO2K,potassium acetate,potassium ethanoate,alkali; acetate,O 1s,531.1,0.1,CO₂⁻,22; 23,10.1039/D6LF00207B; 10.1021/acsami.4c17461,C 1s (C-C/C-H) = 285.0 eV; C 1s (C-C/C-H) = 285.0 eV
+V2O5,vanadium(V) oxide,vanadium pentoxide,oxide,V 2p3/2,517.3,0.2,V⁵⁺,24; 25; 26,10.1016/j.elspec.2004.03.004; 10.1002/sia.3844; 10.1016/j.elspec.2005.09.001,O 1s (VOx) = 530.0 eV; Not reported; Not reported
+VO2,vanadium(IV) oxide,vanadium dioxide,oxide,V 2p3/2,516.0,0.2,V⁴⁺,24; 25; 26,10.1016/j.elspec.2004.03.004; 10.1002/sia.3844; 10.1016/j.elspec.2005.09.001,O 1s (VOx) = 530.0 eV; Not reported; Not reported
+V2O3,vanadium(III) oxide,vanadium sesquioxide,oxide,V 2p3/2,515.3,0.2,V³⁺,24; 25; 26,10.1016/j.elspec.2004.03.004; 10.1002/sia.3844; 10.1016/j.elspec.2005.09.001,O 1s (VOx) = 530.0 eV; Not reported; Not reported
+V,vanadium,vanadium metal; metallic vanadium,element,V 2p3/2,512.2,0.15,V⁰,25,10.1002/sia.3844,Not reported
+VO,vanadium(II) oxide,vanadium monoxide,oxide,V 2p3/2,512.7,0.1,V²⁺,25,10.1002/sia.3844,Not reported
+VO,vanadium(II) oxide,vanadium monoxide,oxide,O 1s,531.1,0.1,O²⁻,25,10.1002/sia.3844,Not reported
+V2O3,vanadium(III) oxide,vanadium sesquioxide,oxide,O 1s,530.0,0.1,O²⁻,25,10.1002/sia.3844,Not reported
+VO2,vanadium(IV) oxide,vanadium dioxide,oxide,O 1s,529.4,0.1,O²⁻,25,10.1002/sia.3844,Not reported
+V2O5,vanadium(V) oxide,vanadium pentoxide,oxide,O 1s,530.2,0.2,O²⁻,25; 26,10.1002/sia.3844; 10.1016/j.elspec.2005.09.001,Not reported; Not reported
+Li6.25Al0.25La3Zr2O12,aluminum-doped lithium lanthanum zirconium oxide,Al-doped LLZO; aluminum-doped LLZO; garnet solid electrolyte,alkali; oxide; zirconate,O 1s,530.7,0.2,O²⁻,28,10.1002/aenm.201803440,Zr 3d5/2 (Zr4+) = 182.4 eV
+Li6.5La3Zr1.5Nb0.5O12,niobium-doped lithium lanthanum zirconium oxide,Nb-doped LLZO; niobium-doped LLZO; garnet solid electrolyte,alkali; oxide; zirconate,Nb 3d5/2,207.9,0.2,Nb⁵⁺,28,10.1002/aenm.201803440,Zr 3d5/2 (Zr4+) = 182.4 eV
+Li6.5La3Zr1.5Nb0.5O12,niobium-doped lithium lanthanum zirconium oxide,Nb-doped LLZO; niobium-doped LLZO; garnet solid electrolyte,alkali; oxide; zirconate,O 1s,530.7,0.2,O²⁻,28,10.1002/aenm.201803440,Zr 3d5/2 (Zr4+) = 182.4 eV
+Li6.5La3Zr1.5Ta0.5O12,tantalum-doped lithium lanthanum zirconium oxide,Ta-doped LLZO; tantalum-doped LLZO; garnet solid electrolyte,alkali; oxide; zirconate,O 1s,530.7,0.2,O²⁻,28,10.1002/aenm.201803440,Zr 3d5/2 (Zr4+) = 182.4 eV
+Li6PS5Cl,lithium phosphorus sulfide chloride,LPSCl; lithium argyrodite; lithium thiophosphate chloride,alkali; sulfide; chloride; phosphate,Li 1s,55.6,0.2,Li⁺,29,10.1016/j.ssi.2016.11.029,C 1s (C-C/C-H) = 285.0 eV
+Li6PS5Cl,lithium phosphorus sulfide chloride,LPSCl; lithium argyrodite; lithium thiophosphate chloride,alkali; sulfide; chloride; phosphate,Cl 2p3/2,198.8,0.2,Cl⁻,29,10.1016/j.ssi.2016.11.029,C 1s (C-C/C-H) = 285.0 eV
+Li6PS5Cl,lithium phosphorus sulfide chloride,LPSCl; lithium argyrodite; lithium thiophosphate chloride,alkali; sulfide; chloride; phosphate,P 2p3/2,132.0,0.2,PS₄³⁻,29,10.1016/j.ssi.2016.11.029,C 1s (C-C/C-H) = 285.0 eV
+Li6PS5Cl,lithium phosphorus sulfide chloride,LPSCl; lithium argyrodite; lithium thiophosphate chloride,alkali; sulfide; chloride; phosphate,S 2p3/2,161.7,0.2,PS₄³⁻,29,10.1016/j.ssi.2016.11.029,C 1s (C-C/C-H) = 285.0 eV
+LiCl,lithium chloride,,alkali; chloride,Li 1s,56.4,0.2,Li⁺,29; 37,10.1016/j.ssi.2016.11.029; 10.1002/anie.202015238,C 1s (C-C/C-H) = 285.0 eV; C 1s (C-C/C-H) = 284.8 eV
+LiCl,lithium chloride,,alkali; chloride,Cl 2p3/2,198.7,0.2,Cl⁻,29; 37,10.1016/j.ssi.2016.11.029; 10.1002/anie.202015238,C 1s (C-C/C-H) = 285.0 eV; C 1s (C-C/C-H) = 284.8 eV
+P2S5,phosphorus pentasulfide,diphosphorus pentasulfide; phosphorus(V) sulfide; P4S10,sulfide,P 2p3/2,132.9,0.2,P₂S₅,29,10.1016/j.ssi.2016.11.029,C 1s (C-C/C-H) = 285.0 eV
+Li2S,lithium sulfide,lithium sulphide,alkali; sulfide,S 2p3/2,160.5,0.5,S²⁻,30; 31,10.1039/C5RA14915K; 10.1021/acsami.2c11196,S 2p3/2 (Li2SO4) = 169.6 eV; C 1s (lowest-BE) = 284.8 eV
+Li2S,lithium sulfide,lithium sulphide,alkali; sulfide,S 2p3/2,162.3,0.1,terminal S,30,10.1039/C5RA14915K,S 2p3/2 (Li2SO4) = 169.6 eV
+Li2S,lithium sulfide,lithium sulphide,alkali; sulfide,S 2p3/2,163.9,0.1,central S,30,10.1039/C5RA14915K,S 2p3/2 (Li2SO4) = 169.6 eV
+Na2S,disodium sulfide,Sodium sulphide; Sodium sulfuret; sodium sulfide anhydrous; sodium monosulphide,alkali; sulfide,S 2p3/2,161.7,0.1,terminal S,30,10.1039/C5RA14915K,S 2p3/2 (Na2SO4) = 168.8 eV
+Na2S,disodium sulfide,Sodium sulphide; Sodium sulfuret; sodium sulfide anhydrous; sodium monosulphide,alkali; sulfide,S 2p3/2,163.3,0.1,central S,30,10.1039/C5RA14915K,S 2p3/2 (Na2SO4) = 168.8 eV
+Na2S,disodium sulfide,Sodium sulphide; Sodium sulfuret; sodium sulfide anhydrous; sodium monosulphide,alkali; sulfide,Na 1s,1071.6,0.1,Na⁺,30,10.1039/C5RA14915K,S 2p3/2 (Na2SO4) = 168.8 eV
+Na2S4,disodium tetrasulfide,sodium tetrasulfide; sodium polysulfide,alkali; sulfide,S 2p3/2,161.8,0.1,terminal S,30,10.1039/C5RA14915K,S 2p3/2 (Na2SO4) = 168.8 eV
+Na2S4,disodium tetrasulfide,sodium tetrasulfide; sodium polysulfide,alkali; sulfide,S 2p3/2,163.4,0.1,central S,30,10.1039/C5RA14915K,S 2p3/2 (Na2SO4) = 168.8 eV
+Na2S4,disodium tetrasulfide,sodium tetrasulfide; sodium polysulfide,alkali; sulfide,Na 1s,1071.5,0.1,Na⁺,30,10.1039/C5RA14915K,S 2p3/2 (Na2SO4) = 168.8 eV
+K2Sn,potassium polysulfide,K2Sx; K2Sₙ,alkali; sulfide,S 2p3/2,161.9,0.1,terminal S,30,10.1039/C5RA14915K,S 2p3/2 (K2SO4) = 168.6 eV
+K2Sn,potassium polysulfide,K2Sx; K2Sₙ,alkali; sulfide,S 2p3/2,163.5,0.1,central S,30,10.1039/C5RA14915K,S 2p3/2 (K2SO4) = 168.6 eV
+K2Sn,potassium polysulfide,K2Sx; K2Sₙ,alkali; sulfide,K 2p3/2,292.8,0.2,K⁺,30,10.1039/C5RA14915K,S 2p3/2 (K2SO4) = 168.6 eV
+Li2S,lithium sulfide,lithium sulphide,alkali; sulfide,Li 1s,55.0,0.2,Li⁺,31,10.1021/acsami.2c11196,C 1s (lowest-BE) = 284.8 eV
+LiCoO2,lithium cobalt oxide,LCO; lithium cobaltate,alkali; oxide,Li 1s,54.3,0.2,Li⁺,32,10.1021/am5089764,C 1s (C-C/C-H) = 285.0 eV
+LiCoO2,lithium cobalt oxide,LCO; lithium cobaltate,alkali; oxide,Li 1s,55.5,0.2,Li₂CO₃,32,10.1021/am5089764,C 1s (C-C/C-H) = 285.0 eV
+LiCoO2,lithium cobalt oxide,LCO; lithium cobaltate,alkali; oxide,Co 2p3/2,779.7,0.2,Co³⁺,32,10.1021/am5089764,C 1s (C-C/C-H) = 285.0 eV
+LiCoO2,lithium cobalt oxide,LCO; lithium cobaltate,alkali; oxide,Co 3p,61.0,0.2,Co³⁺,32,10.1021/am5089764,C 1s (C-C/C-H) = 285.0 eV
+LiCoO2,lithium cobalt oxide,LCO; lithium cobaltate,alkali; oxide,O 1s,529.5,0.2,O²⁻,32,10.1021/am5089764,C 1s (C-C/C-H) = 285.0 eV
+LiNi1/3Mn1/3Co1/3O2,lithium nickel manganese cobalt oxide,NMC; NMC111; Li(Ni1/3Mn1/3Co1/3)O2,alkali; oxide,Li 1s,54.3,0.2,Li⁺,32,10.1021/am5089764,C 1s (C-C/C-H) = 285.0 eV
+LiNi1/3Mn1/3Co1/3O2,lithium nickel manganese cobalt oxide,NMC; NMC111; Li(Ni1/3Mn1/3Co1/3)O2,alkali; oxide,Li 1s,55.6,0.2,Li₂CO₃,32,10.1021/am5089764,C 1s (C-C/C-H) = 285.0 eV
+LiNi1/3Mn1/3Co1/3O2,lithium nickel manganese cobalt oxide,NMC; NMC111; Li(Ni1/3Mn1/3Co1/3)O2,alkali; oxide,Ni 2p3/2,854.5,0.2,Ni²⁺,32,10.1021/am5089764,C 1s (C-C/C-H) = 285.0 eV
+LiNi1/3Mn1/3Co1/3O2,lithium nickel manganese cobalt oxide,NMC; NMC111; Li(Ni1/3Mn1/3Co1/3)O2,alkali; oxide,Ni 3p,67.3,0.2,Ni²⁺,32,10.1021/am5089764,C 1s (C-C/C-H) = 285.0 eV
+LiNi1/3Mn1/3Co1/3O2,lithium nickel manganese cobalt oxide,NMC; NMC111; Li(Ni1/3Mn1/3Co1/3)O2,alkali; oxide,Co 2p3/2,779.9,0.2,Co³⁺,32,10.1021/am5089764,C 1s (C-C/C-H) = 285.0 eV
+LiNi1/3Mn1/3Co1/3O2,lithium nickel manganese cobalt oxide,NMC; NMC111; Li(Ni1/3Mn1/3Co1/3)O2,alkali; oxide,Mn 2p3/2,642.3,0.2,Mn⁴⁺,32,10.1021/am5089764,C 1s (C-C/C-H) = 285.0 eV
+LiNi1/3Mn1/3Co1/3O2,lithium nickel manganese cobalt oxide,NMC; NMC111; Li(Ni1/3Mn1/3Co1/3)O2,alkali; oxide,Mn 3p,49.7,0.2,Mn⁴⁺,32,10.1021/am5089764,C 1s (C-C/C-H) = 285.0 eV
+LiNi1/3Mn1/3Co1/3O2,lithium nickel manganese cobalt oxide,NMC; NMC111; Li(Ni1/3Mn1/3Co1/3)O2,alkali; oxide,O 1s,529.4,0.2,O²⁻,32,10.1021/am5089764,C 1s (C-C/C-H) = 285.0 eV
+Li2O,lithium oxide,lithia,alkali; oxide,Li 1s,54.0,0.2,Li⁺,33,10.1021/cm0311269,C 1s (C-C/C-H) = 285.0 eV
+Li2O,lithium oxide,lithia,alkali; oxide,O 1s,528.5,0.2,O²⁻,33,10.1021/cm0311269,C 1s (C-C/C-H) = 285.0 eV
+Li3PO4,lithium phosphate,lithium orthophosphate,alkali; phosphate,P 2p3/2,134.5,0.2,PO₄³⁻,34,10.1016/j.tsf.2011.01.087,C 1s (C-C/C-H) = 284.6 eV
+LiPON,lithium phosphorus oxynitride,lithium phosphorous oxynitride,alkali; phosphate; nitride,P 2p3/2,132.8,0.2,POₓNᵧ,34,10.1016/j.tsf.2011.01.087,C 1s (C-C/C-H) = 284.6 eV
+LiPON,lithium phosphorus oxynitride,lithium phosphorous oxynitride,alkali; phosphate; nitride,N 1s,399.4,0.2,N doubly coordinated (Nd),34,10.1016/j.tsf.2011.01.087,C 1s (C-C/C-H) = 284.6 eV
+LiPON,lithium phosphorus oxynitride,lithium phosphorous oxynitride,alkali; phosphate; nitride,N 1s,400.8,0.2,N triply coordinated (Nt),34,10.1016/j.tsf.2011.01.087,C 1s (C-C/C-H) = 284.6 eV
+Na3PS4,sodium thiophosphate,NPS; sodium orthothiophosphate,alkali; sulfide; phosphate,S 2p3/2,161.0,0.2,P=S,35,10.1021/acsami.6b10119,C 1s (C-C/C-H) = 284.8 eV
+Na3PS4,sodium thiophosphate,NPS; sodium orthothiophosphate,alkali; sulfide; phosphate,S 2p3/2,160.0,0.2,P-S-Na,35,10.1021/acsami.6b10119,C 1s (C-C/C-H) = 284.8 eV
+Na3PS4,sodium thiophosphate,NPS; sodium orthothiophosphate,alkali; sulfide; phosphate,P 2p3/2,131.0,0.2,PS₄³⁻,35,10.1021/acsami.6b10119,C 1s (C-C/C-H) = 284.8 eV
+Li3InCl6,lithium indium chloride,LIC; lithium indium hexachloride,alkali; chloride,In 3d5/2,446.2,0.2,In³⁺,36; 37,10.1016/j.matdes.2023.111690; 10.1002/anie.202015238,C 1s = 284.8 eV; C 1s (C-C/C-H) = 284.8 eV
+Li3InCl6,lithium indium chloride,LIC; lithium indium hexachloride,alkali; chloride,Cl 2p3/2,199.4,0.2,Cl⁻,36; 37,10.1016/j.matdes.2023.111690; 10.1002/anie.202015238,C 1s = 284.8 eV; C 1s (C-C/C-H) = 284.8 eV
+Li3InCl6,lithium indium chloride,LIC; lithium indium hexachloride,alkali; chloride,Li 1s,56.6,0.2,Li⁺,37,10.1002/anie.202015238,C 1s (C-C/C-H) = 284.8 eV
+Li3YCl6,lithium yttrium chloride,LYC; lithium yttrium hexachloride,alkali; chloride; rare earth,Y 3d5/2,159.0,0.2,Y³⁺,37,10.1002/anie.202015238,C 1s (C-C/C-H) = 284.8 eV
+Li3YCl6,lithium yttrium chloride,LYC; lithium yttrium hexachloride,alkali; chloride; rare earth,Cl 2p3/2,198.8,0.2,Cl⁻,37,10.1002/anie.202015238,C 1s (C-C/C-H) = 284.8 eV
+Li3YCl6,lithium yttrium chloride,LYC; lithium yttrium hexachloride,alkali; chloride; rare earth,Li 1s,56.6,0.2,Li⁺,37,10.1002/anie.202015238,C 1s (C-C/C-H) = 284.8 eV
+InCl3,indium(III) chloride,indium trichloride,chloride,In 3d5/2,446.3,0.2,In³⁺,37,10.1002/anie.202015238,C 1s (C-C/C-H) = 284.8 eV
+InCl3,indium(III) chloride,indium trichloride,chloride,Cl 2p3/2,199.4,0.2,Cl⁻,37,10.1002/anie.202015238,C 1s (C-C/C-H) = 284.8 eV
+YCl3,yttrium(III) chloride,yttrium trichloride,chloride; rare earth,Y 3d5/2,159.2,0.2,Y³⁺,37,10.1002/anie.202015238,C 1s (C-C/C-H) = 284.8 eV
+YCl3,yttrium(III) chloride,yttrium trichloride,chloride; rare earth,Cl 2p3/2,199.1,0.2,Cl⁻,37,10.1002/anie.202015238,C 1s (C-C/C-H) = 284.8 eV
+Li2ZrCl6,lithium zirconium chloride,LZC; lithium zirconium hexachloride,alkali; chloride,Zr 3d5/2,183.00,0.2,Zr⁴⁺,38,10.1021/acssuschemeng.3c06652,Not reported
+Li7P3S11,lithium thiophosphate,LPS; 70Li2S-30P2S5,alkali; sulfide; phosphate,S 2p3/2,162.9,0.2,P-S-P,39; 40,10.1016/j.ssi.2015.11.034; 10.2109/jcersj2.16006,C 1s (C-C/C-H) = 284.8 eV; C 1s (C-C/C-H) = 284.7 eV
+Li7P3S11,lithium thiophosphate,LPS; 70Li2S-30P2S5,alkali; sulfide; phosphate,S 2p3/2,162.1,0.2,P=S,39,10.1016/j.ssi.2015.11.034,C 1s (C-C/C-H) = 284.8 eV
+Li7P3S11,lithium thiophosphate,LPS; 70Li2S-30P2S5,alkali; sulfide; phosphate,S 2p3/2,161.5,0.2,P-S-Li,39; 40,10.1016/j.ssi.2015.11.034; 10.2109/jcersj2.16006,C 1s (C-C/C-H) = 284.8 eV; C 1s (C-C/C-H) = 284.7 eV
+Li7P3S11,lithium thiophosphate,LPS; 70Li2S-30P2S5,alkali; sulfide; phosphate,P 2p3/2,132.9,0.2,P₂S₇⁴⁻,39,10.1016/j.ssi.2015.11.034,C 1s (C-C/C-H) = 284.8 eV
+Li7P3S11,lithium thiophosphate,LPS; 70Li2S-30P2S5,alkali; sulfide; phosphate,P 2p3/2,134.1,0.2,PS₄³⁻,39,10.1016/j.ssi.2015.11.034,C 1s (C-C/C-H) = 284.8 eV
+P4S10,phosphorus pentasulfide,P2S5; tetraphosphorus decasulfide,sulfide,P 2p3/2,134.0,0.2,P-S,39,10.1016/j.ssi.2015.11.034,C 1s (C-C/C-H) = 284.8 eV
+P4S10,phosphorus pentasulfide,P2S5; tetraphosphorus decasulfide,sulfide,S 2p3/2,164.9,0.2,P-S-P,39,10.1016/j.ssi.2015.11.034,C 1s (C-C/C-H) = 284.8 eV
+P4S10,phosphorus pentasulfide,P2S5; tetraphosphorus decasulfide,sulfide,S 2p3/2,163.3,0.2,P=S,39,10.1016/j.ssi.2015.11.034,C 1s (C-C/C-H) = 284.8 eV
+Li3PS4,lithium thiophosphate,LPS; 75Li2S-25P2S5,alkali; sulfide; phosphate,S 2p3/2,161.2,0.2,P-S-Li,40,10.2109/jcersj2.16006,C 1s (C-C/C-H) = 284.7 eV
+LiPO2F2,lithium difluorophosphate,lithium difluorophosphate; LiPF2O2; LDFP,alkali; fluoride; phosphate,F 1s,685.5,0.2,PO₂F₂⁻,41,10.1039/C7RA03926C,C 1s (C-C/C-H) = 284.8 eV
+LiPO2F2,lithium difluorophosphate,lithium difluorophosphate; LiPF2O2; LDFP,alkali; fluoride; phosphate,P 2p3/2,133.6,0.2,PO₂F₂⁻,41,10.1039/C7RA03926C,C 1s (C-C/C-H) = 284.8 eV
+LiPO3,lithium metaphosphate,lithium phosphate,alkali; phosphate,Li 1s,55,0.1,Li⁺,42,10.1016/0167-2738(92)90308-C,C 1s (C-C/C-H) = 284.6 eV
+LiPO3,lithium metaphosphate,lithium phosphate,alkali; phosphate,P 2p3/2,134.3,0.1,PO₃⁻,42,10.1016/0167-2738(92)90308-C,C 1s (C-C/C-H) = 284.6 eV
+LiPO3,lithium metaphosphate,lithium phosphate,alkali; phosphate,O 1s,531.4,0.1,P–O⁻,42,10.1016/0167-2738(92)90308-C,C 1s (C-C/C-H) = 284.6 eV
+LiPO3,lithium metaphosphate,lithium phosphate,alkali; phosphate,O 1s,533.2,0.1,P–O–P,42,10.1016/0167-2738(92)90308-C,C 1s (C-C/C-H) = 284.6 eV
+Li4P2O7,lithium pyrophosphate,tetralithium diphosphate,alkali; phosphate,Li 1s,55.2,0.1,Li⁺,42,10.1016/0167-2738(92)90308-C,C 1s (C-C/C-H) = 284.6 eV
+Li4P2O7,lithium pyrophosphate,tetralithium diphosphate,alkali; phosphate,P 2p3/2,133.7,0.1,P₂O₇⁴⁻,42,10.1016/0167-2738(92)90308-C,C 1s (C-C/C-H) = 284.6 eV
+Li4P2O7,lithium pyrophosphate,tetralithium diphosphate,alkali; phosphate,O 1s,531.4,0.1,P–O⁻,42,10.1016/0167-2738(92)90308-C,C 1s (C-C/C-H) = 284.6 eV
+Li4P2O7,lithium pyrophosphate,tetralithium diphosphate,alkali; phosphate,O 1s,533.1,0.1,P–O–P,42,10.1016/0167-2738(92)90308-C,C 1s (C-C/C-H) = 284.6 eV
+Na3PO4,sodium phosphate,trisodium phosphate; sodium orthophosphate,alkali; phosphate,P 2p3/2,132.9,0.1,PO₄³⁻,43,10.1016/S0020-1693(00)91150-2,Au 4f7/2 = 84.0 eV
+Na3PO4,sodium phosphate,trisodium phosphate; sodium orthophosphate,alkali; phosphate,O 1s,531.2,0.1,PO₄³⁻,43,10.1016/S0020-1693(00)91150-2,Au 4f7/2 = 84.0 eV
+K3PO4,potassium phosphate,tripotassium phosphate; potassium orthophosphate,alkali; phosphate,P 2p3/2,132.8,0.1,PO₄³⁻,43,10.1016/S0020-1693(00)91150-2,Au 4f7/2 = 84.0 eV
+K3PO4,potassium phosphate,tripotassium phosphate; potassium orthophosphate,alkali; phosphate,O 1s,530.7,0.1,PO₄³⁻,43,10.1016/S0020-1693(00)91150-2,Au 4f7/2 = 84.0 eV
+Na2HPO4,disodium hydrogen phosphate,sodium hydrogen phosphate; disodium phosphate,alkali; phosphate,P 2p3/2,133,0.1,HPO₄²⁻,43,10.1016/S0020-1693(00)91150-2,Au 4f7/2 = 84.0 eV
+Na2HPO4,disodium hydrogen phosphate,sodium hydrogen phosphate; disodium phosphate,alkali; phosphate,O 1s,531.6,0.1,O⁻ in HPO₄²⁻,43,10.1016/S0020-1693(00)91150-2,Au 4f7/2 = 84.0 eV
+K2HPO4,dipotassium hydrogen phosphate,potassium hydrogen phosphate; dipotassium phosphate,alkali; phosphate,P 2p3/2,133.1,0.1,HPO₄²⁻,43,10.1016/S0020-1693(00)91150-2,Au 4f7/2 = 84.0 eV
+K2HPO4,dipotassium hydrogen phosphate,potassium hydrogen phosphate; dipotassium phosphate,alkali; phosphate,O 1s,530.8,0.1,O⁻ in HPO₄²⁻,43,10.1016/S0020-1693(00)91150-2,Au 4f7/2 = 84.0 eV
+CaHPO4,calcium hydrogen phosphate,dicalcium phosphate,alkaline earth; phosphate,P 2p3/2,133.5,0.1,HPO₄²⁻,43,10.1016/S0020-1693(00)91150-2,Au 4f7/2 = 84.0 eV
+CaHPO4,calcium hydrogen phosphate,dicalcium phosphate,alkaline earth; phosphate,O 1s,531.5,0.1,O⁻ in HPO₄²⁻,43,10.1016/S0020-1693(00)91150-2,Au 4f7/2 = 84.0 eV
+NaH2PO4,sodium dihydrogen phosphate,monosodium phosphate,alkali; phosphate,P 2p3/2,134.7,0.1,H₂PO₄⁻,43,10.1016/S0020-1693(00)91150-2,Au 4f7/2 = 84.0 eV
+NaH2PO4,sodium dihydrogen phosphate,monosodium phosphate,alkali; phosphate,O 1s,532.2,0.1,O⁻ in H₂PO₄⁻,43,10.1016/S0020-1693(00)91150-2,Au 4f7/2 = 84.0 eV
+KH2PO4,potassium dihydrogen phosphate,monopotassium phosphate,alkali; phosphate,P 2p3/2,134.6,0.1,H₂PO₄⁻,43,10.1016/S0020-1693(00)91150-2,Au 4f7/2 = 84.0 eV
+KH2PO4,potassium dihydrogen phosphate,monopotassium phosphate,alkali; phosphate,O 1s,531.4,0.1,O⁻ in H₂PO₄⁻,43,10.1016/S0020-1693(00)91150-2,Au 4f7/2 = 84.0 eV
+Na4P2O7,sodium pyrophosphate,tetrasodium diphosphate,alkali; phosphate,P 2p3/2,133.6,0.1,P₂O₇⁴⁻,43,10.1016/S0020-1693(00)91150-2,Au 4f7/2 = 84.0 eV
+Na4P2O7,sodium pyrophosphate,tetrasodium diphosphate,alkali; phosphate,O 1s,531.4,0.1,P₂O₇⁴⁻,43,10.1016/S0020-1693(00)91150-2,Au 4f7/2 = 84.0 eV
+Mg2P2O7,magnesium pyrophosphate,dimagnesium diphosphate,alkaline earth; phosphate,P 2p3/2,134.4,0.1,P₂O₇⁴⁻,43,10.1016/S0020-1693(00)91150-2,Au 4f7/2 = 84.0 eV
+Mg2P2O7,magnesium pyrophosphate,dimagnesium diphosphate,alkaline earth; phosphate,O 1s,532.3,0.1,P₂O₇⁴⁻,43,10.1016/S0020-1693(00)91150-2,Au 4f7/2 = 84.0 eV
+Ca2P2O7,calcium pyrophosphate,dicalcium diphosphate,alkaline earth; phosphate,P 2p3/2,134.1,0.1,P₂O₇⁴⁻,43,10.1016/S0020-1693(00)91150-2,Au 4f7/2 = 84.0 eV
+Ca2P2O7,calcium pyrophosphate,dicalcium diphosphate,alkaline earth; phosphate,O 1s,531.8,0.1,P₂O₇⁴⁻,43,10.1016/S0020-1693(00)91150-2,Au 4f7/2 = 84.0 eV
+Na5P3O10·6H2O,sodium triphosphate hexahydrate,sodium tripolyphosphate hexahydrate,alkali; phosphate; hydrate,P 2p3/2,133.7,0.1,P₃O₁₀⁵⁻,43,10.1016/S0020-1693(00)91150-2,Au 4f7/2 = 84.0 eV
+Na5P3O10·6H2O,sodium triphosphate hexahydrate,sodium tripolyphosphate hexahydrate,alkali; phosphate; hydrate,O 1s,531.9,0.1,P₃O₁₀⁵⁻,43,10.1016/S0020-1693(00)91150-2,Au 4f7/2 = 84.0 eV
+Ca5(P3O10)2,calcium triphosphate,calcium tripolyphosphate,alkaline earth; phosphate,P 2p3/2,134.4,0.1,P₃O₁₀⁵⁻,43,10.1016/S0020-1693(00)91150-2,Au 4f7/2 = 84.0 eV
+Ca5(P3O10)2,calcium triphosphate,calcium tripolyphosphate,alkaline earth; phosphate,O 1s,531.9,0.1,P₃O₁₀⁵⁻,43,10.1016/S0020-1693(00)91150-2,Au 4f7/2 = 84.0 eV
+BeF2,beryllium fluoride,beryllium difluoride,alkaline earth; fluoride,F 1s,687.3,0.2,F⁻,44,10.1039/FT9908600247,C 1s (C-C/C-H) = 285.0 eV
+MgF2,magnesium fluoride,magnesium difluoride,alkaline earth; fluoride,F 1s,686.2,0.4,F⁻,44; 47,10.1039/FT9908600247; 10.1002/sia.70003,C 1s (C-C/C-H) = 285.0 eV; C 1s (C-C/C-H) = 284.8 eV
+MgF2,magnesium fluoride,magnesium difluoride,alkaline earth; fluoride,Mg 2p,51.5,0.1,Mg²⁺,47,10.1002/sia.70003,C 1s (C-C/C-H) = 284.8 eV
+MgF2,magnesium fluoride,magnesium difluoride,alkaline earth; fluoride,Mg 2p,51.8,0.1,Mg²⁺,47,10.1002/sia.70003,C 1s (C-C/C-H) = 284.8 eV
+MgF2,magnesium fluoride,magnesium difluoride,alkaline earth; fluoride,F 2s,30.9,0.1,F⁻,47,10.1002/sia.70003,C 1s (C-C/C-H) = 284.8 eV
+MgF2,magnesium fluoride,magnesium difluoride,alkaline earth; fluoride,F 2s,31.2,0.1,F⁻,47,10.1002/sia.70003,C 1s (C-C/C-H) = 284.8 eV
+CaF2,calcium fluoride,fluorite,alkaline earth; fluoride,F 1s,684.6,0.2,F⁻,44,10.1039/FT9908600247,C 1s (C-C/C-H) = 285.0 eV
+SrF2,strontium fluoride,strontium difluoride,alkaline earth; fluoride,F 1s,684.6,0.2,F⁻,44,10.1039/FT9908600247,C 1s (C-C/C-H) = 285.0 eV
+BaF2,barium fluoride,barium difluoride,alkaline earth; fluoride,F 1s,684.2,0.2,F⁻,44,10.1039/FT9908600247,C 1s (C-C/C-H) = 285.0 eV
+AlF3,aluminium fluoride,alpha-AlF3; aluminium trifluoride,fluoride,Al 2p,76.6,0.1,Al³⁺,45,10.1039/B821484K,C 1s (C-C/C-H) = 284.8 eV
+AlF3,aluminium fluoride,alpha-AlF3; aluminium trifluoride,fluoride,F 1s,686.7,0.1,F⁻,45,10.1039/B821484K,C 1s (C-C/C-H) = 284.8 eV
+Al(PO3)3,aluminium metaphosphate,cubic aluminium metaphosphate,phosphate,Al 2p,75.1,0.2,Al³⁺,46,10.1039/C9RA08738A,C 1s (C-C/C-H) = 284.7 eV
+Al(PO3)3,aluminium metaphosphate,cubic aluminium metaphosphate,phosphate,P 2p3/2,134.6,0.2,PO₃⁻,46,10.1039/C9RA08738A,C 1s (C-C/C-H) = 284.7 eV
+Al(PO3)3,aluminium metaphosphate,cubic aluminium metaphosphate,phosphate,O 1s,532.1,0.2,P–O–Al,46,10.1039/C9RA08738A,C 1s (C-C/C-H) = 284.7 eV
+Al(PO3)3,aluminium metaphosphate,cubic aluminium metaphosphate,phosphate,O 1s,533.8,0.2,P–O–P,46,10.1039/C9RA08738A,C 1s (C-C/C-H) = 284.7 eV
+Mg,magnesium,magnesium metal,alkaline earth; element,Mg 2p,49.7,0.05,Mg⁰,47,10.1002/sia.70003,Not reported
+MgCl2,magnesium chloride,magnesium dichloride,alkaline earth; chloride,Mg 2p,51.6,0.1,Mg²⁺,47,10.1002/sia.70003,C 1s (C-C/C-H) = 284.8 eV
+MgCl2,magnesium chloride,magnesium dichloride,alkaline earth; chloride,Cl 2s,270.4,0.3,Cl⁻,47,10.1002/sia.70003,C 1s (C-C/C-H) = 284.8 eV
+MgCl2,magnesium chloride,magnesium dichloride,alkaline earth; chloride,Cl 2p3/2,199.3,0.1,Cl⁻,47,10.1002/sia.70003,C 1s (C-C/C-H) = 284.8 eV
+MgBr2,magnesium bromide,magnesium dibromide,alkaline earth; bromide,Mg 2p,51.5,0.1,Mg²⁺,47,10.1002/sia.70003,C 1s (C-C/C-H) = 284.8 eV
+MgBr2,magnesium bromide,magnesium dibromide,alkaline earth; bromide,Br 3d5/2,69.1,0.1,Br⁻,47,10.1002/sia.70003,C 1s (C-C/C-H) = 284.8 eV
+MgO,magnesium oxide,magnesia,alkaline earth; oxide,Mg 2p,49.4,0.1,Mg²⁺,47,10.1002/sia.70003,C 1s (C-C/C-H) = 284.8 eV
+MgO,magnesium oxide,magnesia,alkaline earth; oxide,O 1s,529.7,0.1,O²⁻,47,10.1002/sia.70003,C 1s (C-C/C-H) = 284.8 eV
+MgO,magnesium oxide,magnesia,alkaline earth; oxide,O 1s,531.8,0.1,O²⁻ (defect),47,10.1002/sia.70003,C 1s (C-C/C-H) = 284.8 eV
+Mg(OH)2,magnesium hydroxide,,alkaline earth; hydroxide,Mg 2p,49.8,0.1,Mg²⁺,47,10.1002/sia.70003,C 1s (C-C/C-H) = 284.8 eV
+Mg(OH)2,magnesium hydroxide,,alkaline earth; hydroxide,O 1s,531.4,0.1,OH⁻,47,10.1002/sia.70003,C 1s (C-C/C-H) = 284.8 eV
+MgCO3,magnesium carbonate,magnesite,alkaline earth; carbonate,Mg 2p,50.6,0.1,Mg²⁺,47,10.1002/sia.70003,C 1s (C-C/C-H) = 284.8 eV
+MgCO3,magnesium carbonate,magnesite,alkaline earth; carbonate,O 1s,532.2,0.2,CO₃²⁻,47,10.1002/sia.70003,C 1s (C-C/C-H) = 284.8 eV
+MgCO3,magnesium carbonate,magnesite,alkaline earth; carbonate,C 1s,290.2,0.1,CO₃²⁻,47,10.1002/sia.70003,C 1s (C-C/C-H) = 284.8 eV
+Mg(CH3COO)2,magnesium acetate,MgAc2; magnesium ethanoate,alkaline earth; acetate,Mg 2p,50.9,0.1,Mg²⁺,47,10.1002/sia.70003,C 1s (C-C/C-H) = 284.8 eV
+Mg(CH3COO)2,magnesium acetate,MgAc2; magnesium ethanoate,alkaline earth; acetate,O 1s,532.4,0.1,CO₂⁻,47,10.1002/sia.70003,C 1s (C-C/C-H) = 284.8 eV
+Mg(CH3COO)2,magnesium acetate,MgAc2; magnesium ethanoate,alkaline earth; acetate,C 1s,289.4,0.1,CO₂⁻,47,10.1002/sia.70003,C 1s (C-C/C-H) = 284.8 eV
+MgS2O3,magnesium thiosulfate,,alkaline earth; sulfide; sulfate,Mg 2p,50.9,0.1,Mg²⁺,47,10.1002/sia.70003,C 1s (C-C/C-H) = 284.8 eV
+MgS2O3,magnesium thiosulfate,,alkaline earth; sulfide; sulfate,S 2p3/2,163.5,0.1,S*–SO₃²⁻,47,10.1002/sia.70003,C 1s (C-C/C-H) = 284.8 eV
+MgS2O3,magnesium thiosulfate,,alkaline earth; sulfide; sulfate,S 2p3/2,167.3,0.1,S–S*O₃²⁻,47,10.1002/sia.70003,C 1s (C-C/C-H) = 284.8 eV
+MgSO4,magnesium sulfate,,alkaline earth; sulfate,Mg 2p,51.0,0.1,Mg²⁺,47,10.1002/sia.70003,C 1s (C-C/C-H) = 284.8 eV
+MgSO4,magnesium sulfate,,alkaline earth; sulfate,O 1s,532.1,0.1,SO₄²⁻,47,10.1002/sia.70003,C 1s (C-C/C-H) = 284.8 eV
+MgSO4,magnesium sulfate,,alkaline earth; sulfate,S 2p3/2,169.2,0.1,SO₄²⁻,47,10.1002/sia.70003,C 1s (C-C/C-H) = 284.8 eV
+Mg(NO3)2,magnesium nitrate,,alkaline earth; nitrate,Mg 2p,51.5,0.1,Mg²⁺,47,10.1002/sia.70003,C 1s (C-C/C-H) = 284.8 eV
+Mg(NO3)2,magnesium nitrate,,alkaline earth; nitrate,N 1s,407.9,0.1,NO₃⁻,47,10.1002/sia.70003,C 1s (C-C/C-H) = 284.8 eV
+LiBO2,lithium metaborate,lithium borate,alkali; borate,Li 1s,55.2,0.2,Li⁺,48,10.1016/0169-4332(94)90290-9,Au 4f7/2 = 84.0 eV
+LiBO2,lithium metaborate,lithium borate,alkali; borate,B 1s,191.8,0.2,BO₂⁻,48,10.1016/0169-4332(94)90290-9,Au 4f7/2 = 84.0 eV
+LiBO2,lithium metaborate,lithium borate,alkali; borate,O 1s,531.1,0.2,BO₂⁻,48,10.1016/0169-4332(94)90290-9,Au 4f7/2 = 84.0 eV
+C3H7Na2O6P·xH2O,glycerol 2-phosphate disodium salt hydrate,disodium glycerol phosphate hydrate,alkali; alcohol; phosphate; hydrate,P 2p3/2,133.3,0.2,PO₄,49,10.17576/jsm-2018-4708-33,C 1s (C-C/C-H) = 285.0 eV
+C9H21O3P,triisopropyl phosphite,tris(propan-2-yl) phosphite; TIP,ester; phosphite,P 2p3/2,132.9,0.2,PO₃,49,10.17576/jsm-2018-4708-33,C 1s (C-C/C-H) = 285.0 eV
+Na5P3O10,sodium tripolyphosphate,sodium triphosphate,alkali; phosphate,P 2p3/2,133.5,0.2,P₃O₁₀⁵⁻,49,10.17576/jsm-2018-4708-33,C 1s (C-C/C-H) = 285.0 eV
+Na6P6O18,sodium hexametaphosphate,sodium polymetaphosphate; (NaPO3)6,alkali; phosphate,P 2p3/2,134.0,0.2,PO₃⁻,49,10.17576/jsm-2018-4708-33,C 1s (C-C/C-H) = 285.0 eV
+B,boron,amorphous boron,element,B 1s,187.5,0.2,B⁰,50,10.1007/s10947-006-0133-y,C 1s (C-C/C-H) = 285.0 eV
+h-BN,hexagonal boron nitride,boron nitride; hBN,nitride,B 1s,190.5,0.2,B-N,50,10.1007/s10947-006-0133-y,C 1s (C-C/C-H) = 285.0 eV
+h-BN,hexagonal boron nitride,boron nitride; hBN,nitride,N 1s,398.0,0.2,B-N,50,10.1007/s10947-006-0133-y,C 1s (C-C/C-H) = 285.0 eV
+B4C,boron carbide,tetraboron carbide,carbide,B 1s,186.7,0.2,B-C,50,10.1007/s10947-006-0133-y,C 1s (C-C/C-H) = 285.0 eV
+B2O3,boron oxide,diboron trioxide; boric anhydride,oxide,B 1s,193.3,0.2,B³⁺,50,10.1007/s10947-006-0133-y,C 1s (C-C/C-H) = 285.0 eV
+H3BO3,boric acid,orthoboric acid; boracic acid,borate,B 1s,193.5,0.2,B-O,50,10.1007/s10947-006-0133-y,C 1s (C-C/C-H) = 285.0 eV
+H3BO3,boric acid,orthoboric acid; boracic acid,borate,O 1s,532.3,0.2,B-OH,50,10.1007/s10947-006-0133-y,C 1s (C-C/C-H) = 285.0 eV
+NaBH4,sodium borohydride,sodium tetrahydroborate,alkali; hydride,B 1s,187.4,0.2,BH₄⁻,50,10.1007/s10947-006-0133-y,C 1s (C-C/C-H) = 285.0 eV
+NaBH4,sodium borohydride,sodium tetrahydroborate,alkali; hydride,Na 1s,1071.9,0.2,Na⁺,50,10.1007/s10947-006-0133-y,C 1s (C-C/C-H) = 285.0 eV
+KBH4,potassium borohydride,potassium tetrahydroborate,alkali; hydride,B 1s,187.4,0.1,BH₄⁻,51,10.1007/s10812-009-9116-z,C 1s (C-C/C-H) = 284.8 eV
+KBH4,potassium borohydride,potassium tetrahydroborate,alkali; hydride,K 2p3/2,293.1,0.1,K⁺,51,10.1007/s10812-009-9116-z,C 1s (C-C/C-H) = 284.8 eV
+NaBPh4,sodium tetraphenylborate,sodium tetraphenylboron,alkali; borate,B 1s,187.7,0.1,BPh₄⁻,51,10.1007/s10812-009-9116-z,C 1s (C-C/C-H) = 284.8 eV
+NaBPh4,sodium tetraphenylborate,sodium tetraphenylboron,alkali; borate,C 1s,284.5,0.1,C-C/C-H,51,10.1007/s10812-009-9116-z,C 1s (C-C/C-H) = 284.8 eV
+NaBPh4,sodium tetraphenylborate,sodium tetraphenylboron,alkali; borate,Na 1s,1072.5,0.1,Na⁺,51,10.1007/s10812-009-9116-z,C 1s (C-C/C-H) = 284.8 eV
+LEMC,Lithium ethylene monocarbonate,HOCH2CH2OCO2Li,alkali; carbonate,Li 1s,55.4,0.2,Li⁺,52,10.1038/s41557-019-0304-z,C 1s (C-C/C-H) = 284.8 eV
+LEMC,Lithium ethylene monocarbonate,HOCH2CH2OCO2Li,alkali; carbonate,C 1s,286.4,0.2,CO,52,10.1038/s41557-019-0304-z,C 1s (C-C/C-H) = 284.8 eV
+LEMC,Lithium ethylene monocarbonate,HOCH2CH2OCO2Li,alkali; carbonate,C 1s,290.0,0.2,CO₃,52,10.1038/s41557-019-0304-z,C 1s (C-C/C-H) = 284.8 eV
+LEMC,Lithium ethylene monocarbonate,HOCH2CH2OCO2Li,alkali; carbonate,O 1s,531.7,0.2,CO₃,52,10.1038/s41557-019-0304-z,C 1s (C-C/C-H) = 284.8 eV
+LEMC,Lithium ethylene monocarbonate,HOCH2CH2OCO2Li,alkali; carbonate,O 1s,533.2,0.2,CO,52,10.1038/s41557-019-0304-z,C 1s (C-C/C-H) = 284.8 eV
+LEDC,Lithium ethylene dicarbonate,(CH2OCO2Li)2; LiOCO2CH2CH2OCO2Li,alkali; carbonate,Li 1s,55.4,0.2,Li⁺,52,10.1038/s41557-019-0304-z,C 1s (C-C/C-H) = 284.8 eV
+LEDC,Lithium ethylene dicarbonate,(CH2OCO2Li)2; LiOCO2CH2CH2OCO2Li,alkali; carbonate,C 1s,286.6,0.2,CO,52,10.1038/s41557-019-0304-z,C 1s (C-C/C-H) = 284.8 eV
+LEDC,Lithium ethylene dicarbonate,(CH2OCO2Li)2; LiOCO2CH2CH2OCO2Li,alkali; carbonate,C 1s,290.0,0.2,CO₃,52,10.1038/s41557-019-0304-z,C 1s (C-C/C-H) = 284.8 eV
+LEDC,Lithium ethylene dicarbonate,(CH2OCO2Li)2; LiOCO2CH2CH2OCO2Li,alkali; carbonate,O 1s,531.8,0.2,CO₃,52,10.1038/s41557-019-0304-z,C 1s (C-C/C-H) = 284.8 eV
+LEDC,Lithium ethylene dicarbonate,(CH2OCO2Li)2; LiOCO2CH2CH2OCO2Li,alkali; carbonate,O 1s,533.3,0.2,CO,52,10.1038/s41557-019-0304-z,C 1s (C-C/C-H) = 284.8 eV
+Li2O2,Lithium peroxide,,alkali; peroxide,Li 1s,54.5,0.2,Li⁺,53,10.1021/cm303226g,C 1s (C-C/C-H) = 285.0 eV
+Li2O2,Lithium peroxide,,alkali; peroxide,O 1s,531.5,0.2,O₂²⁻,53,10.1021/cm303226g,C 1s (C-C/C-H) = 285.0 eV
+Au-S-alkyl,gold-bound alkylthiolate,alkanethiolate on gold; alkylthiolate SAM,thiol; thin film,S 2p3/2,162.0,0.2,Au-S (thiolate),54; 55; 56,10.1021/la960465w; 10.1021/jp9935337; 10.1021/acs.jpcc.1c06984,Au 4f7/2 = 84.0 eV; C 1s (C-C/C-H) = 284.6 eV; Au 4f7/2 = 84.0 eV
+Au-S-aryl,gold-bound aromatic thiolate,aromatic thiolate on gold; arylthiolate SAM,thiol; thin film,S 2p3/2,162.0,0.1,Au-S (thiolate),56,10.1021/acs.jpcc.1c06984,Au 4f7/2 = 84.0 eV
+R-SH,unbound alkanethiol,free thiol; alkanethiol,thiol,S 2p3/2,163.5,0.2,S-H (thiol),54,10.1021/la960465w,Au 4f7/2 = 84.0 eV
+TMS,Trimethylene sulfate,"1,3,2-Dioxathiane 2,2-dioxide; C3H6O4S",sulfonyl; sulfur ring,S 2p3/2,169.0,0.1,sulfate ester,57,10.1021/jp509731y,C 1s (C=C) = 284.5 eV
+DTD,Ethylene sulfate,"1,3,2-Dioxathiolane 2,2-dioxide; C2H4O4S",sulfonyl; sulfur ring,S 2p3/2,169.0,0.1,sulfate ester,57,10.1021/jp509731y,C 1s (C=C) = 284.5 eV
+LiFePO4,lithium iron phosphate,LFP,alkali; phosphate,Fe 2p3/2,710.5,0.15,Fe²⁺ (red.),58,10.1021/jp106631v,C 1s (C-C/C-H) = 285.0 eV
+LiFePO4,lithium iron phosphate,LFP,alkali; phosphate,Fe 2p3/2,712.5,0.15,Fe³⁺ (ox.),58,10.1021/jp106631v,C 1s (C-C/C-H) = 285.0 eV
+Carbon black,carbon black,CB; conductive carbon black; thermal carbon black,element,C 1s,284.4,0.1,C sp²,59; 60,10.1016/S0008-6223(00)00239-6; 10.1016/S0169-4332(03)00550-6,C 1s (C sp²) = 284.4 eV; Not reported
+Carbon black,carbon black,CB; conductive carbon black; thermal carbon black,element,C 1s,285.9,0.2,C-O,59; 60,10.1016/S0008-6223(00)00239-6; 10.1016/S0169-4332(03)00550-6,C 1s (C sp²) = 284.4 eV; Not reported
+Carbon black,carbon black,CB; conductive carbon black; thermal carbon black,element,C 1s,287.4,0.2,C=O,59; 60,10.1016/S0008-6223(00)00239-6; 10.1016/S0169-4332(03)00550-6,C 1s (C sp²) = 284.4 eV; Not reported
+Carbon black,carbon black,CB; conductive carbon black; thermal carbon black,element,C 1s,288.9,0.2,"COOH, COOR",59; 60,10.1016/S0008-6223(00)00239-6; 10.1016/S0169-4332(03)00550-6,C 1s (C sp²) = 284.4 eV; Not reported
+Carbon black,carbon black,CB; conductive carbon black; thermal carbon black,element,C 1s,290.7,0.3,π–π*,59; 60,10.1016/S0008-6223(00)00239-6; 10.1016/S0169-4332(03)00550-6,C 1s (C sp²) = 284.4 eV; Not reported
+Carbon black,carbon black,CB; conductive carbon black; thermal carbon black,element,O 1s,531.2,0.2,C=O,59; 60,10.1016/S0008-6223(00)00239-6; 10.1016/S0169-4332(03)00550-6,C 1s (C sp²) = 284.4 eV; Not reported
+Carbon black,carbon black,CB; conductive carbon black; thermal carbon black,element,O 1s,532.9,0.2,C-O,59; 60,10.1016/S0008-6223(00)00239-6; 10.1016/S0169-4332(03)00550-6,C 1s (C sp²) = 284.4 eV; Not reported

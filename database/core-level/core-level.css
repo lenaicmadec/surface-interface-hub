@@ -1,0 +1,401 @@
+
+
+/* ============================================================= */
+/* GLOBAL                                                        */
+/* ============================================================= */
+
+#xps-core-levels-static {
+  margin: 1.2rem 0;
+
+  font-size: 0.82rem !important;
+  line-height: 1.2 !important;
+}
+
+
+/* ============================================================= */
+/* SELECTOR                                                      */
+/* ============================================================= */
+
+#xps-core-levels-static .xps-core-intro {
+  margin-bottom: 0.75rem;
+  font-size: 0.64rem !important;
+  line-height: 1.3 !important;
+  font-weight: 400;
+  opacity: 0.65;
+}
+
+#xps-core-levels-static .xps-core-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+#xps-core-levels-static .xps-core-control {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  gap: 0.25rem;
+
+  width: 240px;
+
+}
+
+
+#xps-core-levels-static label {
+  font-size: 0.75rem !important;
+  line-height: 1.2 !important;
+
+  font-weight: 600;
+}
+
+
+#xps-core-levels-static select {
+  padding: 0.35rem 0.55rem;
+
+  border: 1px solid var(--border);
+  border-radius: 0.4rem;
+
+  background: transparent;
+  color: inherit;
+
+  font-size: 0.78rem !important;
+  line-height: 1.2 !important;
+}
+
+#xps-core-levels-static .xps-class-filter {
+  position: relative;
+  width: 280px;
+}
+
+#xps-core-levels-static .xps-core-toggle,
+#xps-core-levels-static .xps-class-toggle,
+#xps-core-levels-static .xps-class-clear {
+  width: 100%;
+  padding: 0.35rem 0.55rem;
+  border: 1px solid var(--border);
+  border-radius: 0.4rem;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 0.78rem !important;
+  line-height: 1.2 !important;
+  text-align: left;
+  cursor: pointer;
+}
+
+#xps-core-levels-static .xps-class-toggle::after {
+  content: "⌄";
+  float: right;
+}
+
+#xps-core-levels-static .xps-core-toggle::after {
+  content: "⌄";
+  float: right;
+}
+
+#xps-core-levels-static .xps-core-menu,
+#xps-core-levels-static .xps-class-menu {
+  position: absolute;
+  z-index: 5;
+  top: calc(100% + 0.3rem);
+  left: 0;
+  width: min(340px, 90vw);
+  padding: 0.55rem;
+  border: 1px solid rgba(156, 163, 175, 0.35);
+  border-radius: 0.4rem;
+  background: var(--surface);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+#xps-core-levels-static .xps-core-search,
+#xps-core-levels-static .xps-class-search {
+  width: 100%;
+  margin-bottom: 0.45rem;
+  padding: 0.3rem 0.45rem;
+  border: 1px solid var(--border);
+  border-radius: 0.3rem;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 0.75rem !important;
+}
+
+#xps-core-levels-static .xps-core-options,
+#xps-core-levels-static .xps-class-options {
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+#xps-core-levels-static .xps-core-option,
+#xps-core-levels-static .xps-class-option {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.2rem 0;
+  font-size: 0.75rem !important;
+  cursor: pointer;
+}
+
+#xps-core-levels-static .xps-core-option {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+}
+
+#xps-core-levels-static .xps-core-option.xps-filtered-out {
+  display: none;
+}
+
+#xps-core-levels-static .xps-class-option.xps-filtered-out {
+  display: none;
+}
+
+#xps-core-levels-static .xps-core-empty {
+  padding: 0.5rem 0.2rem;
+  color: var(--muted);
+  font-size: 0.72rem !important;
+}
+
+#xps-core-levels-static .xps-core-empty[hidden] {
+  display: none;
+}
+
+#xps-core-levels-static .xps-class-clear {
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+
+/* ============================================================= */
+/* PLACEHOLDER                                                   */
+/* ============================================================= */
+
+#xps-core-levels-static .xps-chart-placeholder {
+  margin-top: 1rem;
+
+  font-size: 0.75rem !important;
+  line-height: 1.3 !important;
+
+  opacity: 0.65;
+}
+
+
+/* ============================================================= */
+/* CHART                                                         */
+/* ============================================================= */
+
+#xps-core-levels-static .xps-chart-container {
+  width: 100%;
+  max-width: 1100px;
+
+  margin: 1.2rem auto 0 auto;
+}
+
+
+#xps-core-levels-static .xps-chart-title {
+  text-align: center;
+
+  margin-bottom: 0.25rem;
+
+  color:
+    var(--accent);
+
+  font-size: 1rem !important;
+  line-height: 1.25 !important;
+
+  font-weight: 700;
+}
+
+#xps-core-levels-static .xps-spin-orbit-info {
+  margin: 0 0 0.7rem;
+  text-align: center;
+  color: var(--text);
+  font-size: 0.72rem !important;
+  line-height: 1.25 !important;
+  font-weight: 700;
+}
+
+#xps-core-levels-static .xps-spin-orbit-info[hidden] {
+  display: none;
+}
+
+
+#xps-core-levels-static .xps-chart-wrapper {
+  width: 100%;
+  overflow-x: visible;
+}
+
+
+#xps-core-levels-static .xps-chart {
+  display: block;
+
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  max-width: 100%;
+}
+
+
+#xps-core-levels-static .xps-chart text {
+  fill: currentColor;
+
+  font-size: 15.5px;
+}
+
+
+/* ============================================================= */
+/* AXIS                                                          */
+/* ============================================================= */
+
+#xps-core-levels-static .xps-chart .xps-axis {
+  stroke: #9ca3af;
+
+  stroke-width: 1;
+}
+
+#xps-core-levels-static .xps-chart .xps-axis-title {
+  font-size: 17px !important;
+  font-weight: 700;
+}
+
+
+/* ============================================================= */
+/* ENERGY RANGE                                                  */
+/* ============================================================= */
+
+#xps-core-levels-static .xps-chart .xps-range {
+  stroke:
+    var(--accent);
+
+  stroke-width: 7;
+  stroke-linecap: butt;
+
+  opacity: 0.72;
+
+  cursor: pointer;
+
+  transition:
+    opacity 0.15s ease,
+    stroke-width 0.15s ease;
+}
+
+
+#xps-core-levels-static .xps-chart .xps-range:hover {
+  opacity: 1;
+
+  stroke-width: 9;
+
+  filter:
+    drop-shadow(
+      0 0 3px
+      var(--accent)
+    );
+}
+
+
+#xps-core-levels-static .xps-chart .xps-range-selected {
+  opacity: 1;
+
+  stroke-width: 10;
+
+  filter:
+    drop-shadow(
+      0 0 4px
+      var(--accent)
+    );
+}
+
+#xps-core-levels-static .xps-chart .xps-detail-label {
+  font-size: 14px !important;
+  opacity: 0.86;
+}
+
+#xps-core-levels-static .xps-chart .xps-detail-label-selected {
+  fill: var(--accent);
+  font-size: 18px !important;
+  font-weight: 700;
+  opacity: 1;
+}
+
+
+/* ============================================================= */
+/* SELECTED VALUE                                                */
+/* ============================================================= */
+
+#xps-core-levels-static .xps-chart .xps-selected-value {
+  font-weight: 700;
+  font-size: 20px !important;
+
+  fill:
+    var(--accent);
+}
+
+
+#xps-core-levels-static .xps-chart .xps-reference-number {
+  font-weight: 600;
+  font-size: 17px !important;
+}
+
+#xps-core-levels-static .xps-chart .xps-peak-assignment {
+  font-size: 17px !important;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 3px;
+  transition: fill 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+#xps-core-levels-static .xps-chart .xps-peak-assignment:hover,
+#xps-core-levels-static .xps-chart .xps-peak-assignment:focus {
+  fill: var(--accent);
+  text-decoration-color: currentColor;
+  outline: none;
+}
+
+#xps-core-levels-static .xps-chart .xps-copy-feedback {
+  fill: var(--accent);
+  font-size: 11px !important;
+  font-weight: 700;
+}
+
+
+#xps-core-levels-static .xps-chart .xps-doi-link {
+  font-size: 16px !important;
+  font-weight: 600;
+
+  fill:
+    var(--accent);
+
+  text-decoration: underline;
+
+  cursor: pointer;
+}
+
+
+/* ============================================================= */
+/* MOBILE                                                        */
+/* ============================================================= */
+
+@media (max-width: 768px) {
+
+  #xps-core-levels-static .xps-core-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #xps-core-levels-static .xps-core-control {
+    width: 100%;
+  }
+
+
+  #xps-core-levels-static .xps-chart-container {
+    width: 100%;
+  }
+
+}

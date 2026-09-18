@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en" data-theme="ocean" data-theme-mode="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>XPS Spectrum Identification — XPS Tools v0.4</title>
+<script src="../../../assets/xps-theme.js"></script>
+<link rel="stylesheet" href="../../../assets/xps-themes.css">
+<link rel="stylesheet" href="../../../assets/xps-base.css">
+<link rel="stylesheet" href="../../../assets/site.css">
+<link rel="stylesheet" href="./spectrum-analysis.css">
+</head>
+<body class="spectrumPage">
+<header class="hubTopbar hubAppTopbar">
+  <a class="hubBrand" href="../../../"><img class="hubMarkImg" src="../../../assets/images/hub-logo.png" alt=""><span class="hubBrandText">Surface &amp; Interface Hub</span></a>
+  <nav class="hubTopNav" aria-label="Primary navigation"></nav>
+  <div class="hubTheme"><span class="hubThemeLabel">Theme</span><div data-theme-picker></div></div>
+</header>
+
+<div class="appShell withHubHeader">
+  <nav class="xpsNav" data-xps-nav data-active="spectrum-identification" aria-label="XPS navigation"></nav>
+  <div class="appMain">
+    <header class="head toolHead">
+      <div class="headCopy">
+        <h1>XPS Spectrum Identification</h1>
+        <div class="sub">Open a VAMAS file, identify survey elements, then explore reference assignments and compounds for the available core-level regions.</div>
+      </div>
+      <div class="headUtility" aria-label="Tool information">
+        <div class="headInfo"><span class="appVersionIcon"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6.5V3h3.5L17 13.5 13.5 17 3 6.5Z"></path><circle cx="6.1" cy="6.1" r=".8" fill="currentColor" stroke="none"></circle></svg>XPS Tools · v0.4</span><span aria-hidden="true">·</span><span>Local processing</span></div>
+      </div>
+    </header>
+
+    <div id="spectrum-analysis" class="xps-vamas">
+      <div class="xv-top-grid">
+        <div class="xv-top-left-stack">
+        <div class="xv-upload-card">
+          <input class="xv-file-input" type="file" accept=".vms,.VMS,.vamas,text/plain" hidden>
+          <div class="xv-upload-main-row">
+            <button type="button" class="xv-file-button" title="Open VAMAS" aria-label="Open VAMAS file">
+              <span class="xv-btn-icon xv-svg-icon xv-folder-icon" aria-hidden="true"><svg viewBox="0 0 24 20"><path d="M2.5 6V4.8c0-.8.7-1.5 1.5-1.5h5.3l2 2h8.1c1 0 1.8.8 1.8 1.8v1"></path><path d="M3.2 17h15.6c.7 0 1.3-.4 1.6-1l2-5.1c.3-.9-.3-1.8-1.2-1.8H6.9c-.7 0-1.3.4-1.6 1l-3.2 5.1c-.5.8.1 1.8 1.1 1.8Z"></path></svg></span>
+            </button>
+            <div class="xv-upload-copy">
+              <div class="xv-subtitle">Load a VAMAS file.</div>
+              <div class="xv-file-meta-row" hidden>
+                <button type="button" class="xv-file-info-button" title="VAMAS file information" aria-label="VAMAS file information"><span class="xv-svg-icon" aria-hidden="true"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="7"></circle><path d="M10 8.5v5"></path><circle cx="10" cy="5.7" r=".6" fill="currentColor" stroke="none"></circle></svg></span></button>
+                <div class="xv-file-meta" hidden>
+                  <div class="xv-file-meta-name"></div>
+                  <div class="xv-file-meta-info"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="xv-analysis-mode-bar" hidden aria-label="Analysis mode">
+          <span class="xv-mode-search-icon xv-svg-icon" aria-hidden="true"><svg viewBox="0 0 20 20"><circle cx="8.5" cy="8.5" r="5"></circle><path d="m12.2 12.2 4.1 4.1"></path></svg></span>
+          <button type="button" class="xv-analysis-mode-button" data-analysis-mode="survey">Survey</button>
+          <button type="button" class="xv-analysis-mode-button" data-analysis-mode="core">Core level</button>
+        </div>
+        </div>
+
+        <div class="xv-navigation" hidden>
+          <div class="xv-navigation-primary">
+            <div class="xv-nav-sample">
+              <label class="xv-side-label" for="spectrum-analysis-sample">Sample</label>
+              <div class="xv-sample-fixed">
+                <div class="xv-sample-picker">
+                  <button type="button" class="xv-sample-picker-button" aria-expanded="false" aria-haspopup="listbox">
+                    <span class="xv-sample-picker-label">Sample</span>
+                    <span class="xv-sample-picker-chevron" aria-hidden="true">▾</span>
+                  </button>
+                  <div class="xv-sample-menu" hidden role="listbox" aria-label="Samples"></div>
+                  <select id="spectrum-analysis-sample" class="xv-sample-select" hidden aria-hidden="true" tabindex="-1"></select>
+                </div>
+              </div>
+            </div>
+            <div class="xv-block-list"></div>
+          </div>
+          <div class="xv-navigation-actions">
+            <div class="xv-navigation-tools-left">
+              <div class="xv-calibration-slot">
+                <button type="button" class="xv-graph-calibration" hidden title="Open or close binding-energy calibration controls">
+                  <span class="xv-btn-icon xv-svg-icon" aria-hidden="true"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="3.2"></circle><path d="M10 2.3v3M10 14.7v3M2.3 10h3M14.7 10h3"></path></svg></span><span>Open calibration</span>
+                </button>
+                <button type="button" class="xv-export-image" hidden title="Export the displayed spectrum as PNG" aria-label="Export displayed spectrum as image">
+                  <span class="xv-btn-icon xv-svg-icon" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M3.2 6.2h3l1.1-1.8h5.4l1.1 1.8h3A1.8 1.8 0 0 1 18.6 8v7A1.8 1.8 0 0 1 16.8 16.8H3.2A1.8 1.8 0 0 1 1.4 15V8a1.8 1.8 0 0 1 1.8-1.8Z"></path><circle cx="10" cy="11.2" r="3.1"></circle></svg></span>
+                </button>
+              </div>
+              <div class="xv-navigation-steppers">
+                <div class="xv-step-control" aria-label="Browse samples">
+                  <button type="button" class="xv-nav-step xv-sample-prev" title="Previous sample containing this region" aria-label="Previous sample"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10.8 2.5 5.2 8l5.6 5.5Z"></path></svg></button>
+                  <span>Sample</span>
+                  <button type="button" class="xv-nav-step xv-sample-next" title="Next sample containing this region" aria-label="Next sample"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m5.2 2.5 5.6 5.5-5.6 5.5Z"></path></svg></button>
+                </div>
+                <div class="xv-step-control" aria-label="Browse regions">
+                  <button type="button" class="xv-nav-step xv-region-prev" title="Previous region" aria-label="Previous region"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10.8 2.5 5.2 8l5.6 5.5Z"></path></svg></button>
+                  <span>Region</span>
+                  <button type="button" class="xv-nav-step xv-region-next" title="Next region" aria-label="Next region"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m5.2 2.5 5.6 5.5-5.6 5.5Z"></path></svg></button>
+                </div>
+              </div>
+            </div>
+            <div class="xv-view-mode-controls" role="group" aria-label="Spectrum view mode">
+              <button type="button" class="xv-view-mode-button xv-single-view is-active" aria-pressed="true">
+                <span class="xv-btn-icon xv-svg-icon" aria-hidden="true"><svg viewBox="0 0 20 20"><rect x="3" y="5" width="14" height="10" rx="1.8"></rect></svg></span><span>Single view</span>
+              </button>
+              <button type="button" class="xv-view-mode-button xv-top-multiview" aria-pressed="false">
+                <span class="xv-btn-icon xv-svg-icon" aria-hidden="true"><svg viewBox="0 0 20 20"><rect x="3" y="3" width="5.5" height="5.5" rx="1"></rect><rect x="11.5" y="3" width="5.5" height="5.5" rx="1"></rect><rect x="3" y="11.5" width="5.5" height="5.5" rx="1"></rect><rect x="11.5" y="11.5" width="5.5" height="5.5" rx="1"></rect></svg></span><span>Multi-view</span>
+              </button>
+              <button type="button" class="xv-view-mode-button xv-workflow-reset" title="Reset active analysis and view state" aria-label="Reset active analysis and view state">
+                <span class="xv-btn-icon xv-svg-icon" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M5.2 6.2H2.8V3.8"></path><path d="M3.2 6a7 7 0 1 1-1 6"></path></svg></span><span>Reset</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="xv-status" hidden></div>
+
+
+      <div class="xv-workspace" hidden>
+        <main class="xv-main">
+          <div class="xv-analysis-grid">
+            <section class="xv-left-panel" aria-label="Controls and reference information">
+              <div class="xv-survey-command-card">
+                <div class="xv-survey-command-head">
+                  <div class="xv-command-title"><span class="xv-title-icon xv-svg-icon" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M2 14.5h3l1.5-6 2.2 8 2.2-11 2.2 7h4.9"></path></svg></span><span>Survey Identification</span></div>
+                  <div class="xv-auto-summary" hidden></div>
+                </div>
+                <div class="xv-survey-command-row">
+                  <div class="xv-command-left">
+                    <div class="xv-mode-controls" role="group" aria-label="Identification mode">
+                      <button type="button" class="xv-mode-button is-active" data-mode="manual"><span class="xv-btn-icon xv-svg-icon" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M6 9.5V5.2a1.3 1.3 0 0 1 2.6 0v3.2"></path><path d="M8.6 8V4.5a1.3 1.3 0 0 1 2.6 0V8"></path><path d="M11.2 8.4V5.3a1.3 1.3 0 0 1 2.6 0v4.5"></path><path d="M13.8 9.2V7.1a1.3 1.3 0 0 1 2.6 0v4.4c0 3.3-2.2 5.6-5.5 5.6H9.5c-2 0-3.4-.8-4.5-2.4L2.9 12a1.2 1.2 0 0 1 1.9-1.5L6 11.8"></path></svg></span><span>Manual</span></button>
+                      <button type="button" class="xv-mode-button" data-mode="auto" title="Detect survey maxima and suggest candidate elements"><span class="xv-btn-icon xv-svg-icon" aria-hidden="true"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="5.3"></circle><circle cx="10" cy="10" r="1.5"></circle><path d="M10 1.8v3M10 15.2v3M1.8 10h3M15.2 10h3"></path></svg></span><span>Auto</span></button>
+                    </div>
+                    <button type="button" class="xv-energy-window-toggle xv-survey-energy-toggle" aria-pressed="false" title="Show a movable reference-energy window"><span class="xv-btn-icon xv-svg-icon" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M5 3v14M15 3v14"></path><path d="M8 10h4"></path><path d="M9.5 8.5 8 10l1.5 1.5M10.5 8.5 12 10l-1.5 1.5"></path></svg></span><span>Energy window</span></button>
+                  </div>
+                  <button type="button" class="xv-clear-elements" disabled><span class="xv-btn-icon xv-svg-icon" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M4.2 13.6 10.8 7a1.5 1.5 0 0 1 2.1 0l3.1 3.1a1.5 1.5 0 0 1 0 2.1l-3.5 3.5H7.4Z"></path><path d="m8.2 10.6 4.2 4.2M12.5 15.7h4.2"></path></svg></span><span>Clear</span></button>
+                </div>
+              </div>
+
+              <div class="xv-survey-tools">
+                <div class="xv-panel-title"><span class="xv-title-icon xv-svg-icon" aria-hidden="true"><svg viewBox="0 0 20 20"><circle cx="5" cy="5" r="1.25" fill="currentColor" stroke="none"></circle><circle cx="10" cy="5" r="1.25" fill="currentColor" stroke="none"></circle><circle cx="15" cy="5" r="1.25" fill="currentColor" stroke="none"></circle><circle cx="5" cy="10" r="1.25" fill="currentColor" stroke="none"></circle><circle cx="10" cy="10" r="1.25" fill="currentColor" stroke="none"></circle><circle cx="15" cy="10" r="1.25" fill="currentColor" stroke="none"></circle><circle cx="5" cy="15" r="1.25" fill="currentColor" stroke="none"></circle><circle cx="10" cy="15" r="1.25" fill="currentColor" stroke="none"></circle><circle cx="15" cy="15" r="1.25" fill="currentColor" stroke="none"></circle></svg></span><span>Periodic Table</span></div>
+                <div class="xv-periodic-shell">
+                  <div class="xv-periodic-table"></div>
+                  <div class="xv-periodic-central">
+                    <div class="xv-periodic-note">X-ray source read from the VAMAS file.<br>Select up to 6 elements.<br>Click on a line/label to display its energy.</div>
+                    <div class="xv-central-controls">
+                      <div class="xv-line-filter xv-table-line-filter" role="group" aria-label="Displayed reference lines">
+                        <button type="button" data-line-filter="xps">XPS</button>
+                        <button type="button" data-line-filter="auger">Auger</button>
+                        <button type="button" data-line-filter="both" class="is-active" aria-pressed="true">Both</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="xv-series-row xv-lanthanides"></div>
+                  <div class="xv-series-row xv-actinides"></div>
+                </div>
+              </div>
+
+              <div class="xv-energy-results-card xv-survey-energy-results" hidden>
+                <div class="xv-database-head">
+                  <div class="xv-command-title"><span class="xv-title-icon xv-svg-icon" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M5 3v14M15 3v14"></path><path d="M8 10h4"></path><path d="M9.5 8.5 8 10l1.5 1.5M10.5 8.5 12 10l-1.5 1.5"></path></svg></span><span>Energy Window</span></div>
+                  <div class="xv-energy-summary"></div>
+                </div>
+                <div class="xv-energy-results"></div>
+              </div>
+
+              <div class="xv-core-placeholder" hidden>
+                <div class="xv-core-command-card">
+                  <div class="xv-core-command-head">
+                    <div class="xv-command-title"><span class="xv-title-icon xv-svg-icon" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M2 14.5h3l1.5-6 2.2 8 2.2-11 2.2 7h4.9"></path></svg></span><span>Core-level Explorer</span></div>
+                  </div>
+                  <div class="xv-core-command-row">
+                    <div class="xv-command-left xv-core-command-left">
+                      <input class="xv-core-search" type="search" placeholder="Search compound, name or alias…" aria-label="Search compounds">
+                      <button type="button" class="xv-energy-window-toggle xv-core-energy-toggle" aria-pressed="false" title="Show a movable reference-energy window"><span class="xv-btn-icon xv-svg-icon" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M5 3v14M15 3v14"></path><path d="M8 10h4"></path><path d="M9.5 8.5 8 10l1.5 1.5M10.5 8.5 12 10l-1.5 1.5"></path></svg></span><span>Energy window</span></button>
+                    </div>
+                    <button type="button" class="xv-core-clear" title="Clear search, energy window and pinned compounds"><span class="xv-btn-icon xv-svg-icon" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M4.2 13.6 10.8 7a1.5 1.5 0 0 1 2.1 0l3.1 3.1a1.5 1.5 0 0 1 0 2.1l-3.5 3.5H7.4Z"></path><path d="m8.2 10.6 4.2 4.2M12.5 15.7h4.2"></path></svg></span><span>Clear</span></button>
+                  </div>
+                </div>
+
+                <div class="xv-core-database-card">
+                  <div class="xv-database-head">
+                    <div class="xv-command-title"><span class="xv-title-icon xv-svg-icon" aria-hidden="true"><svg viewBox="0 0 20 20"><ellipse cx="10" cy="4" rx="6" ry="2.2"></ellipse><path d="M4 4v5c0 1.2 2.7 2.2 6 2.2s6-1 6-2.2V4"></path><path d="M4 9v5c0 1.2 2.7 2.2 6 2.2s6-1 6-2.2V9"></path></svg></span><span>Reference Database</span><span class="xv-database-context" hidden></span></div>
+                    <div class="xv-database-hint"></div>
+                  </div>
+                  <div class="xv-database-summary"></div>
+                  <div class="xv-database-click-hint">Click a compound to pin it.</div>
+                  <div class="xv-database-list"><div class="xv-database-empty">Select a core-level block.</div></div>
+                </div>
+
+                <div class="xv-pinned-card">
+                  <div class="xv-command-title xv-pinned-title"><span class="xv-title-icon xv-svg-icon" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M7 3h6l-1 4 3 3v1H5v-1l3-3-1-4Z"></path><path d="M10 11v6"></path></svg></span><span>Pinned Compounds</span><span class="xv-pinned-view-controls" role="group" aria-label="Pinned compound view"><button type="button" class="xv-pinned-single-view" hidden aria-pressed="false" title="Show the current spectrum"><span class="xv-btn-icon xv-svg-icon" aria-hidden="true"><svg viewBox="0 0 20 20"><rect x="3" y="5" width="14" height="10" rx="1.8"></rect></svg></span></button><button type="button" class="xv-multiregion-toggle" hidden aria-pressed="false" title="Load all available regions associated with pinned compounds"><span class="xv-btn-icon xv-svg-icon" aria-hidden="true"><svg viewBox="0 0 20 20"><rect x="3" y="3" width="5.5" height="5.5" rx="1"></rect><rect x="11.5" y="3" width="5.5" height="5.5" rx="1"></rect><rect x="3" y="11.5" width="5.5" height="5.5" rx="1"></rect><rect x="11.5" y="11.5" width="5.5" height="5.5" rx="1"></rect></svg></span></button></span></div>
+                  <div class="xv-pinned-list"><div class="xv-pinned-empty">No pinned compound.</div></div>
+                  <div class="xv-pinned-note">Pinned compounds propagate when another available core level is opened. · Use × or click the search result again to unpin.</div>
+                </div>
+              </div>
+            </section>
+
+            <section class="xv-right-panel" aria-label="Spectrum visualization">
+              <div class="xv-pregraph-slot">
+              <div class="xv-calibration-strip" hidden>
+                <button type="button" class="xv-core-action xv-cal-pick" title="Enable one-click observed-energy selection on the spectrum">Pick observed BE</button>
+                <input class="xv-cal-observed" type="number" step="0.01" placeholder="Observed BE" aria-label="Observed binding energy">
+                <input class="xv-cal-reference" type="number" step="0.01" placeholder="Reference BE" aria-label="Reference binding energy">
+                <select class="xv-cal-scope" aria-label="Calibration scope">
+                  <option value="block">Current spectrum</option>
+                  <option value="sample">All blocks in sample</option>
+                </select>
+                <button type="button" class="xv-core-action xv-set-calibration">Validate</button>
+                <select class="xv-reset-calibration" aria-label="Reset calibration">
+                  <option value="">Reset…</option>
+                  <option value="current">Reset current core level</option>
+                  <option value="all">Reset all</option>
+                </select>
+              </div>
+              </div>
+              <div class="xv-chart-card">
+                <div class="xv-chart-head">
+                  <div class="xv-chart-left-tools">
+                    <div class="xv-graph-context">
+                      <span class="xv-graph-sample-title">Sample</span>
+                      <span class="xv-graph-block-title">Survey</span>
+                      <span class="xv-graph-calibration-badge" hidden></span>
+                    </div>
+                  </div>
+                  <div class="xv-line-info" hidden title="Click to copy the displayed energy"></div>
+                  <div class="xv-chart-actions">
+                    <button type="button" class="xv-energy-axis-toggle" aria-pressed="false" title="Toggle binding / kinetic energy display">BE</button>
+                    <button type="button" class="xv-counts-toggle" aria-pressed="false" title="Show or hide the intensity/counts axis">Counts</button>
+                    <button type="button" class="xv-reset-view" title="Reset energy range" disabled><span class="xv-btn-icon xv-svg-icon" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M5.2 6.2H2.8V3.8"></path><path d="M3.2 6a7 7 0 1 1-1 6"></path></svg></span><span>View</span></button>
+                  </div>
+                  <div class="xv-legend"></div>
+                </div>
+                <svg class="xv-chart" role="img" aria-label="XPS spectrum"></svg>
+                <div class="xv-multiregion-view" hidden aria-label="Pinned compound multi-region spectra"></div>
+              </div>
+              <div class="xv-energy-mode-note" hidden></div>
+            </section>
+          </div>
+        </main>
+      </div>
+    </div>
+    <div class="appGlobalFooter"><span>Surface &amp; Interface Hub</span><span>·</span><span>© 2026 Lénaïc Madec</span><span>·</span><a href="../../../about/">Contact</a><span>·</span><a href="../../../about/">About</a></div>
+  </div>
+</div>
+<script src="../../../assets/xps-nav.js"></script>
+<script src="../../../assets/vamas.js"></script>
+<script src="../../../assets/xps-data.js"></script>
+<script src="../../../data/element-lines-master.js"></script>
+<script src="./spectrum-analysis.js"></script>
+</body>
+</html>

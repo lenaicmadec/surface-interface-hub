@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en" data-theme="ocean" data-theme-mode="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>XPS Spectrum Identification — Surface &amp; Interface Hub</title>
+<script src="../../assets/xps-theme.js"></script>
+<link rel="stylesheet" href="../../assets/xps-themes.css">
+<link rel="stylesheet" href="../../assets/xps-base.css">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<header class="hubTopbar">
+  <a class="hubBrand" href="../../">
+    <img class="hubMarkImg" src="../../assets/images/hub-logo.png" alt="">
+    <span class="hubBrandText">Surface &amp; Interface Hub</span>
+  </a>
+  <nav class="hubTopNav" aria-label="Primary navigation"></nav>
+  <div class="hubTheme"><span class="hubThemeLabel">Theme</span><div data-theme-picker></div></div>
+</header>
+<div class="hubLayout">
+<aside class="hubSidebar" aria-label="Hub navigation"></aside>
+  <main class="hubMain">
+    <div class="hubShell spectrumLanding">
+      <section class="pageHero spectrumPageHero">
+        <div class="spectrumIntroBlock">
+          <div class="pageEyebrowRow"><div class="pageEyebrow">XPS spectrum interpretation</div><div class="suiteVersion">XPS Tools · v0.4</div></div>
+          <h1>XPS Spectrum Identification</h1>
+          <p>Interpret XPS spectra from VAMAS files. Survey spectra can be analyzed in terms of possible elemental lines, while core-level regions can be compared with curated binding-energy literature references and reported peak assignments.</p>
+          <div class="spectrumLaunchRow">
+            <a class="actionBtn" href="./app/">Launch Spectrum Identification →</a>
+            <span class="spectrumLocalNote">VAMAS files are processed locally in your browser.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="spectrumVisualGrid" aria-label="Spectrum analysis modes">
+        <article class="spectrumVisualCard">
+          <div class="spectrumVisualHead">
+            <span class="modeTag">Survey</span>
+            <h2>Identify candidate elements</h2>
+          </div>
+          <div class="spectrumVisualFrame">
+            <img src="../../assets/images/figure-spectrum-survey.png" alt="Annotated Survey identification workflow">
+          </div>
+        </article>
+
+        <article class="spectrumVisualCard">
+          <div class="spectrumVisualHead">
+            <span class="modeTag">Core levels</span>
+            <h2>Compare reference assignments</h2>
+          </div>
+          <div class="spectrumVisualFrame">
+            <img src="../../assets/images/figure-spectrum-core-level.png" alt="Annotated Core-level reference and comparison workflow">
+          </div>
+        </article>
+      </section>
+
+      <section class="builderGuideCard spectrumGuideCard" aria-labelledby="spectrumGuideTitle">
+        <h2 id="spectrumGuideTitle">Interpret survey and core-level spectra</h2>
+        <div class="spectrumGuideColumns">
+          <section>
+            <h3>Survey spectra</h3>
+            <ul>
+              <li>Identify candidate elements manually, automatically or within an energy window.</li>
+              <li>Compare labeled XPS and Auger transitions before interpreting the spectrum.</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Core-level regions</h3>
+            <ul>
+              <li>Search compounds by name, chemical class or functional group.</li>
+              <li>Pin compounds with literature binding energies and reported peak assignments.</li>
+              <li>Compare complementary core-level regions in single or multi-view.</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Shared controls</h3>
+            <ul>
+              <li>Calibrate binding energies when needed without modifying the original VAMAS data.</li>
+              <li>Search within a selected binding-energy window.</li>
+              <li>Switch between single and multi-view visualization.</li>
+              <li>Export the current spectrum or comparison as an image.</li>
+            </ul>
+          </section>
+        </div>
+      </section>
+
+      <div class="noteBox spectrumCaution">Suggested elements and peak assignments depend on the available reference data, spectrum quality, calibration, instrumental conditions and sample chemistry. They should support interpretation, not replace critical assessment.</div>
+
+      <footer class="hubFooter"><span>Surface &amp; Interface Hub</span><span>·</span><span>© 2026 Lénaïc Madec</span><span>·</span><a href="../../about/">Contact</a><span>·</span><a href="../../about/">About</a></footer>
+    </div>
+  </main>
+</div>
+<script src="../../assets/xps-nav.js"></script><script src="../../assets/site.js"></script></body>
+</html>

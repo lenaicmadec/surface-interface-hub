@@ -1,0 +1,181 @@
+﻿Category,Chemical class,XPS element,Aliases
+Inorganic,actinide,Ac; Th; Pa; U; Np; Pu; Am; Cm; Bk; Cf; Es; Fm; Md; No; Lr,actinides
+Inorganic,alkali,Li; Na; K; Rb; Cs,alkalis
+Inorganic,alkaline earth,Be; Mg; Ca; Sr; Ba,alkaline earths
+Inorganic,ammonium,N,ammoniums
+Inorganic,lanthanide,La; Ce; Pr; Nd; Pm; Sm; Eu; Gd; Tb; Dy; Ho; Er; Tm; Yb; Lu,lanthanides
+Inorganic,rare earth,Sc; Y; La; Ce; Pr; Nd; Pm; Sm; Eu; Gd; Tb; Dy; Ho; Er; Tm; Yb; Lu,rare earths
+Inorganic,substituted ammonium,N,substituted ammoniums
+Inorganic,uranyl,U,uranyls
+Inorganic,acetate,C,acetates
+Inorganic,aluminate,Al,aluminates
+Inorganic,arsenate,As,arsenates
+Inorganic,arsenide,As,arsenides
+Inorganic,azide,N,azides
+Inorganic,beryllate,Be,beryllates
+Inorganic,borate,B,borates
+Inorganic,boride,B,borides
+Inorganic,bromate,Br,bromates
+Inorganic,bromide,Br,bromides
+Inorganic,cadmate,Cd,cadmates
+Inorganic,carbide,C,carbides
+Inorganic,carbonate,C,carbonates
+Inorganic,chalcogenide,S; Se; Te,chalcogenides
+Inorganic,chlorate,Cl,chlorates
+Inorganic,chloride,Cl,chlorides
+Inorganic,chromate,Cr,chromates
+Inorganic,cobaltate,Co,cobaltates
+Inorganic,cuprate,Cu,cuprates
+Inorganic,cyanide,C; N,cyanides
+Inorganic,double oxide,O,double oxides
+Inorganic,ferrate,Fe,ferrates
+Inorganic,fluoride,F,fluorides
+Inorganic,germanate,Ge,germanates
+Inorganic,hydride,H,hydrides
+Inorganic,hydroxide,O,hydroxides
+Inorganic,indate,In,indates
+Inorganic,iodate,I,iodates
+Inorganic,iodide,I,iodides
+Inorganic,iridate,Ir,iridates
+Inorganic,manganate,Mn,manganates
+Inorganic,mercurate,Hg,mercurates
+Inorganic,molybdate,Mo,molybdates
+Inorganic,nickelate,Ni,nickelates
+Inorganic,niobate,Nb,niobates
+Inorganic,nitrate,N,nitrates
+Inorganic,nitride,N,nitrides
+Inorganic,nitrite,N,nitrites
+Inorganic,osmate,Os,osmates
+Inorganic,oxalate,C,oxalates
+Inorganic,oxide,O,oxides
+Inorganic,palladate,Pd,palladates
+Inorganic,phosphate,P,phosphates
+Inorganic,phosphide,P,phosphides
+Inorganic,platinate,Pt,platinates
+Inorganic,rhenate,Re,rhenates
+Inorganic,rhodate,Rh,rhodates
+Inorganic,ruthenate,Ru,ruthenates
+Inorganic,selenate,Se,selenates
+Inorganic,selenide,Se,selenides
+Inorganic,silicate,Si,silicates
+Inorganic,silicide,Si,silicides
+Inorganic,stannate,Sn,stannates
+Inorganic,stibnate,Sb,stibnates
+Inorganic,sulfate,S,sulfates
+Inorganic,sulfide,S,sulfides
+Inorganic,sulfite,S,sulfites
+Inorganic,tellurate,Te,tellurates
+Inorganic,tantalate,Ta,tantalates
+Inorganic,tartrate,C,tartrates
+Inorganic,telluride,Te,tellurides
+Inorganic,titanate,Ti,titanates
+Inorganic,tungstate,W,tungstates
+Inorganic,vanadate,V,vanadates
+Inorganic,wolframate,W,wolframates
+Inorganic,xenate,Xe,xenates
+Inorganic,zincate,Zn,zincates
+Inorganic,zirconate,Zr,zirconates
+Inorganic,phosphorous,P,
+Inorganic,thionyl sulfonyl,S,thionyl sulfonyls
+Inorganic,phosphite,P,phosphites
+Inorganic,silane,Si,silanes
+Inorganic,stibnide,Sb,stibnides
+Organic,(iso)cyanide,C; N,(iso)cyanides
+Organic,(iso)thiocyanate,N; C; S,(iso)thiocyanates
+Organic,acyl halide,C,acyl halides
+Organic,alcohol,O,alcohols
+Organic,aldehyde,C,aldehydes
+Organic,amide,N,amides
+Organic,amine,N,amines
+Organic,anhydride,C,anhydrides
+Organic,azo,N,azos
+Organic,carbohydrate,C,carbohydrates
+Organic,carboxylic acid,C,carboxylic acids
+Organic,dithoic acid,C,dithioic acids
+Organic,ester,C,esters
+Organic,ethanethioato,S,ethanethioatos
+Organic,ether,O,ethers
+Organic,hydroxyl(organic),O,hydroxyl(organic)s
+Organic,imide,N,imides
+Organic,ketone,C,ketones
+Organic,nitro(so),N,nitro(so)s
+Organic,phenyl benzene,C,phenyl_benzenes
+Organic,phosphoryl,P,phosphoryls
+Organic,sulfinyl(organic),S,sulfinyl(organic)s
+Organic,sulfonyl,S,sulfonyls
+Organic,thiol,S,thiols
+Organic,thiourea,S; N,thioureas
+Organic,urea,N,ureas
+Organic,xanthine,N,xanthines
+Organic,halogenated compound,F; Cl; Br; I,halogenated compounds
+Organic,hydrocarbon,C,hydrocarbons
+Organic,multiple rings,,
+Organic,nitrogen ring,N,nitrogen rings
+Organic,organic acid,C,organic acids
+Organic,other ring,,other rings
+Organic,sulfur ring,S,sulfur rings
+Organic,8-quinolinolato,,8-quinolinolatos
+Organic,acetamide,,acetamides
+Organic,aniline,N,anilines
+Organic,azole,N,azoles
+Organic,benzamidato,,benzamidatos
+Organic,butanedione dioximato,,butanedione dioximatos
+Organic,carbazole,N,carbazoles
+Organic,cellulose,C,celluloses
+Organic,cycloheptane,C,cycloheptanes
+Organic,cyclooctadiene,C,cyclooctadienes
+Organic,cyclopentadienyl,C,cyclopentadienyls
+Organic,ethanediamine,N,ethanediamines
+Organic,ethylenediaminetetraacetate,N,ethylenediaminetetraacetates
+Organic,isoxazole,,isoxazoles
+Organic,pentadionato,,pentadionatos
+Organic,phthalocyanine,N,phthalocyanines
+Organic,porphyrin,N,porphyrins
+Organic,pyrrole,N,pyrroles
+Organic,nitrogen,N,nitrogens
+Organic,oxygen,O,oxygens
+Organic,sulfur,S,sulfurs
+Ligand,ammonia-aminyl ligand,N,ammonia-aminyl ligands
+Ligand,antimony,Sb,antimonys
+Ligand,arsenic,As,arsenics
+Ligand,carbonyl ligand,C,carbonyl ligands
+Ligand,dinitrogen oxide ligand,N,dinitrogen oxide ligands
+Ligand,EDTA,N; O,EDTAs
+Ligand,formato ligand,C,formato ligands
+Ligand,hydrazine ligand,N,hydrazine ligands
+Ligand,nitrogen ligand,N,nitrogen ligands
+Ligand,nitrosyl ligand,N,nitrosyl ligands
+Ligand,oxygen ligand,O,oxygen ligands
+Ligand,phosphonium,P,phosphoniums
+Ligand,phosphorane,P,phosphoranes
+Ligand,sulfur ligand,S,sulfur ligands
+Ligand,water ligand,O,water ligands
+Other,acid,,acids
+Other,addition compound,,addition compounds
+Other,alloy,,alloys
+Other,aqueous,,
+Other,berthollide,,berthollides
+Other,borane/caborane,,borane/caboranes
+Other,catalyst,,catalysts
+Other,cluster,,clusters
+Other,drug,,drugs
+Other,element,,elements
+Other,fiber,,fibers
+Other,gel,,gels
+Other,glass,,
+Other,hydrate,,hydrates
+Other,II-VI semiconductor,,II-VI semiconductors
+Other,III-V semiconductor,,III-V semiconductors
+Other,intermetallic,,intermetallics
+Other,IV semiconductor,,IV semiconductors
+Other,IV-VI semiconductor,,IV-VI semiconductors
+Other,mineral,,minerals
+Other,molecular sieve,,molecular sieves
+Other,non-stoichiometric oxide,O,non-stoichiometric oxides
+Other,organometallic,,organometallics
+Other,peroxide,O,peroxides
+Other,polymer,,polymers
+Other,solid solution,,solid solutions
+Other,superconductor,,superconductors
+Other,surface polymer,,surface polymers
+Other,thin film,,thin films

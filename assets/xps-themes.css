@@ -1,0 +1,200 @@
+:root,
+[data-theme="ocean"]{
+  color-scheme:dark;
+  --bg:#0f172a;
+  --nav-bg:#0c1426;
+  --surface:#111c33;
+  --surface-raised:#17233d;
+  --surface-deep:#0b1528;
+  --field-bg:#0b1222;
+  --text:#e5e7eb;
+  --text-soft:#cbd5e1;
+  --muted:#94a3b8;
+  --border:#334155;
+  --border-soft:#26344e;
+  --accent:#38bdf8;
+  --accent-strong:#075985;
+  --accent-text:#e0f2fe;
+  --plot-bg:#081120;
+  --plot-grid:#25324a;
+  --plot-axis:#64748b;
+  --plot-sum:#ffffff;
+  --good:#34d399;
+  --good-text:#bbf7d0;
+  --warn:#fbbf24;
+  --warn-text:#fde68a;
+  --bad:#fb7185;
+  --bad-text:#fecdd3;
+}
+
+[data-theme="graphite"]{
+  color-scheme:dark;
+  --bg:#151a20;
+  --nav-bg:#11161b;
+  --surface:#1d252d;
+  --surface-raised:#26313b;
+  --surface-deep:#10171d;
+  --field-bg:#11181f;
+  --text:#edf2f7;
+  --text-soft:#cbd5df;
+  --muted:#91a0ae;
+  --border:#3b4855;
+  --border-soft:#2c3741;
+  --accent:#9fb2c3;
+  --accent-strong:#465766;
+  --accent-text:#f8fafc;
+  --plot-bg:#10161c;
+  --plot-grid:#313c46;
+  --plot-axis:#7b8996;
+  --plot-sum:#ffffff;
+}
+
+[data-theme="forest"]{
+  color-scheme:dark;
+  --bg:#062b24;
+  --nav-bg:#05231e;
+  --surface:#0b3a31;
+  --surface-raised:#12483d;
+  --surface-deep:#05261f;
+  --field-bg:#062b24;
+  --text:#e8f7f0;
+  --text-soft:#c7e6d9;
+  --muted:#8fb8a8;
+  --border:#2c5b4e;
+  --border-soft:#1d493e;
+  --accent:#42d392;
+  --accent-strong:#147a50;
+  --accent-text:#ecfdf5;
+  --plot-bg:#05241e;
+  --plot-grid:#245145;
+  --plot-axis:#7da99a;
+  --plot-sum:#ffffff;
+}
+
+[data-theme="teal"]{
+  color-scheme:dark;
+  --bg:#06343a;
+  --nav-bg:#052a30;
+  --surface:#0a4249;
+  --surface-raised:#0e5058;
+  --surface-deep:#042a2f;
+  --field-bg:#052f35;
+  --text:#e7fbfb;
+  --text-soft:#c5ecec;
+  --muted:#8eb9bc;
+  --border:#2d6267;
+  --border-soft:#1d5055;
+  --accent:#22d3ee;
+  --accent-strong:#0e7490;
+  --accent-text:#ecfeff;
+  --plot-bg:#04282d;
+  --plot-grid:#24565b;
+  --plot-axis:#79a9ad;
+  --plot-sum:#ffffff;
+}
+
+[data-theme="sandstone"]{
+  color-scheme:dark;
+  --bg:#211d17;
+  --nav-bg:#1a1712;
+  --surface:#2b261f;
+  --surface-raised:#373027;
+  --surface-deep:#1c1813;
+  --field-bg:#201b16;
+  --text:#f4f0e8;
+  --text-soft:#ddd3c2;
+  --muted:#aa9d89;
+  --border:#554b3c;
+  --border-soft:#40382e;
+  --accent:#f1c45d;
+  --accent-strong:#9a6518;
+  --accent-text:#fff8e7;
+  --plot-bg:#1b1712;
+  --plot-grid:#4a4033;
+  --plot-axis:#9d8d75;
+  --plot-sum:#ffffff;
+}
+
+[data-theme="sky"]{
+  color-scheme:light;
+  --bg:#edf6ff;
+  --nav-bg:#e4f1ff;
+  --surface:#f8fbff;
+  --surface-raised:#eaf4ff;
+  --surface-deep:#dfeeff;
+  --field-bg:#ffffff;
+  --text:#17324f;
+  --text-soft:#31577d;
+  --muted:#6b87a4;
+  --border:#b8d2eb;
+  --border-soft:#d0e1f1;
+  --accent:#2f8cff;
+  --accent-strong:#1669c9;
+  --accent-text:#ffffff;
+  --plot-bg:#ffffff;
+  --plot-grid:#d7e5f3;
+  --plot-axis:#7695b3;
+  --plot-sum:#162f4a;
+  --good:#1f9d62;
+  --good-text:#166534;
+  --warn:#c98512;
+  --warn-text:#92400e;
+  --bad:#d94f70;
+  --bad-text:#9f1239;
+}
+
+[data-theme="sage"]{
+  color-scheme:light;
+  --bg:#eef6ef;
+  --nav-bg:#e5f0e7;
+  --surface:#f8fbf7;
+  --surface-raised:#eaf3eb;
+  --surface-deep:#dfece1;
+  --field-bg:#ffffff;
+  --text:#193d2a;
+  --text-soft:#37624a;
+  --muted:#6f8c79;
+  --border:#bfd2c3;
+  --border-soft:#d4e1d6;
+  --accent:#4b9a6a;
+  --accent-strong:#35734e;
+  --accent-text:#ffffff;
+  --plot-bg:#ffffff;
+  --plot-grid:#d9e6dc;
+  --plot-axis:#799783;
+  --plot-sum:#183b29;
+  --good:#278b59;
+  --good-text:#166534;
+  --warn:#b98324;
+  --warn-text:#854d0e;
+  --bad:#ca5167;
+  --bad-text:#9f1239;
+}
+
+[data-theme="ivory"]{
+  color-scheme:light;
+  --bg:#fbf6ec;
+  --nav-bg:#f4ecde;
+  --surface:#fffdf9;
+  --surface-raised:#f7efe2;
+  --surface-deep:#eee4d5;
+  --field-bg:#ffffff;
+  --text:#4b3924;
+  --text-soft:#70583c;
+  --muted:#927b61;
+  --border:#d7c6af;
+  --border-soft:#e7dac8;
+  --accent:#c48722;
+  --accent-strong:#9f6812;
+  --accent-text:#ffffff;
+  --plot-bg:#ffffff;
+  --plot-grid:#eadfce;
+  --plot-axis:#a28c72;
+  --plot-sum:#4a3620;
+  --good:#2d8a5a;
+  --good-text:#166534;
+  --warn:#b87917;
+  --warn-text:#854d0e;
+  --bad:#c84d66;
+  --bad-text:#9f1239;
+}

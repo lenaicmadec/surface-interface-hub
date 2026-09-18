@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en" data-theme="ocean" data-theme-mode="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Interactive XPS Database — Surface &amp; Interface Hub</title>
+    <script src="../assets/xps-theme.js"></script>
+    <link rel="stylesheet" href="../assets/xps-themes.css" />
+    <link rel="stylesheet" href="../assets/xps-base.css" />
+    <link rel="stylesheet" href="../assets/site.css" />
+    <link rel="stylesheet" href="./database.css" />
+  </head>
+  <body>
+    <header class="hubTopbar">
+      <a class="hubBrand" href="../"
+        ><img
+          class="hubMarkImg"
+          src="../assets/images/hub-logo.png"
+          alt=""
+        /><span class="hubBrandText">Surface &amp; Interface Hub</span></a
+      >
+      <nav class="hubTopNav" aria-label="Primary navigation"></nav>
+      <div class="hubActions">
+        <button class="hubShare" type="button" data-share-page>Share</button>
+        <div class="hubTheme">
+          <span class="hubThemeLabel">Theme</span>
+          <div data-theme-picker></div>
+        </div>
+      </div>
+    </header>
+    <div class="hubLayout">
+      <aside class="hubSidebar" aria-label="Hub navigation"></aside>
+      <main class="hubMain">
+        <div class="hubShell databaseLanding">
+          <section class="pageHero">
+            <div class="pageEyebrow">XPS reference data</div>
+            <h1>Interactive XPS Database</h1>
+          </section>
+          <div class="noteBox databaseScope">
+            <strong>Database scope</strong
+            ><span
+              >This version currently focuses primarily on battery materials and
+              Solid Electrolyte Interphase (SEI) compounds. Additional reference
+              data will be progressively added.</span
+            >
+          </div>
+          <section class="databaseSearch">
+            <div class="sectionHeading">
+              <svg viewBox="0 0 32 24" aria-hidden="true">
+                <path d="M2 21 H30" />
+                <path
+                  d="M4 20 L7 19 L9 17 L11 19 L13 16 L15 3 L17 18 L19 16 L21 9 L23 18 L26 16 L28 19"
+                />
+              </svg>
+              <h2>Search the interactive XPS database by:</h2>
+            </div>
+            <div class="databaseCards">
+              <a class="databaseCard" href="element/"
+                ><span>Element</span
+                ><small
+                  >Explore characteristic XPS and Auger lines by element.</small
+                ></a
+              ><a class="databaseCard" href="core-level/"
+                ><span>Core Level</span
+                ><small
+                  >Compare reported binding energies for a selected core
+                  level.</small
+                ></a
+              ><a class="databaseCard" href="chemical-species/"
+                ><span>Chemical Species</span
+                ><small
+                  >Search compounds, aliases, chemical classes and reported peak
+                  assignments.</small
+                ></a
+              >
+            </div>
+          </section>
+          <div class="versionTag">XPS Database · v0.4</div>
+          <details class="disclosure databaseDisclaimer">
+            <summary>Disclaimer, contact and acknowledgements</summary>
+            <div class="content">
+              <p>
+                <strong>About the data.</strong> This database consolidates
+                literature values by chemical species, core level and peak
+                assignment. Compatible measurements are combined into a
+                representative binding energy and associated uncertainty. Only
+                reported core levels are listed; their absence from the
+                database does not imply their absence from a spectrum.
+              </p>
+              <p>
+                <strong>Energy calibration and fitting.</strong> Binding
+                energies are presented using the energy calibration reported
+                by each source. Calibration details are available with each
+                reference. Reported peak positions may also depend on the
+                constraints and procedures used to fit complex spectra.
+              </p>
+              <p>
+                <strong>Interpretation.</strong> Differences of a few tenths of
+                an electronvolt may result from calibration, chemical
+                environment, material structure or fitting procedure and should
+                not alone be interpreted as evidence of distinct chemical
+                states.
+              </p>
+              <p>
+                <strong>Scope.</strong> This database is intended as a reference
+                aid. Although the entries have been compiled and internally
+                reviewed with reasonable care, interpretation should always
+                consider the original publication and its experimental context.
+              </p>
+              <p>
+                If you identify an error, have a question, or wish to suggest an
+                addition, please contact Lénaïc Madec at
+                <a href="mailto:lenaic.madec@cnrs.fr">lenaic.madec@cnrs.fr</a>.
+                Corrections
+                and additions will be documented and incorporated into future
+                releases of the database and its archived dataset.
+              </p>
+              <p>
+                We thank the authors of the cited work, as well as colleagues
+                and users who contribute feedback and help improve this
+                resource.
+              </p>
+              <p>
+                The full references used to build this database are available
+                below.
+              </p>
+              <a
+                class="referenceButton"
+                href="Database-literature-references.pdf"
+                target="_blank"
+                rel="noopener"
+                >Database literature references ↗</a
+              >
+            </div>
+          </details>
+          <footer class="hubFooter">
+            <span>Surface &amp; Interface Hub</span><span>·</span
+            ><span>© 2026 Lénaïc Madec</span><span>·</span
+            ><a href="../about/">Contact</a><span>·</span
+            ><a href="../about/">About</a>
+          </footer>
+        </div>
+      </main>
+    </div>
+    <script src="../assets/xps-nav.js"></script>
+    <script src="../assets/site.js"></script>
+  </body>
+</html>
